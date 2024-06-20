@@ -52,7 +52,6 @@ df_Investigacion.columns = ['Edad', 'Género', 'País de Residencia', 'Ciudad de
 
 df_Investigacion = df_Investigacion.fillna('No respondió')
 
-Investigacion = df_Investigacion
 
 # %%
 # Título de la aplicación
@@ -70,6 +69,7 @@ El conjunto de datos **Iris** es uno de los conjuntos de datos más conocidos en
 
 En esta aplicación, exploraremos el conjunto de datos Iris mediante gráficos y estadísticas descriptivas. A continuación, se muestra una tabla con las primeras filas del conjunto de datos.
 """)
+
 
 # %%
 
