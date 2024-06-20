@@ -103,4 +103,4 @@ Pregunta1.columns.name = '¿Alguna Vez Has Sido Diagnosticado con una Enfermedad
 
 print(Pregunta1)
 
-
+st.table(Pregunta1)
