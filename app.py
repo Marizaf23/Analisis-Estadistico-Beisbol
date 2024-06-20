@@ -15,12 +15,6 @@ cur = conn.cursor()
 # Consultar las tablas en la base de datos
 consulta_ntablas = "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;"
 
-
-# Mostrar las entidades
-print("Entidades en la base de datos:")
-entidades = pd.read_sql_query(sql = consulta_ntablas, con = conn)
-entidades
-
 # %%
 # Crear consulta para convertir en DF
 consulta = "SELECT * FROM Respuestas;"
@@ -65,14 +59,9 @@ st.title("Análisis del Conjunto de Datos Iris")
 st.write("""
 ## Introducción
 
-El conjunto de datos **Iris** es uno de los conjuntos de datos más conocidos en la comunidad de ciencia de datos. Este conjunto de datos fue introducido por el biólogo y estadístico británico Ronald A. Fisher en su artículo de 1936 "The use of multiple measurements in taxonomic problems". El conjunto de datos contiene 150 observaciones de iris con cuatro características: longitud del sépalo, anchura del sépalo, longitud del pétalo y anchura del pétalo. Además, cada observación pertenece a una de las tres especies de iris: Iris setosa, Iris versicolor o Iris virginica.
-
-En esta aplicación, exploraremos el conjunto de datos Iris mediante gráficos y estadísticas descriptivas. A continuación, se muestra una tabla con las primeras filas del conjunto de datos.
 """)
 
-
 # %%
-
 
 # PREGUNTA #1
 #¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?
