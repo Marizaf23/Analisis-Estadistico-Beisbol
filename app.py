@@ -2,7 +2,9 @@
 import pandas as pd
 import numpy  as np
 import sqlite3
-import plotly as plty
+import plotly.express as px
+import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 import seaborn as sn
 import streamlit as st
 
