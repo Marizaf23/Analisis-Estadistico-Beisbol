@@ -5,6 +5,7 @@ import sqlite3
 import streamlit as st
 import seaborn   as sns
 import matplotlib.pyplot as plt
+import plotly as plty
 
 # Conectar a la base de datos SQLite
 conn = sqlite3.connect(r'C:\Users\maria\Documents\UCV MARY\EECA\SEMESTRE 2024-1\SEMESTRE II\COMPUTACIÓN II\TRABAJO FINAL\SALUD MENTAL EN LA INDUSTRIA TECNOLÓGICA 1.sqlite')
