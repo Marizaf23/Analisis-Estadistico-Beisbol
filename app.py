@@ -11,11 +11,11 @@ import streamlit as st
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
 
 # Crea un menú de pestañas
-tab1, tab2 = st.tabs(["Página 1", "Página 2"])
+tab1, tab2 = st.tabs(["Datos", "Página 2"])
 
 # Contenido de la página 1
 with tab1:
-    st.header("Datos")
+    st.header("Visualizacióon de los Datos")
     st.write("Información de la Data Suministrada.")
 
 # Carga los DataFrames desde los archivos.csv
