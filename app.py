@@ -2,7 +2,7 @@
 import pandas as pd
 import numpy  as np
 import sqlite3
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import plotly as plty
 import seaborn as sn
 import streamlit as st
