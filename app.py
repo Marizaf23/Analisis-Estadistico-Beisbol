@@ -15,7 +15,7 @@ tab1, tab2 = st.tabs(["Datos", "Página 2"])
 
 # Contenido de la página 1
 with tab1:
-    st.header("Visualizacióon de los Datos")
+    st.header("Visualización de los Datos")
     st.write("Información de la Data Suministrada.")
 
 # Carga los DataFrames desde los archivos.csv
