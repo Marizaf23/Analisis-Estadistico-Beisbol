@@ -11,10 +11,15 @@ import streamlit as st
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
 
 # Crea un menú de pestañas
-tab1, tab2 = st.tabs(["Datos", "Página 2"])
+tab1, tab2 = st.tabs(["Introducción", "Datos"])
 
 # Contenido de la página 1
 with tab1:
+    st.header("Introducción")
+    st.write("Información de la Data Suministrada.")
+
+# Contenido de la página 2
+with tab2:
     st.header("Visualización de los Datos")
     st.write("Información de la Data Suministrada.")
 
@@ -37,10 +42,3 @@ elif option == '2018':
 elif option == '2019':
     st.dataframe(df_2019)
 
-st.write("""
-## Introducción
-
-El conjunto de datos **Iris** es uno de los conjuntos de datos más conocidos en la comunidad de ciencia de datos. Este conjunto de datos fue introducido por el biólogo y estadístico británico Ronald A. Fisher en su artículo de 1936 "The use of multiple measurements in taxonomic problems". El conjunto de datos contiene 150 observaciones de iris con cuatro características: longitud del sépalo, anchura del sépalo, longitud del pétalo y anchura del pétalo. Además, cada observación pertenece a una de las tres especies de iris: Iris setosa, Iris versicolor o Iris virginica.
-
-En esta aplicación, exploraremos el conjunto de datos Iris mediante gráficos y estadísticas descriptivas. A continuación, se muestra una tabla con las primeras filas del conjunto de datos.
-""")
