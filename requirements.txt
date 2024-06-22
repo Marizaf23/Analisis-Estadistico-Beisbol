@@ -1,6 +1,5 @@
 pandas
 numpy
-sqlite3
 streamlit
 seaborn
 matplotlib.pyplot
