@@ -4,6 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly as px
 import streamlit as st
+import os
 
 
 # Título de la aplicación
