@@ -23,14 +23,15 @@ with tab2:
     st.header("Visualización de los Datos")
     st.write("Información de la Data Suministrada.")
 
-ruta_relativa = 'CSV'
-ruta_absoluta = os.path.join(os.getcwd(), ruta_relativa)
+@st.cache
+def load_csv(file_path):
+    return pd.read_csv(file_path)
 
 # Leer archivos CSV
-df_2016 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion1.csv'))
-df_2017 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion2.csv'))
-df_2018 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion3.csv'))
-df_2019 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion4.csv'))
+df_2016 = load_csv('CSV/Investigacion1.csv')
+df_2017 = load_csv('CSV/Investigacion2.csv')
+df_2018 = load_csv('CSV/Investigacion3.csv')
+df_2019 = load_csv('CSV/Investigacion4.csv')
 
 # Crea un selectbox con las opciones
 option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
