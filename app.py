@@ -77,8 +77,8 @@ with tab5:
     # Crea un selectbox con las opciones
     option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
 
-    if st.button('2016'):
-    # PREGUNTA #1
+if st.button('2016'):
+    # PREGUNTA #1: #¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
