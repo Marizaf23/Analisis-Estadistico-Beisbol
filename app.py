@@ -78,7 +78,6 @@ with tab5:
     option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
 
 if option == '2016':
-    # PREGUNTA #1: #¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
@@ -86,17 +85,8 @@ if option == '2016':
                         margins=True, 
                         margins_name='Total')
 
-    fig = go.Figure(data=[go.Table(
-        header=dict(values=list(Pregunta1.columns) + ['Total'],
-                    line_color='darkslategray',
-                    fill_color='lightskyblue',
-                    align='left'),
-        cells=dict(values=Pregunta1.values.tolist() + [Pregunta1.loc['Total']],
-                   line_color='darkslategray',
-                   fill_color='lightcyan',
-                   align='left'))
-    ])
+    Pregunta1 = Pregunta1.rename_axis('¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?')
+    Pregunta1.columns.name = 'Historial Familiar'
 
-    fig.update_layout(title_text="Tabla de Contingencia")
-
-    st.write(fig)
+    st.write("Tabla de Contingencia")
+    st.dataframe(Pregunta1)
