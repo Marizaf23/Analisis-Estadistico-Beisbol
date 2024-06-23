@@ -4,4 +4,3 @@ streamlit
 seaborn
 matplotlib
 plotly
-os
