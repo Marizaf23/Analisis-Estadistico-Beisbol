@@ -88,5 +88,4 @@ if option == '2016':
     Pregunta1.index.name = 'Diagnóstico de Enfermedad Mental'
     Pregunta1.columns.name = 'Historial Familiar'
 
-    st.write(Pregunta1.to_string(header=True))
     st.table(Pregunta1)
