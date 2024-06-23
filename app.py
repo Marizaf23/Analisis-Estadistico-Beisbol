@@ -23,8 +23,8 @@ with tab2:
     st.header("Visualización de los Datos")
     st.write("Información de la Data Suministrada.")
 
-# Ruta absoluta a la carpeta donde se encuentran los archivos CSV
-ruta_absoluta = 'C:\\Users\\maria\\Documents\\UCV MARY\\EECA\\SEMESTRE 2024-1\\SEMESTRE II\\COMPUTACIÓN II\\TRABAJO FINAL\\CSV'
+ruta_relativa = 'CSV'
+ruta_absoluta = os.path.join(os.getcwd(), ruta_relativa)
 
 # Leer archivos CSV
 df_2016 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion1.csv'))
