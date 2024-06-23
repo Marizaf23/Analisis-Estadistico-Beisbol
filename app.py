@@ -76,3 +76,19 @@ with tab5:
 
     # Crea un selectbox con las opciones
     option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
+
+# PREGUNTA #1
+#¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?
+
+    Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
+                        df_2016['Historial Familiar'], 
+                        margins=True, 
+                        margins_name='Total')
+
+    Pregunta1 = Pregunta1.rename_axis('¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?')
+    Pregunta1.columns.name = 'Historial Familiar'
+
+    st.table(Pregunta1)
+
+    st.write("Tabla de Contingencia")
+    st.write(Pregunta1)
