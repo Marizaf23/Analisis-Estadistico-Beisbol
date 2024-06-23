@@ -86,7 +86,5 @@ if option == '2016':
                         margins_name='Total')
 
     Pregunta1 = Pregunta1.rename_axis('¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?')
-    Pregunta1.columns.name = 'Historial Familiar'
-
     st.write("Tabla de Contingencia")
-    st.dataframe(Pregunta1)
+    st.table(Pregunta1.T.reset_index().rename(columns={'index': 'Historial Familiar'}))
