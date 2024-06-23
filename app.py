@@ -76,27 +76,3 @@ with tab5:
 
     # Crea un selectbox con las opciones
     option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
-
-def create_contingency_table(year):
-    if year == '2016':
-        df = df_2016
-    elif year == '2017':
-        df = df_2017
-    elif year == '2018':
-        df = df_2018
-    elif year == '2019':
-        df = df_2019
-    
-    contingency_table = pd.crosstab(df['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
-                                    df['Historial Familiar'], 
-                                    margins=True, 
-                                    margins_name='Total')
-    
-    contingency_table.columns.name = 'Historial Familiar'
-    contingency_table.index.name = '¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'
-    
-    return contingency_table
-
-contingency_tables = {}
-for year in ['2016', '2017', '2018', '2019']:
-    contingency_tables[year] = create_contingency_table(year)
