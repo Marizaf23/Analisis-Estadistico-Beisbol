@@ -80,11 +80,11 @@ with tab5:
 if option == '2016':
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
-    Pregunta1 = pd.crosstab(df_2016['Enfermedad Mental'], 
+    Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2016['Historial Familiar'], 
                         margins=True, 
                         margins_name='Total')
 
+    Pregunta1 = Pregunta1.rename_axis(index='Enfermedad Mental', columns='Historial Familiar')
     st.write("Tabla de Contingencia")
-    st.table(Pregunta1, index_names=['Enfermedad Mental'], column_names=['Historial Familiar', 'Si', 'No', 'No sé'], columns=Pregunta1.columns)
-
+    st.table(Pregunta1.T.reset_index().rename(columns={'index': 'Historial Familiar'}))
