@@ -85,4 +85,4 @@ if option == '2016':
                         df_2016['Historial Familiar'], 
                         margins=True, 
                         margins_name='Total')
-    st.table(Pregunta1, header=True)
+    st.dataframe(Pregunta1)
