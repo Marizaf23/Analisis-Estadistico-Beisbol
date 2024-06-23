@@ -86,5 +86,20 @@ if option == '2016':
                         margins_name='Total')
 
     Pregunta1 = Pregunta1.rename_axis(index='Enfermedad Mental', columns='Historial Familiar')
+
     st.write("Tabla de Contingencia")
-    st.table(Pregunta1.T.reset_index().rename(columns={'index': 'Historial Familiar'}))
+    st.markdown("""
+    <style>
+        .dataframe {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+        }
+        .dataframe th, .dataframe td {
+            border: 1px solid #ddd;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.write(Pregunta1.to_html(index=False, header=True), unsafe_allow_html=True)
