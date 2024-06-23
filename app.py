@@ -22,12 +22,14 @@ with tab2:
     st.header("Visualización de los Datos")
     st.write("Información de la Data Suministrada.")
 
-# Carga los DataFrames desde los archivos.csv
+# Ruta absoluta a la carpeta donde se encuentran los archivos CSV
+ruta_absoluta = 'C:\\Users\\maria\\Documents\\UCV MARY\\EECA\\SEMESTRE 2024-1\\SEMESTRE II\\COMPUTACIÓN II\\TRABAJO FINAL\\CSV'
 
-df_2016 = pd.read_csv('Investigacion1.csv')
-df_2017 = pd.read_csv('Investigacion2.csv')
-df_2018 = pd.read_csv('Investigacion3.csv')
-df_2019 = pd.read_csv('Investigacion4.csv')
+# Leer archivos CSV
+df_2016 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion1.csv'))
+df_2017 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion2.csv'))
+df_2018 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion3.csv'))
+df_2019 = pd.read_csv(os.path.join(ruta_absoluta, 'Investigacion4.csv'))
 
 # Crea un selectbox con las opciones
 option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
