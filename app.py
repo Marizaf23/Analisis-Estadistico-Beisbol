@@ -80,12 +80,23 @@ with tab5:
 if option == '2016':
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
+    # Crear una tabla de frecuencias para la pregunta
     Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2016['Historial Familiar'], 
                         margins=True, 
                         margins_name='Total')
 
-    Pregunta1.index.name = 'Diagnóstico de Enfermedad Mental'
-    Pregunta1.columns.name = 'Historial Familiar'
+    # Transponer la tabla para que las respuestas estén en las filas
+    Pregunta1 = Pregunta1.T
 
+    # Renombrar las filas y columnas
+    Pregunta1.index.name = 'Historial Familiar'
+    Pregunta1.columns.name = 'Enfermedad Mental'
+
+    # Mostrar la tabla en Streamlit
+    st.title("Enfermedad Mental y Historial Familiar en la Industria Tecnológica")
+    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
     st.table(Pregunta1)
+
+    # Mostrar el resultado
+    st.write("De acuerdo a los datos, hay **{}** personas en la industria tecnológica que tienen una enfermedad mental diagnosticada y dentro de este grupo, **{}** tienen algún historial familiar.".format(Pregunta1.loc['Si', 'Si'], Pregunta1.loc['Si', 'Si']))
