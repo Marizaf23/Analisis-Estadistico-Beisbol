@@ -1,4 +1,3 @@
-# %%
 import pandas as pd
 import numpy  as np
 import seaborn as sns
@@ -24,6 +23,7 @@ with tab2:
     st.write("Información de la Data Suministrada.")
 
 # Carga los DataFrames desde los archivos.csv
+
 df_2016 = pd.read_csv('Investigacion1.csv')
 df_2017 = pd.read_csv('Investigacion2.csv')
 df_2018 = pd.read_csv('Investigacion3.csv')
