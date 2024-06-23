@@ -11,7 +11,7 @@ from io import StringIO
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
 
 # Crea un menú de pestañas
-tab1, tab2 = st.tabs(["Introducción", "Datos"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12 = st.tabs(["Introducción", "Datos", "Planteamiento del Problema", "Marco Teórico", "Pregunta #1", "Pregunta #2", "Pregunta #3", "Pregunta #4", "Pregunta #5", "Pregunta #6", "Conclusión", "Bibliografía"])
 
 # Contenido de la página 1
 with tab1:
@@ -32,7 +32,7 @@ with tab2:
             st.error("Failed to load data from GitHub.")
             return None
 
-    # URLs of CSV files in GitHub repository
+    # Identificar los URLs de los CSV del repositorio
     urls = {
         '2016': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion1.csv',
         '2017': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion2.csv',
@@ -40,7 +40,7 @@ with tab2:
         '2019': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion4.csv'
     }
 
-    # Load CSV files from GitHub
+    # Cargar los CSV desde GitHub
     df_2016 = load_csv_from_github(urls['2016'])
     df_2017 = load_csv_from_github(urls['2017'])
     df_2018 = load_csv_from_github(urls['2018'])
@@ -58,3 +58,45 @@ with tab2:
         st.dataframe(df_2018)
     elif option == '2019':
         st.dataframe(df_2019)
+
+# Contenido de la página 3
+with tab3:
+    st.header("Planteamiento Del Problema")
+    st.write("planteamiento.")
+
+# Contenido de la página 4
+with tab4:
+    st.header("Marco Teórico")
+    st.write("marco.")
+
+# Contenido de la página 5
+with tab5:
+    st.header("Pregunta #1: ¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
+    st.write("#1")
+
+    # Crea un selectbox con las opciones
+    option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
+
+def create_contingency_table(year):
+    if year == '2016':
+        df = df_2016
+    elif year == '2017':
+        df = df_2017
+    elif year == '2018':
+        df = df_2018
+    elif year == '2019':
+        df = df_2019
+    
+    contingency_table = pd.crosstab(df['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
+                                    df['Historial Familiar'], 
+                                    margins=True, 
+                                    margins_name='Total')
+    
+    contingency_table.columns.name = 'Historial Familiar'
+    contingency_table.index.name = '¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'
+    
+    return contingency_table
+
+contingency_tables = {}
+for year in ['2016', '2017', '2018', '2019']:
+    contingency_tables[year] = create_contingency_table(year)
