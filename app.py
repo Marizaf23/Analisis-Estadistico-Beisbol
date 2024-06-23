@@ -77,7 +77,7 @@ with tab5:
     # Crea un selectbox con las opciones
     option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
 
-if st.button('2016'):
+if option == '2016':
     # PREGUNTA #1: #¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
@@ -86,8 +86,17 @@ if st.button('2016'):
                         margins=True, 
                         margins_name='Total')
 
-    Pregunta1 = Pregunta1.rename_axis('¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?')
-    Pregunta1.columns.name = 'Historial Familiar'
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(Pregunta1.columns) + ['Total'],
+                    line_color='darkslategray',
+                    fill_color='lightskyblue',
+                    align='left'),
+        cells=dict(values=Pregunta1.values.tolist() + [Pregunta1.loc['Total']],
+                   line_color='darkslategray',
+                   fill_color='lightcyan',
+                   align='left'))
+    ])
 
-    st.write("Tabla de Contingencia")
-    st.table(Pregunta1)
+    fig.update_layout(title_text="Tabla de Contingencia")
+
+    st.write(fig)
