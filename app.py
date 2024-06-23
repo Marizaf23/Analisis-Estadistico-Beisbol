@@ -4,8 +4,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly as px
 import streamlit as st
-import os
-
+import requests
+from io import StringIO
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
@@ -24,14 +24,27 @@ with tab2:
     st.write("Información de la Data Suministrada.")
 
 @st.cache
-def load_csv(file_path):
-    return pd.read_csv(file_path)
+def load_csv_from_github(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return pd.read_csv(StringIO(response.text))
+    else:
+        st.error("Failed to load data from GitHub.")
+        return None
 
-# Leer archivos CSV
-df_2016 = load_csv('CSV/Investigacion1.csv')
-df_2017 = load_csv('CSV/Investigacion2.csv')
-df_2018 = load_csv('CSV/Investigacion3.csv')
-df_2019 = load_csv('CSV/Investigacion4.csv')
+# URLs of CSV files in GitHub repository
+urls = {
+    '2016': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion1.csv',
+    '2017': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion2.csv',
+    '2018': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion3.csv',
+    '2019': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion4.csv'
+}
+
+# Load CSV files from GitHub
+df_2016 = load_csv_from_github(urls['2016'])
+df_2017 = load_csv_from_github(urls['2017'])
+df_2018 = load_csv_from_github(urls['2018'])
+df_2019 = load_csv_from_github(urls['2019'])
 
 # Crea un selectbox con las opciones
 option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
