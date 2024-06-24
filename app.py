@@ -96,7 +96,7 @@ if option == '2016':
     
     Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta2016_1, width=800, height=165)
+    st.dataframe(Pregunta2016_1, width=800, height=177)
 
 
 elif option == '2017':
