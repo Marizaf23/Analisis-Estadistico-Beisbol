@@ -87,13 +87,13 @@ if option == '2016':
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta1.index.name = "**Historial Familiar**"
+    Pregunta1.index.name = "Historial Familiar"
     
     # Agregar una fila debajo de los títulos de las columnas 
-    Pregunta1.loc['**Enfermedad Mental**'] = ['', '', '', '']
+    Pregunta1.loc['Enfermedad Mental'] = ['', '', '', '']
 
     Pregunta1 = Pregunta1.reindex(['Enfermedad Mental'] + [i for i in Pregunta1.index if i != 'Enfermedad Mental'])
     
-    Pregunta1.rename(columns={'index': '**Enfermedad Mental**'})
+    Pregunta1.rename(columns={'index': 'Enfermedad Mental'})
 
     st.dataframe(Pregunta1)
