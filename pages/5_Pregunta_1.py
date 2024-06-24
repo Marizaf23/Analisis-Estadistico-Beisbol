@@ -18,10 +18,10 @@ def load_csv_from_github(url):
 
 # URLs of CSV files in GitHub repository
 urls = {
-    '2016': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion1.csv',
-    '2017': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion2.csv',
-    '2018': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion3.csv',
-    '2019': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/f9543f9242e7869a95a82e55fb2d1289971a9c40/CSV/Investigacion4.csv'
+    '2016': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/95f59adcc416732d98f3b9aa494eb78cadd12c0d/CSV/Investigacion1.csv',
+    '2017': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/95f59adcc416732d98f3b9aa494eb78cadd12c0d/CSV/Investigacion2.csv',
+    '2018': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/95f59adcc416732d98f3b9aa494eb78cadd12c0d/CSV/Investigacion3.csv',
+    '2019': 'https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/95f59adcc416732d98f3b9aa494eb78cadd12c0d/CSV/Investigacion4.csv'
 }
 
 # Load CSV files from GitHub
@@ -43,12 +43,12 @@ if option == '2016':
 
     #Crear la tabla bivariante con pandas
     Pregunta2016_1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
-                        df_2016['Historial Familiar'], 
+                        df_2016['Antecedentes Heredofamiliares'], 
                         margins=True, 
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta2016_1.index.name = "Historial Familiar"
+    Pregunta2016_1.index.name = "Antecedentes Heredofamiliares"
     
     # Agregar una fila debajo de los títulos de las columnas 
     Pregunta2016_1.loc['Enfermedad Mental'] = ['', '', '', '']
@@ -64,12 +64,12 @@ elif option == '2017':
     
     #Crear la tabla bivariante con pandas
     Pregunta2017_1 = pd.crosstab(df_2017['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
-                        df_2017['Historial Familiar'], 
+                        df_2017['Antecedentes Heredofamiliares'], 
                         margins=True, 
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta2017_1.index.name = "Historial Familiar"
+    Pregunta2017_1.index.name = "Antecedentes Heredofamiliares"
     
     # Agregar una fila debajo de los títulos de las columnas 
     Pregunta2017_1.loc['Enfermedad Mental'] = ['', '', '', '']
@@ -87,12 +87,12 @@ elif option == '2018':
     
     #Crear la tabla bivariante con pandas
     Pregunta2018_1 = pd.crosstab(df_2018['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
-                        df_2018['Historial Familiar'], 
+                        df_2018['Antecedentes Heredofamiliares'], 
                         margins=True, 
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta2018_1.index.name = "Historial Familiar"
+    Pregunta2018_1.index.name = "Antecedentes Heredofamiliares"
     
     # Agregar una fila debajo de los títulos de las columnas 
     Pregunta2018_1.loc['Enfermedad Mental'] = ['', '', '', '']
@@ -110,12 +110,12 @@ elif option == '2019':
 
     #Crear la tabla bivariante con pandas
     Pregunta2019_1 = pd.crosstab(df_2019['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
-                        df_2019['Historial Familiar'], 
+                        df_2019['Antecedentes Heredofamiliares'], 
                         margins=True, 
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta2019_1.index.name = "Historial Familiar"
+    Pregunta2019_1.index.name = "Antecedentes Heredofamiliares"
     
     # Agregar una fila debajo de los títulos de las columnas 
     Pregunta2019_1.loc['Enfermedad Mental'] = ['', '', '', '']
