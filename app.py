@@ -6,6 +6,7 @@ import plotly as px
 import streamlit as st
 import requests
 from io import StringIO
+import altair as alt
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
@@ -80,9 +81,29 @@ with tab5:
 if option == '2016':
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
-    # Crear una tabla de frecuencias para la pregunta
+
+    # Crear la tabla bivariante con pandas
     Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2016['Historial Familiar'], 
                         margins=True, 
                         margins_name='Total')
-    st.dataframe(Pregunta1, width=None)
+
+    # Renombrar el índice y las columnas
+    Pregunta1.index.name = 'Enfermedad Mental'
+    Pregunta1.columns.name = 'Historial Familiar'
+
+    # Convertir la tabla a un formato adecuado para Altair
+    Pregunta1_reset = Pregunta1.reset_index()
+    Pregunta1_melt = Pregunta1_reset.melt(id_vars=['Enfermedad Mental'], var_name='Historial Familiar', value_name='Count')
+
+    # Crear la visualización con Altair
+    chart = alt.Chart(Pregunta1_melt).mark_bar().encode(
+        x=alt.X('Historial Familiar', axis=alt.Axis(title='Historial Familiar')),
+        y=alt.Y('Count', axis=alt.Axis(title='Count')),
+        color=alt.Color('Historial Familiar', legend=alt.Legend(title='Historial Familiar')),
+        column=alt.Column('Enfermedad Mental', header=alt.Header(title='Enfermedad Mental')),
+        tooltip=['Enfermedad Mental', 'Historial Familiar', 'Count']
+        )
+
+    # Mostrar la visualización en Streamlit
+    st.altair_chart(chart, use_container_width=True)
