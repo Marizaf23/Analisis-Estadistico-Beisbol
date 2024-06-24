@@ -80,15 +80,20 @@ with tab5:
 if option == '2016':
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
-
-    # Crear la tabla bivariante con pandas
+    #Crear la tabla bivariante con pandas
     Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2016['Historial Familiar'], 
                         margins=True, 
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta1.index.name = "**Enfermedad Mental**"
-    Pregunta1.columns.name = "**Historial Familiar**"
+    Pregunta1.index.name = "**Historial Familiar**"
     
+    # Agregar una fila debajo de los títulos de las columnas 
+    Pregunta1.loc['**Enfermedad Mental**'] = ['', '', '', '']
+
+    Pregunta1 = Pregunta1.reindex(['Enfermedad Mental'] + [i for i in Pregunta1.index if i != 'Enfermedad Mental'])
+    
+    Pregunta1.rename(columns={'index': '**Enfermedad Mental**'})
+
     st.table(Pregunta1)
