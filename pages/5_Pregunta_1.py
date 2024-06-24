@@ -40,7 +40,6 @@ st.subheader('¿Cuántas personas en la industria tecnológica tienen una enferm
 option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
 
 if option == '2016':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     #Crear la tabla bivariante con pandas
     Pregunta2016_1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
@@ -62,8 +61,7 @@ if option == '2016':
 
 
 elif option == '2017':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
-
+    
     #Crear la tabla bivariante con pandas
     Pregunta2017_1 = pd.crosstab(df_2017['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2017['Historial Familiar'], 
@@ -86,8 +84,7 @@ elif option == '2017':
 
 
 elif option == '2018':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
-
+    
     #Crear la tabla bivariante con pandas
     Pregunta2018_1 = pd.crosstab(df_2018['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2018['Historial Familiar'], 
@@ -110,7 +107,6 @@ elif option == '2018':
 
 
 elif option == '2019':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     #Crear la tabla bivariante con pandas
     Pregunta2019_1 = pd.crosstab(df_2019['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
