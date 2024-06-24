@@ -95,4 +95,4 @@ if option == '2016':
     
     Pregunta1 = Pregunta1.reindex(['Enfermedad Mental'] + [i for i in Pregunta1.index if i != 'Enfermedad Mental'])
     
-    st.table(Pregunta1)
+    st.dataframe(Pregunta1)
