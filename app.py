@@ -96,7 +96,7 @@ if option == '2016':
     
     Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta2016_1, width=800, height=100)
+    st.dataframe(Pregunta2016_1, width=800, height=220)
 
 
 elif option == '2017':
@@ -120,7 +120,7 @@ elif option == '2017':
 
     Pregunta2017_1 = Pregunta2017_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2017_1.index if i not in ['Enfermedad Mental', 'No respondió', 'Total']] + ['No respondió'] + ['Total'])
     
-    st.dataframe(Pregunta2017_1, width=800, height=200)
+    st.dataframe(Pregunta2017_1, width=800, height=220)
 
 
 elif option == '2018':
@@ -144,7 +144,7 @@ elif option == '2018':
 
     Pregunta2018_1 = Pregunta2018_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2018_1.index if i not in ['Enfermedad Mental', 'No respondió', 'Total']] + ['No respondió'] + ['Total'])
     
-    st.dataframe(Pregunta2018_1, width=800, height=300)
+    st.dataframe(Pregunta2018_1, width=800, height=220)
 
 
 elif option == '2019':
@@ -168,4 +168,4 @@ elif option == '2019':
 
     Pregunta2019_1 = Pregunta2019_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2019_1.index if i not in ['Enfermedad Mental', 'No respondió', 'Total']] + ['No respondió'] + ['Total'])
 
-    st.dataframe(Pregunta2019_1, width=800, height=400)
+    st.dataframe(Pregunta2019_1, width=800, height=220)
