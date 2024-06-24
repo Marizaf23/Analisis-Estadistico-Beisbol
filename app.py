@@ -96,4 +96,4 @@ if option == '2016':
     
     Pregunta1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta1.style.set_index(Pregunta1.index, axis=0, **{'background-color': 'blue'}))
+    st.dataframe(Pregunta1.style.highlight_max(axis= 0))
