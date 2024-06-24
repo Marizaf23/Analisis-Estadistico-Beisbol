@@ -90,18 +90,6 @@ if option == '2016':
 
     st.dataframe(Pregunta2016_1, width=800, height=177)
 
-    # Convertir la tabla cruzada a un dataframe "long" para plotly
-    Pregunta2016_1_long = Pregunta2016_1.reset_index().melt(id_vars='Historial Familiar', var_name='Enfermedad Mental', value_name='Count')
-
-    # Crear la gráfica de barras agrupadas
-    fig = px.bar(Pregunta2016_1_long, x='Historial Familiar', y='Count', color='Enfermedad Mental', barmode='group')
-
-    # Personalizar la gráfica
-    fig.update_layout(title='Gráfica de barras agrupadas',
-                  xaxis_title='Historial Familiar',
-                  yaxis_title='Count',
-                  legend_title='Enfermedad Mental')
-
 
 elif option == '2017':
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
