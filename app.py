@@ -102,4 +102,3 @@ if option == '2016':
     # Mostrar el dataframe con el índice estilizado
     st.write(index_style, unsafe_allow_html=True)
     st.dataframe(Pregunta1.style.highlight_max(axis=0))
-   
