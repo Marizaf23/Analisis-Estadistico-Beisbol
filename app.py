@@ -81,19 +81,85 @@ if option == '2016':
     st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     #Crear la tabla bivariante con pandas
-    Pregunta1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
+    Pregunta2016_1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2016['Historial Familiar'], 
                         margins=True, 
                         margins_name='Total')
 
     # Renombrar el índice
-    Pregunta1.index.name = "Historial Familiar"
+    Pregunta2016_1.index.name = "Historial Familiar"
     
     # Agregar una fila debajo de los títulos de las columnas 
-    Pregunta1.loc['Enfermedad Mental'] = ['', '', '', '']
+    Pregunta2016_1.loc['Enfermedad Mental'] = ['', '', '', '']
 
-    Pregunta1 = Pregunta1.reindex(['Enfermedad Mental'] + [i for i in Pregunta1.index if i != 'Enfermedad Mental'])
+    Pregunta2016_1 = Pregunta2016_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2016_1.index if i != 'Enfermedad Mental'])
     
-    Pregunta1.rename(columns={'index': 'Enfermedad Mental'})
+    Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta1)
+    st.table(Pregunta2016_1)
+
+
+elif option == '2017':
+    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
+
+    #Crear la tabla bivariante con pandas
+    Pregunta2017_1 = pd.crosstab(df_2017['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
+                        df_2017['Historial Familiar'], 
+                        margins=True, 
+                        margins_name='Total')
+
+    # Renombrar el índice
+    Pregunta2017_1.index.name = "Historial Familiar"
+    
+    # Agregar una fila debajo de los títulos de las columnas 
+    Pregunta2017_1.loc['Enfermedad Mental'] = ['', '', '', '']
+
+    Pregunta2017_1 = Pregunta2017_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2017_1.index if i != 'Enfermedad Mental'])
+    
+    Pregunta2017_1.rename(columns={'index': 'Enfermedad Mental'})
+
+    st.table(Pregunta2017_1)
+
+
+elif option == '2018':
+    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
+
+    #Crear la tabla bivariante con pandas
+    Pregunta2018_1 = pd.crosstab(df_2018['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
+                        df_2018['Historial Familiar'], 
+                        margins=True, 
+                        margins_name='Total')
+
+    # Renombrar el índice
+    Pregunta2018_1.index.name = "Historial Familiar"
+    
+    # Agregar una fila debajo de los títulos de las columnas 
+    Pregunta2018_1.loc['Enfermedad Mental'] = ['', '', '', '']
+
+    Pregunta2018_1 = Pregunta2018_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2018_1.index if i != 'Enfermedad Mental'])
+    
+    Pregunta2018_1.rename(columns={'index': 'Enfermedad Mental'})
+
+    st.table(Pregunta2018_1)
+
+
+elif option == '2019':
+    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
+
+    #Crear la tabla bivariante con pandas
+    Pregunta2019_1 = pd.crosstab(df_2019['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
+                        df_2019['Historial Familiar'], 
+                        margins=True, 
+                        margins_name='Total')
+
+    # Renombrar el índice
+    Pregunta2019_1.index.name = "Historial Familiar"
+    
+    # Agregar una fila debajo de los títulos de las columnas 
+    Pregunta2019_1.loc['Enfermedad Mental'] = ['', '', '', '']
+
+    Pregunta2019_1 = Pregunta2019_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2019_1.index if i != 'Enfermedad Mental'])
+    
+    Pregunta2019_1.rename(columns={'index': 'Enfermedad Mental'})
+
+    st.table(Pregunta2019_1)
