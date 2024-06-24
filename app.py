@@ -87,8 +87,12 @@ if option == '2016':
                         margins=True, 
                         margins_name='Total')
 
-    # Renombrar el índice y las columnas
-    Pregunta1.index.name = 'Enfermedad Mental'
-    Pregunta1.columns.name = 'Historial Familiar'
+    # Renombrar el índice
+    Pregunta1.index.name = 'Historial Familiar'
 
-    st.write(Pregunta1)
+    # Agregar una fila debajo de los títulos de las columnas
+    Pregunta1.loc['Enfermedad Mental'] = ['', '', '', '']
+    
+    Pregunta1 = Pregunta1.reindex(['Enfermedad Mental'] + [i for i in Pregunta1.index if i != 'Enfermedad Mental'])
+    
+    st.table(Pregunta1)
