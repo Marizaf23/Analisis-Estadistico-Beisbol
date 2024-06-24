@@ -11,15 +11,15 @@ from io import StringIO
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
 
 # Crea un menú de pestañas
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10, tab11, tab12 = st.tabs(["Introducción", "Datos", "Planteamiento del Problema", "Marco Teórico", "Pregunta #1", "Pregunta #2", "Pregunta #3", "Pregunta #4", "Pregunta #5", "Pregunta #6", "Conclusión", "Bibliografía"])
+page = st.selectbox('Seleccione una página', ["Introducción", "Datos", "Planteamiento del Problema", "Marco Teórico", "Pregunta 1", "Pregunta 2", "Pregunta 3", "Pregunta 4", "Pregunta 5", "Pregunta 6", "Conclusión", "Bibliografía"])
 
 # Contenido de la página 1
-with tab1:
+if page == "Introducción":
     st.header("Introducción")
     st.write("Información de la Data Suministrada.")
 
 # Contenido de la página 2
-with tab2:
+elif page == "Datos":
     st.header("Visualización de los Datos")
     st.write("Información de la Data Suministrada.")
 
@@ -60,17 +60,17 @@ with tab2:
         st.dataframe(df_2019)
 
 # Contenido de la página 3
-with tab3:
+elif page == "Planteamiento del Problema":
     st.header("Planteamiento Del Problema")
     st.write("planteamiento.")
 
 # Contenido de la página 4
-with tab4:
+elif page == "Marco Teórico":
     st.header("Marco Teórico")
     st.write("marco.")
 
 # Contenido de la página 5
-with tab5:
+elif page == "Pregunta 1":
     st.header("Pregunta #1: ¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
     st.write("#1")
 
