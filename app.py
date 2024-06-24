@@ -118,6 +118,8 @@ elif option == '2017':
     
     Pregunta2017_1.rename(columns={'index': 'Enfermedad Mental'})
 
+    Pregunta2017_1 = Pregunta2017_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2017_1.index if i not in ['Enfermedad Mental', 'No respondió']] + ['No respondió'])
+
     st.table(Pregunta2017_1)
 
 
