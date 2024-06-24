@@ -8,15 +8,7 @@ import requests
 from io import StringIO
 from PIL import Image
 
-# Carga la imagen que deseas utilizar como ícono
-im = Image.open("C:\Users\maria\Documents\UCV MARY\EECA\SEMESTRE 2024-1\SEMESTRE II\COMPUTACIÓN II\TRABAJO FINAL\7095065.png")
 
-# Configura la página con el ícono personalizado
-st.set_page_config(
-    page_title="Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019",
-    page_icon=im,
-    layout="wide"
-)
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
 
