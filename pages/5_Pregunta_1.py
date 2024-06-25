@@ -240,3 +240,44 @@ elif option == '2019':
     Pregunta2019_1 = Pregunta2019_1.reindex(['Enfermedad Mental'] + [i for i in Pregunta2019_1.index if i not in ['Enfermedad Mental', 'No respondió', 'Total']] + ['No respondió'] + ['Total'])
 
     st.dataframe(Pregunta2019_1, width=800, height=212)
+
+            # Crear la figura
+    fig2019_1 = go.Figure()
+
+    fig2019_1.add_trace(go.Bar(
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        x=[0, 1, 0],
+        name='No tengo enfermedades mentales',
+        orientation='h',
+        marker=dict(
+        color='rgb(0, 61, 153)',
+        line=dict(color='rgb(0, 61, 153)', width=2)
+        )   
+        ))
+
+    fig2019_1.add_trace(go.Bar(
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        x=[9, 25, 72],
+        name='Tengo enfermedades mentales',
+        orientation='h',
+        marker=dict(
+        color='rgb(77, 148, 255)',
+        line=dict(color='rgb(77, 148, 255)', width=2)
+        )
+        ))
+
+    fig2019_1.add_trace(go.Bar(
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        x=[35, 19, 43],
+        name='No respondio',
+        orientation='h',
+    marker=dict(
+        color='rgb(0, 102, 255)',
+        line=dict(color='rgb(0, 102, 255)', width=2)
+        )
+        ))
+
+    fig2019_1.update_layout(barmode='stack')
+
+    # Mostrar la figura en Streamlit
+    st.plotly_chart(fig2019_1, use_container_width=True)
