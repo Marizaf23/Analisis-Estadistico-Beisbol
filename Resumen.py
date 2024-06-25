@@ -16,15 +16,15 @@ import streamlit as st
 # Custom HTML/CSS for the banner
 custom_html = """
     <div class="banner">
-        <img src="logo1.png" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
-        <img src="logo2.png" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
+        <img src=""C:\Users\maria\Documents\UCV MARY\EECA\SEMESTRE 2024-1\SEMESTRE II\COMPUTACIÓN II\TRABAJO FINAL\Logo UCV 2400X1920px.png"" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
+        <img src=""C:\Users\maria\Documents\UCV MARY\EECA\SEMESTRE 2024-1\SEMESTRE II\COMPUTACIÓN II\TRABAJO FINAL\eeca.jpeg"" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
         <span style="font-size: 24px; font-weight: bold; margin: 10px;">Mi App de Streamlit</span>
     </div>
     <style>
         .banner {
             width: 100%;
             height: 100px;
-            background-color: #f5f5f5;
+            background-color: #0000FF;
             padding: 20px;
             display: flex;
             justify-content: space-between;
