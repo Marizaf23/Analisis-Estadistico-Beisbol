@@ -284,32 +284,33 @@ elif option == '2019':
 
 elif option == 'Todos':
     labels = ['2016', '2017', '2018', '2019']
-    widths = np.array([35, 25, 25, 15])
 
     data = {
-    "No tengo enfermedades mentales": [366, 4, 2, 1],
     "Tengo enfermedades mentales": [473, 244, 159, 106],
+    "No tengo enfermedades mentales": [366, 4, 2, 1],
     "No respondió": [0, 249, 151, 97]
     }
 
-    fig = go.Figure()
-    for key in data:
-        fig.add_trace(go.Heatmap(
-        z=data[key],
+    fig_total1 = go.Figure()
+    for i, (key, values) in enumerate(data.items()):
+        fig_total1.add_trace(go.Heatmap(
+        z=[values],
         x=labels,
         y=[key]*len(labels),
         colorscale=[[0, 'white'], [1, 'blue']],
         showscale=False,
         hovertemplate="<br>".join([
-            "label: %{x}",
-            "value: %{z}",
+            "Año: %{x}",
+            "Categoria: %{y}",
+            "Cantidad: %{z}",
             ])
         ))
 
-    fig.update_layout(
-    title_text="Distribución de respuestas de enfermedades mentales por año",
+    fig_total1.update_layout(
+    title_text="Personas que respondieron la pregunta de enfermedades mentales por año",
     xaxis=dict(tickvals=labels, ticktext=labels),
     yaxis=dict(tickvals=list(data.keys()), ticktext=list(data.keys())),
     )
 
-    fig.show()
+    st.title("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
+    st.plotly_chart(fig_total1, use_container_width=True)
