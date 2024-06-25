@@ -8,29 +8,16 @@ import requests
 from io import StringIO
 from PIL import Image
 
-st.set_page_config(layout="wide")
-
-
-custom_html = """
-    <div class="banner">
-        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/main/logos/UCV.png" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
-        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/main/logos/EECA.jpeg" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
-        <span style="font-size: 24px; font-weight: bold; margin: 10px;">Mi App de Streamlit</span>
-    </div>
-    <style>
-        .banner {
-            width: 100%;
-            height: 100px;
-            background-color: #0000FF;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    </style>
-"""
-
-st.components.v1.html(custom_html, width=0, height=0)
+st.set_page_config(
+    layout="wide",
+    theme={
+        "primaryColor": "#4991f5",
+        "backgroundColor": "#f5f5f5",
+        "secondaryBackgroundColor": "#7ca0fb",
+        "textColor": "#0a0a0a",
+        "font": "serif"
+    }
+)
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
