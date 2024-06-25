@@ -10,6 +10,32 @@ from PIL import Image
 
 st.set_page_config(layout="wide")
 
+
+import streamlit as st
+
+# Custom HTML/CSS for the banner
+custom_html = """
+    <div class="banner">
+        <img src="logo1.png" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
+        <img src="logo2.png" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
+        <span style="font-size: 24px; font-weight: bold; margin: 10px;">Mi App de Streamlit</span>
+    </div>
+    <style>
+        .banner {
+            width: 100%;
+            height: 100px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+"""
+
+# Display the custom HTML
+st.components.v1.html(custom_html, width=0, height=0)
+
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
 
