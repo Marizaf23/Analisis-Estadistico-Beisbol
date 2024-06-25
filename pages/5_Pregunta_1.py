@@ -63,7 +63,7 @@ if option == '2016':
     # Crear la figura
     fig = go.Figure()
     fig.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[170, 76, 120],
         name='No tengo enfermedades mentales',
         orientation='h',
@@ -73,7 +73,7 @@ if option == '2016':
         )
         ))
     fig.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[70, 70, 333],
         name='Tengo enfermedades mentales',
         orientation='h',
@@ -119,7 +119,7 @@ elif option == '2017':
     fig2017_1 = go.Figure()
 
     fig2017_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[0, 1, 3],
         name='No tengo enfermedades mentales',
         orientation='h',
@@ -130,7 +130,7 @@ elif option == '2017':
         ))
 
     fig2017_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[26, 55, 163],
         name='Tengo enfermedades mentales',
         orientation='h',
@@ -141,7 +141,7 @@ elif option == '2017':
         ))
 
     fig2017_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[85, 79, 85],
         name='No respondio',
         orientation='h',
@@ -182,7 +182,7 @@ elif option == '2018':
     fig2018_1 = go.Figure()
 
     fig2018_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[1, 0, 1],
         name='No tengo enfermedades mentales',
         orientation='h',
@@ -193,7 +193,7 @@ elif option == '2018':
         ))
 
     fig2018_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[11, 35, 113],
         name='Tengo enfermedades mentales',
         orientation='h',
@@ -204,7 +204,7 @@ elif option == '2018':
         ))
 
     fig2018_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[59, 34, 58],
         name='No respondio',
         orientation='h',
@@ -245,7 +245,7 @@ elif option == '2019':
     fig2019_1 = go.Figure()
 
     fig2019_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[0, 1, 0],
         name='No tengo enfermedades mentales',
         orientation='h',
@@ -256,7 +256,7 @@ elif option == '2019':
         ))
 
     fig2019_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[9, 25, 72],
         name='Tengo enfermedades mentales',
         orientation='h',
@@ -267,7 +267,7 @@ elif option == '2019':
         ))
 
     fig2019_1.add_trace(go.Bar(
-        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedentes familiares', 'Tengo antecedentes familiares'],
         x=[35, 19, 43],
         name='No respondio',
         orientation='h',
