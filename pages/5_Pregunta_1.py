@@ -7,17 +7,6 @@ import streamlit as st
 import requests
 from io import StringIO
 
-st.markdown("""
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 
 @st.cache
 def load_csv_from_github(url):
