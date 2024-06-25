@@ -10,13 +10,11 @@ from PIL import Image
 
 st.set_page_config(
     layout="wide",
-    theme={
-        "primaryColor": "#4991f5",
-        "backgroundColor": "#f5f5f5",
-        "secondaryBackgroundColor": "#7ca0fb",
-        "textColor": "#0a0a0a",
-        "font": "serif"
-    }
+    primary_color="#4991f5",
+    background_color="#f5f5f5",
+    secondary_background_color="#7ca0fb",
+    text_color="#0a0a0a",
+    font="serif"
 )
 
 # Título de la aplicación
