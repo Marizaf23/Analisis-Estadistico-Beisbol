@@ -8,6 +8,30 @@ import requests
 from io import StringIO
 from PIL import Image
 
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebarNav"] {
+            background-image: url(https://i.pinimg.com/564x/97/7b/9c/977b9cc57b8638a0aab8a39ea22736dd.jpg);
+            background-repeat: no-repeat;
+            padding-top: 120px;
+            background-position: 20px 20px;
+        }
+        [data-testid="stSidebarNav"]::before {
+            content: "My Company Name";
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 30px;
+            position: relative;
+            top: 100px;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.set_page_config(layout="wide")
+
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")

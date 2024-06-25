@@ -6,17 +6,3 @@ backgroundColor="#f5f5f5"
 secondaryBackgroundColor="#7ca0fb"
 textColor="#0a0a0a"
 font="serif"
-
-[server]
-layout = "wide"
-
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://i.pinimg.com/564x/97/7b/9c/977b9cc57b8638a0aab8a39ea22736dd.jpg");
-    }
-   </style>
-    """,
-    unsafe_allow_html=True
-)
