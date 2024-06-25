@@ -11,11 +11,10 @@ from PIL import Image
 st.set_page_config(layout="wide")
 
 
-# HTML/CSS para el Banner
 custom_html = """
     <div class="banner">
-        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/747f40ab556677f91fc620ca2623560ebd9eb6d6/logos/UCV.png" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
-        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/747f40ab556677f91fc620ca2623560ebd9eb6d6/logos/EECA.jpeg" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
+        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/main/logos/UCV.png" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
+        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/main/logos/EECA.jpeg" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
         <span style="font-size: 24px; font-weight: bold; margin: 10px;">Mi App de Streamlit</span>
     </div>
     <style>
