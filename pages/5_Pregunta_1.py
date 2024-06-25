@@ -57,7 +57,12 @@ if option == '2016':
     
     Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta2016_1, width=800, height=177)
+    st.write("""
+    <div style="text-align: center;">
+        {}
+    </div>
+    """.format(st.dataframe(Pregunta2016_1, width=800, height=177)), unsafe_allow_html=True)
+
 
     # Crear la figura
     fig = go.Figure()
@@ -83,9 +88,9 @@ if option == '2016':
         ))
 
     fig.update_layout(
-        barmode='stack',
-        font=dict(
-        color='rgb(0, 0, 0)' # Cambia el color del texto a negro
+    barmode='stack',
+    font=dict(
+        color='rgb(0, 0, 0)'
         )
         )
 
