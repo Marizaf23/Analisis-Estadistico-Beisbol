@@ -57,7 +57,7 @@ if option == '2016':
     
     Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta2016_1, width=1000, height=177)
+    st.dataframe(Pregunta2016_1, width=1500, height=177)
 
     # Crear la figura
     fig = go.Figure()
