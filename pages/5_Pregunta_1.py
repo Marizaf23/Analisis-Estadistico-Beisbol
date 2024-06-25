@@ -57,12 +57,7 @@ if option == '2016':
     
     Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.write("""
-    <div style="text-align: center;">
-        {}
-    </div>
-    """.format(st.dataframe(Pregunta2016_1, width=800, height=177)), unsafe_allow_html=True)
-
+    st.dataframe(Pregunta2016_1, width=800, height=177)
 
     # Crear la figura
     fig = go.Figure()
