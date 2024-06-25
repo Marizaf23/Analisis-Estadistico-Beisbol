@@ -33,7 +33,7 @@ df_2019 = load_csv_from_github(urls['2019'])
 
 # Contenido de la página 5
 st.header("Pregunta 1")
-st.subheader('¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?')
+st.subheader('¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún antecedente heredofamiliar dentro de este ámbito?')
 
 
 # Crea un selectbox con las opciones
