@@ -8,14 +8,7 @@ import requests
 from io import StringIO
 from PIL import Image
 
-st.set_page_config(
-    layout="wide",
-    primary_color="#4991f5",
-    background_color="#f5f5f5",
-    secondary_background_color="#7ca0fb",
-    text_color="#0a0a0a",
-    font="serif"
-)
+st.set_page_config(layout="wide")
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
