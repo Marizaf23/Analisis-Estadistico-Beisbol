@@ -9,7 +9,6 @@ from io import StringIO
 
 st.markdown("""
     <style>
-        /* Add your CSS styles here */
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
