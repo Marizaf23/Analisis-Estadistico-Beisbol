@@ -11,13 +11,11 @@ from PIL import Image
 st.set_page_config(layout="wide")
 
 
-import streamlit as st
-
-# Custom HTML/CSS for the banner
+# HTML/CSS para el Banner
 custom_html = """
     <div class="banner">
-        <img src=""C:\Users\maria\Documents\UCV MARY\EECA\SEMESTRE 2024-1\SEMESTRE II\COMPUTACIÓN II\TRABAJO FINAL\Logo UCV 2400X1920px.png"" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
-        <img src=""C:\Users\maria\Documents\UCV MARY\EECA\SEMESTRE 2024-1\SEMESTRE II\COMPUTACIÓN II\TRABAJO FINAL\eeca.jpeg"" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
+        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/747f40ab556677f91fc620ca2623560ebd9eb6d6/logos/UCV.png" alt="Logo 1" style="width: 50px; height: 50px; margin: 10px;">
+        <img src="https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/747f40ab556677f91fc620ca2623560ebd9eb6d6/logos/EECA.jpeg" alt="Logo 2" style="width: 50px; height: 50px; margin: 10px;">
         <span style="font-size: 24px; font-weight: bold; margin: 10px;">Mi App de Streamlit</span>
     </div>
     <style>
@@ -33,7 +31,6 @@ custom_html = """
     </style>
 """
 
-# Display the custom HTML
 st.components.v1.html(custom_html, width=0, height=0)
 
 # Título de la aplicación
