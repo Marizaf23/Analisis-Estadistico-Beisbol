@@ -59,6 +59,33 @@ if option == '2016':
 
     st.dataframe(Pregunta2016_1, width=800, height=177)
 
+    # Crear la figura
+    fig2016_1 = go.Figure()
+    fig2016_1.add_trace(go.Bar(
+        y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+        x=[170, 76, 120],
+        name='No tengo enfermedades mentales',
+        orientation='h',
+        marker=dict(
+        color='rgb(77, 148, 255)',
+        line=dict(color='rgb(77, 148, 255)', width=2)
+        )
+        ))
+    fig2016_1.add_trace(go.Bar(
+    y=['No tengo antecedentes heredofamiliares', 'No conozco mis antecedente familiares', 'Tengo antecedentes familiares'],
+    x=[70, 70, 333],
+    name='Tengo enfermedades mentales',
+    orientation='h',
+    marker=dict(
+        color='rgb(0, 102, 255)',
+        line=dict(color='rgb(0, 102, 255)', width=2)
+    )
+    ))
+
+    fig2016_1.update_layout(barmode='stack')
+
+    # Mostrar la figura en Streamlit
+    st.plotly_chart(fig2016_1, use_container_width=True)
 
 elif option == '2017':
     
