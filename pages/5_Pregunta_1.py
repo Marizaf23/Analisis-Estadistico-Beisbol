@@ -387,10 +387,3 @@ prev_button = st.button("Página anterior", key="prev_button")
 if prev_button:
     st.session_state.page -= 1
     st.experimental_rerun()
-
-st.write("""
-    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-        <button style="background-color: #4CAF50; color: #ffffff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Página anterior</button>
-        <button style="background-color: #4CAF50; color: #ffffff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Siguiente página</button>
-    </div>
-""", unsafe_allow_html=True)
