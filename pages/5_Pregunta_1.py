@@ -103,7 +103,7 @@ if option == 'Todos':
 
         number_of_bars = len(df_total2.columns)
 
-        fig_total2, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
+        fig_total2, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(12,8))
 
         colors = ['#290066', '#5c00e6', '#944dff']
 
@@ -128,7 +128,7 @@ if option == 'Todos':
                         plt.Line2D([0], [0], marker='s', color='w', label='Tengo antecedentes heredofamiliares', markerfacecolor=colors[1], markersize=12),
                         plt.Line2D([0], [0], marker='s', color='w', label='No conozco mis antecedentes heredofamiliares', markerfacecolor=colors[2], markersize=12)]
 
-        fig_total2.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
+        fig_total2.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=2)
         
         plt.tight_layout(rect=[0, 0, 1, 0.85])
 
