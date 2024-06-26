@@ -57,7 +57,7 @@ if option == 'Todos':
 
     number_of_bars = len(df_total1.columns)
 
-    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
+    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(6,4))
 
     # Define the colors
     colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
