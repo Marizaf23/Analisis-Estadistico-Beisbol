@@ -111,9 +111,12 @@ if option == 'Todos':
         colors = ['#290066', '#5c00e6', '#944dff']
 
 
-        for i,ax in enumerate(axs):
+        for i, ax in enumerate(axs):
             col_name = df_total2.columns[i]
             values = df_total2[col_name]
+    
+            total = sum(values)
+            normalized_values = [v/total for v in values]
     
         Waffle.make_waffle(
             ax=ax,
