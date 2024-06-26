@@ -2,11 +2,12 @@ import pandas as pd
 import numpy  as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+from pywaffle import Waffle
 import plotly.graph_objects as go
 import streamlit as st
 import requests
 from io import StringIO
-from pywaffle import Waffle
+
 
 
 @st.cache
@@ -41,7 +42,53 @@ st.subheader('¿Cuántas personas en la industria tecnológica tienen una enferm
 # Crea un selectbox con las opciones
 option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
 
-if option == '2016':
+if option == 'Todos':
+    st.subheader("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
+    
+    data_total1 = {
+    2016: [366, 473, 0],
+    2017: [4, 244, 249],
+    2018: [2, 159, 151],
+    2019: [1, 106, 97],
+    }
+
+    df_total1 = pd.DataFrame(data_total1,
+                  index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
+
+    number_of_bars = len(df_total1.columns)
+
+    fig_total1, axs = plt.subplots(nrows=1,
+                        ncols=number_of_bars,
+                        figsize=(8,6),)
+
+   
+    colors = ['#000080', '#0000e6', '#6666ff']
+
+    for i,ax in enumerate(axs):
+        col_name = df_total1.columns[i]
+        values = df_total1[col_name]
+    
+    Waffle.make_waffle(
+        ax=ax, 
+        rows=20,
+        columns=5,
+        values=values,
+        colors=colors
+        )
+
+    ax.set_title(str(col_name), fontsize=14)
+
+    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
+                  plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
+                  plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
+
+    fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
+
+    plt.tight_layout(rect=[0, 0, 1, 0.85])
+
+    st.pyplot(fig_total1)
+
+elif option == '2016':
 
     #Crear la tabla bivariante con pandas
     Pregunta2016_1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
@@ -283,52 +330,4 @@ elif option == '2019':
     # Mostrar la figura en Streamlit
     st.plotly_chart(fig2019_1, use_container_width=True)
 
-elif option == 'Todos':
-    st.subheader("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
-    
-    data_total1 = {
-    2016: [366, 473, 0],
-    2017: [4, 244, 249],
-    2018: [2, 159, 151],
-    2019: [1, 106, 97],
-    }
 
-    df_total1 = pd.DataFrame(data_total1,
-                  index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
-
-    number_of_bars = len(df_total1.columns)
-
-    # Init the whole figure and axes
-    fig_total1, axs = plt.subplots(nrows=1,
-                        ncols=number_of_bars,
-                        figsize=(8,6),)
-
-    # Define the colors
-    colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
-
-    # Iterate over each bar and create it
-    for i,ax in enumerate(axs):
-        col_name = df_total1.columns[i]
-        values = df_total1[col_name]  # values from the i-th column
-    
-    Waffle.make_waffle(
-        ax=ax,  # pass axis to make_waffle 
-        rows=20,
-        columns=5,
-        values=values,
-        colors=colors  # pass the colors
-        )
-
-    # Add year label above each waffle
-    ax.set_title(str(col_name), fontsize=14)
-
-    # Create a legend
-    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
-                  plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
-                  plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
-
-    fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3) # adjust the layout so the legend doesn't overlap with the plot
-
-    plt.tight_layout(rect=[0, 0, 1, 0.85])  # adjust the layout so the legend doesn't overlap with the plot
-
-    st.pyplot(fig_total1)
