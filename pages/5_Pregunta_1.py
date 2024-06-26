@@ -133,7 +133,7 @@ if option == 'Todos':
 
         plt.tight_layout(rect=[0, 0, 1, 0.85])
  
-        st.pyplot(fig_total1)
+        st.pyplot(fig_total2)
 
 
 elif option == '2016':
