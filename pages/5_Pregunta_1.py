@@ -378,3 +378,19 @@ elif option == '2019':
     st.plotly_chart(fig2019_1, use_container_width=True)
 
 
+next_button = st.button("Siguiente página", key="next_button")
+if next_button:
+    st.session_state.page += 1
+    st.experimental_rerun()
+
+prev_button = st.button("Página anterior", key="prev_button")
+if prev_button:
+    st.session_state.page -= 1
+    st.experimental_rerun()
+
+st.write("""
+    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+        <button style="background-color: #4CAF50; color: #ffffff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Página anterior</button>
+        <button style="background-color: #4CAF50; color: #ffffff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Siguiente página</button>
+    </div>
+""", unsafe_allow_html=True)
