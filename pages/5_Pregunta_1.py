@@ -132,7 +132,7 @@ if option == 'Todos':
         
         plt.tight_layout(rect=[0, 0, 1, 0.85])
 
-        fig_total1.set_size_inches(10, 4) 
+        fig_total2.set_size_inches(10, 4) 
         st.pyplot(fig_total2)
 
 elif option == '2016':
