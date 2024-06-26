@@ -43,28 +43,73 @@ st.subheader('¿Cuántas personas en la industria tecnológica tienen una enferm
 option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
 
 if option == 'Todos':
-    st.subheader("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
+        st.subheader("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
     
-    data_total1 = {
-    2016: [366, 473, 0],
-    2017: [4, 244, 249],
-    2018: [2, 159, 151],
-    2019: [1, 106, 97],
-    }
+        data_total1 = {
+        2016: [366, 473, 0],
+        2017: [4, 244, 249],
+        2018: [2, 159, 151],
+        2019: [1, 106, 97],
+        }
 
-    df_total1 = pd.DataFrame(data_total1,
+        df_total1 = pd.DataFrame(data_total1,
                 index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
 
-    number_of_bars = len(df_total1.columns)
+        number_of_bars = len(df_total1.columns)
 
-    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
+        fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
 
-    # Define the colors
-    colors = ['#003d99', '#0066ff', '#6666ff']
+        colors = ['#003d99', '#0066ff', '#6666ff']
 
-    for i, ax in enumerate(axs):
-        col_name = df_total1.columns[i]
-        values = df_total1[col_name]
+        for i, ax in enumerate(axs):
+            col_name = df_total1.columns[i]
+            values = df_total1[col_name]
+    
+            total = sum(values)
+            normalized_values = [v/total for v in values]
+    
+            Waffle.make_waffle(
+                ax=ax,
+                rows=20,
+                columns=5,
+                values=normalized_values,
+                colors=colors
+                )
+
+            ax.set_title(str(col_name), fontsize=14)
+
+        legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
+                    plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
+                    plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
+
+        fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
+
+        plt.tight_layout(rect=[0, 0, 1, 0.85])
+
+        fig_total1.set_size_inches(10, 4) 
+        st.pyplot(fig_total1)
+
+        st.subheader("Gráfica de personas que respondieron la pregunta de antecedentes heredofamiliares por año")
+
+        data_total2 = {
+        2016: [240, 453, 146 ],
+        2017: [111, 251, 135],
+        2018: [71, 172, 69],
+        2019: [44, 115, 45],
+        }
+
+        df_total2 = pd.DataFrame(data_total1,
+                index=['No tengo antecedentes heredofamiliares', 'Tengo antecedentes heredofamiliares', 'No conozco mis antecedentes heredofamiliares'])
+
+        number_of_bars = len(df_total2.columns)
+
+        fig_total2, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
+
+        colors = ['#290066', '#5c00e6', '#944dff']
+
+        for i, ax in enumerate(axs):
+            col_name = df_total2.columns[i]
+            values = df_total2[col_name]
     
         total = sum(values)
         normalized_values = [v/total for v in values]
@@ -77,64 +122,18 @@ if option == 'Todos':
             colors=colors
             )
 
+
         ax.set_title(str(col_name), fontsize=14)
 
-    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
-                    plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
-                    plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
-
-    fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
-
-    plt.tight_layout(rect=[0, 0, 1, 0.85])
-
-    fig_total1.set_size_inches(10, 4) 
-    st.pyplot(fig_total1)
-
-    st.subheader("Gráfica de personas que respondieron la pregunta de antecedentes heredofamiliares por año")
-
-    data_total2 = {
-    2016: [240, 453, 146 ],
-    2017: [111, 251, 135],
-    2018: [71, 172, 69],
-    2019: [44, 115, 45],
-    }
-
-    df_total2 = pd.DataFrame(data_total1,
-                index=['No tengo antecedentes heredofamiliares', 'Tengo antecedentes heredofamiliares', 'No conozco mis antecedentes heredofamiliares'])
-
-    number_of_bars = len(df_total2.columns)
-
-    fig_total2, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
-
-    colors = ['#290066', '#5c00e6', '#944dff']
-
-    for i, ax in enumerate(axs):
-        col_name = df_total2.columns[i]
-        values = df_total2[col_name]
-    
-        total = sum(values)
-        normalized_values = [v/total for v in values]
-    
-    Waffle.make_waffle(
-        ax=ax,
-        rows=20,
-        columns=5,
-        values=normalized_values,
-        colors=colors
-        )
-
-
-    ax.set_title(str(col_name), fontsize=14)
-
-    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo antecedentes heredofamiliares', markerfacecolor=colors[0], markersize=12),
+        legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo antecedentes heredofamiliares', markerfacecolor=colors[0], markersize=12),
                 plt.Line2D([0], [0], marker='s', color='w', label='Tengo antecedentes heredofamiliares', markerfacecolor=colors[1], markersize=12),
                 plt.Line2D([0], [0], marker='s', color='w', label='No conozco mis antecedentes heredofamiliares', markerfacecolor=colors[2], markersize=12)]
 
-    fig_total2.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
+        fig_total2.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
 
-    plt.tight_layout(rect=[0, 0, 1, 0.85])
+        plt.tight_layout(rect=[0, 0, 1, 0.85])
  
-    st.pyplot(fig_total1)
+        st.pyplot(fig_total1)
 
 
 elif option == '2016':
