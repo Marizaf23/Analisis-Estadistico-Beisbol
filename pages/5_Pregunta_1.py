@@ -103,7 +103,7 @@ if option == 'Todos':
 
         number_of_bars = len(df_total2.columns)
 
-        fig_total2, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6),)
+        fig_total2, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
 
         colors = ['#290066', '#5c00e6', '#944dff']
 
