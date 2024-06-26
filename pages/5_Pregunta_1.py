@@ -61,32 +61,24 @@ if option == 'Todos':
                         ncols=number_of_bars,
                         figsize=(8,6),)
 
-   
-    colors = ['#000080', '#0000e6', '#6666ff']
+    colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
 
     for i,ax in enumerate(axs):
         col_name = df_total1.columns[i]
-        values = df_total1[col_name]
+        values = df_total1[col_name]  # values from the i-th column
     
     Waffle.make_waffle(
-        ax=ax, 
+        ax=ax,  # pass axis to make_waffle 
         rows=20,
         columns=5,
         values=values,
-        colors=colors
+        colors=colors  # pass the colors
         )
+    
+    ax.set_xlim(0, 100)  # Set x-axis limits
+    ax.set_ylim(0, 100)  # Set y-axis limits
 
-    ax.set_title(str(col_name), fontsize=14)
-
-    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
-                  plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
-                  plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
-
-    fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3)
-
-    plt.tight_layout(rect=[0, 0, 1, 0.85])
-
-    st.pyplot(fig_total1)
+    st.pyplot(fig_total1, width=600, height=400)
 
 elif option == '2016':
 
