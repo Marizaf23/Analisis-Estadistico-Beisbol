@@ -56,29 +56,28 @@ if option == 'Todos':
                   index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
 
     number_of_bars = len(df_total1.columns)
-
-    fig_total1, axs = plt.subplots(nrows=1,
-                        ncols=number_of_bars,
-                        figsize=(8,6),)
-
-    colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
+    
+    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(6, 4))
+    
+    colors = ['#000080', '#0000e6', '#6666ff']
 
     for i,ax in enumerate(axs):
         col_name = df_total1.columns[i]
-        values = df_total1[col_name]  # values from the i-th column
+        values = df_total1[col_name]
     
     Waffle.make_waffle(
-        ax=ax,  # pass axis to make_waffle 
+        ax=ax,
         rows=20,
         columns=5,
         values=values,
-        colors=colors  # pass the colors
+        colors=colors
         )
     
-    ax.set_xlim(0, 100)  # Set x-axis limits
-    ax.set_ylim(0, 100)  # Set y-axis limits
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
 
-    st.pyplot(fig_total1, width=600, height=400)
+    fig_total1.set_size_inches(6, 4)
+    st.pyplot(fig_total1)
 
 elif option == '2016':
 
