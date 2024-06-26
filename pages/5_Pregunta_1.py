@@ -57,7 +57,7 @@ if option == 'Todos':
 
     number_of_bars = len(df_total1.columns)
 
-    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(6,4))
+    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
 
     # Define the colors
     colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
@@ -91,6 +91,7 @@ if option == 'Todos':
 
     plt.tight_layout(rect=[0, 0, 1, 0.85])  # adjust the layout so the legend doesn't overlap with the plot
 
+    fig_total1.set_size_inches(10, 4) 
     st.pyplot(fig_total1)
 
 elif option == '2016':
