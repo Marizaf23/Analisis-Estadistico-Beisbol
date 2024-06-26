@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import requests
 from io import StringIO
+from pywaffle import Waffle
 
 
 @st.cache
@@ -283,34 +284,51 @@ elif option == '2019':
     st.plotly_chart(fig2019_1, use_container_width=True)
 
 elif option == 'Todos':
-    labels = ['2016', '2017', '2018', '2019']
-
-    data = {
-    "Tengo enfermedades mentales": [473, 244, 159, 106],
-    "No tengo enfermedades mentales": [366, 4, 2, 1],
-    "No respondió": [0, 249, 151, 97]
+    st.subheader("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
+    
+    data_total1 = {
+    2016: [366, 473, 0],
+    2017: [4, 244, 249],
+    2018: [2, 159, 151],
+    2019: [1, 106, 97],
     }
 
-    fig_total1 = go.Figure()
-    for i, (key, values) in enumerate(data.items()):
-        fig_total1.add_trace(go.Heatmap(
-        z=[values],
-        x=labels,
-        y=[key]*len(labels),
-        colorscale=[[0, 'white'], [1, 'blue']],
-        showscale=False,
-        hovertemplate="<br>".join([
-            "Año: %{x}",
-            "Categoria: %{y}",
-            "Cantidad: %{z}",
-            ])
-        ))
+    df_total1 = pd.DataFrame(data_total1,
+                  index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
 
-    fig_total1.update_layout(
-    title_text="Personas que respondieron la pregunta de enfermedades mentales por año",
-    xaxis=dict(tickvals=labels, ticktext=labels),
-    yaxis=dict(tickvals=list(data.keys()), ticktext=list(data.keys())),
-    )
+    number_of_bars = len(df_total1.columns)
 
-    st.title("Gráfica de personas que respondieron la pregunta de enfermedades mentales por año")
-    st.plotly_chart(fig_total1, use_container_width=True)
+    # Init the whole figure and axes
+    fig_total1, axs = plt.subplots(nrows=1,
+                        ncols=number_of_bars,
+                        figsize=(8,6),)
+
+    # Define the colors
+    colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
+
+    # Iterate over each bar and create it
+    for i,ax in enumerate(axs):
+        col_name = df_total1.columns[i]
+        values = df_total1[col_name]  # values from the i-th column
+    
+    Waffle.make_waffle(
+        ax=ax,  # pass axis to make_waffle 
+        rows=20,
+        columns=5,
+        values=values,
+        colors=colors  # pass the colors
+        )
+
+    # Add year label above each waffle
+    ax.set_title(str(col_name), fontsize=14)
+
+    # Create a legend
+    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
+                  plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
+                  plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
+
+    fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3) # adjust the layout so the legend doesn't overlap with the plot
+
+    plt.tight_layout(rect=[0, 0, 1, 0.85])  # adjust the layout so the legend doesn't overlap with the plot
+
+    st.pyplot(fig_total1)
