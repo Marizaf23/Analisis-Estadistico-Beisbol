@@ -60,7 +60,7 @@ if option == 'Todos':
     fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
 
     # Define the colors
-    colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
+    colors = ['#003d99', '#0066ff', '#6666ff']  # different shades of blue
 
     # Iterate over each bar and create it
     for i, ax in enumerate(axs):
