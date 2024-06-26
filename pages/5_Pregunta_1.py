@@ -53,30 +53,44 @@ if option == 'Todos':
     }
 
     df_total1 = pd.DataFrame(data_total1,
-                  index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
+                index=['No tengo enfermedades mentales', 'Tengo enfermedades mentales', 'No respondió'])
 
     number_of_bars = len(df_total1.columns)
-    
-    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(6, 4))
-    
-    colors = ['#000080', '#0000e6', '#6666ff']
 
-    for i,ax in enumerate(axs):
+    fig_total1, axs = plt.subplots(nrows=1, ncols=number_of_bars, figsize=(8,6))
+
+    # Define the colors
+    colors = ['#000080', '#0000e6', '#6666ff']  # different shades of blue
+
+    # Iterate over each bar and create it
+    for i, ax in enumerate(axs):
         col_name = df_total1.columns[i]
-        values = df_total1[col_name]
+        values = df_total1[col_name]  # values from the i-th column
     
-    Waffle.make_waffle(
-        ax=ax,
-        rows=20,
-        columns=5,
-        values=values,
-        colors=colors
-        )
+        # Normalize the values to create a proper waffle chart
+        total = sum(values)
+        normalized_values = [v/total for v in values]
     
-    ax.set_xlim(0, 100)
-    ax.set_ylim(0, 100)
+        Waffle.make_waffle(
+            ax=ax,  # pass axis to make_waffle 
+            rows=20,
+            columns=5,
+            values=normalized_values,
+            colors=colors  # pass the colors
+            )
 
-    fig_total1.set_size_inches(6, 4)
+        # Add year label above each waffle
+        ax.set_title(str(col_name), fontsize=14)
+
+        # Create a legend
+    legend_handles = [plt.Line2D([0], [0], marker='s', color='w', label='No tengo enfermedades mentales', markerfacecolor=colors[0], markersize=12),
+                    plt.Line2D([0], [0], marker='s', color='w', label='Tengo enfermedades mentales', markerfacecolor=colors[1], markersize=12),
+                    plt.Line2D([0], [0], marker='s', color='w', label='No respondió', markerfacecolor=colors[2], markersize=12)]
+
+    fig_total1.legend(handles=legend_handles, loc='upper center', bbox_to_anchor=(0.5, -0.01), ncol=3) # adjust the layout so the legend doesn't overlap with the plot
+
+    plt.tight_layout(rect=[0, 0, 1, 0.85])  # adjust the layout so the legend doesn't overlap with the plot
+
     st.pyplot(fig_total1)
 
 elif option == '2016':
