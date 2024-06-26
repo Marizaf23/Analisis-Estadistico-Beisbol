@@ -122,7 +122,7 @@ if option == 'Todos':
             ax=ax,
             rows=20,
             columns=5,
-            values=values,
+            values=normalized_values,
             colors=colors
             )
 
