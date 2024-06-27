@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 import streamlit as st
 import requests
 from io import StringIO
-
+import plotly.express as px
 
 
 @st.cache
