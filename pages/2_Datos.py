@@ -84,7 +84,7 @@ Edad_inv.columns = ['Muestra', 'Media', 'SD', 'Min', 'Q1', 'Md', 'Q3', 'Máx']
 
 Edad_inv = Edad_inv[['Muestra', 'Media', 'Md', 'SD', 'Min', 'Máx', 'Q1', 'Q3']]
 
-st.dataframe(Edad_inv)
+st.dataframe(Edad_inv, width=800, height=212)
 
 # Drop unnecessary columns
 Edad_inv_graph = Edad_inv.drop(['Muestra', 'SD'], axis=1)
