@@ -33,7 +33,26 @@ try:
     print("Cursor created!")
 
     # Execute the SQL query
-    query = """YOUR_SQL_QUERY_HERE"""
+    query = """SELECT
+    S.SurveyID AS "Año de la Encuesta",
+    ROUND(AVG(CASE WHEN A2.AnswerText = 'Masculino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END), 2) AS "Edad Promedio (MASC)",
+    MIN(CASE WHEN A2.AnswerText = 'Masculino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Mínima (MASC)",
+    MAX(CASE WHEN A2.AnswerText = 'Masculino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Máxima (MASC)",
+				SUM(CASE WHEN A2.AnswerText = 'Masculino' THEN 1 ELSE 0 END) AS "Total Masculino",
+    ROUND(AVG(CASE WHEN A2.AnswerText = 'Femenino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END), 2) AS "Edad Promedio (FEM)",
+    MIN(CASE WHEN A2.AnswerText = 'Femenino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Mínima (FEM)",
+    MAX(CASE WHEN A2.AnswerText = 'Femenino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Máxima (FEM)",
+				SUM(CASE WHEN A2.AnswerText = 'Femenino' THEN 1 ELSE 0 END) AS "Total Femenino",
+    ROUND(AVG(CASE WHEN A2.AnswerText = 'Otro' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END), 2) AS "Edad Promedio (Otro)",
+    MIN(CASE WHEN A2.AnswerText = 'Otro' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Mínima (Otro)",
+    MAX(CASE WHEN A2.AnswerText = 'Otro' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Máxima (Otro)",
+				SUM(CASE WHEN A2.AnswerText = 'Otro' THEN 1 ELSE 0 END) AS "Total Otro",
+    COUNT(DISTINCT A.UserID) AS "Total de Encuestados"
+FROM Respuestas A
+JOIN Survey S ON A.SurveyID = S.SurveyID
+JOIN Respuestas A2 ON S.SurveyID = A2.SurveyID AND A2.QuestionID = 2 AND A2.UserID = A.UserID
+WHERE A.QuestionID = 1
+GROUP BY S.SurveyID;"""
     print(f"Executing query: {query}")
     cur.execute(query)
     print("Query executed!")
