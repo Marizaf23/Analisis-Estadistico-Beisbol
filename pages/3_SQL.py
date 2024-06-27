@@ -171,11 +171,11 @@ LEFT JOIN "No Conoce del Apoyo" na ON e."Tamaño de la Empresa" = na."Tamaño de
 # Recuperación de los resultados en un Dataframe
 Consulta3 = pd.DataFrame(cur.fetchall(), columns=[desc[0] for desc in cur.description])
 
-st.dataframe(Consulta3)
-
 st.write("NOTA: SE REALIZÓ LA COLUMNA 'NO SABE' MEDIANTE UNA DIFERENCIA DEBIDO A QUE EXISTÍAN VALORES NULOS Y -1 QUE AL HACER EL UPDATE FUERON ELIMINADOS, POR ESTO NO HACÍA EL CONTEO COMPLETO")
 
 st.write("NOTA: NO SE PUDO AGREGAR LA QUESTION_ID 94 PARA EVALUAR OTROS OPOYOS DEBIDO A QUE ESTA PREGUNTA SOLO SE RESPONDE EN SURVEY_ID 2014 Y NO TIENE RELACION ALGUNA CON LA PREGUNTA DE LAS ENFERMEDADES MENTALES")
+
+st.dataframe(Consulta3)
 
 st.header("Consulta 4")
 st.subheader("Según los diferentes periodos de la encuesta existe un cambio significativo para el género según la industria tecnológica. ¿En cantidad y por año quienes se declararon con problemas mentales?")
