@@ -55,15 +55,22 @@ elif option == '2019':
 st.header("Variables Cuantitativas")
 st.subheader("Estadísticas Descriptivas de Edad por Año")
 
+try:
+    df_2016['Edad'] = pd.to_numeric(df_2016['Edad'], errors='coerce')
+except Exception as e:
+    st.write(f"Error: {e}")
+
+Edad_2016 = df_2016['Edad'].describe().to_frame().T.round(2)
+
 Edad_2017 = df_2017['Edad'].describe().to_frame().T.round(2)
 
 Edad_2018 = df_2018['Edad'].describe().to_frame().T.round(2)
 
 # Unir los DataFrames en uno
-Edad_inv = pd.concat([Edad_2017, Edad_2018], ignore_index=True)
+Edad_inv = pd.concat([Edad_2016, Edad_2017, Edad_2018], ignore_index=True)
 
 # Renombrar las filas con los años correspondientes
-Edad_inv.index = ['2017', '2018']
+Edad_inv.index = ['2016', '2017', '2018']
 
 # Renombrar las columnas
 Edad_inv.columns = ['Muestra', 'Media', 'SD', 'Min', 'Q1', 'Md', 'Q3', 'Máx']
