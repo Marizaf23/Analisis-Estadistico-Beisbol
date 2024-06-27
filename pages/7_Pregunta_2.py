@@ -342,4 +342,4 @@ elif option == 'Estados':
 
     st.plotly_chart(figp2_3, use_container_width=True)
 
-    st.write("Nota: Todo lo calculado para esta pregunta solo se realizó para 2016 debido a que la variable de Enfermedades Mentales Diagnosticadas fue respondida en este año.")
+    st.write("Nota: Esta pregunta se responde para 2016 debido a que la variable de Enfermedades Mentales Diagnosticadas fue respondida en este año.")
