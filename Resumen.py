@@ -100,7 +100,27 @@ st.write('<ul><li>Determinar las características e incidencias de las enfermeda
 
 # Contenido de la página 4
 st.header("Marco Teórico")
-st.write("marco.")
+st.write("""
+<style>
+p {
+  text-align: justify;
+}
+</style>
+<p>La enfermedad mental puede ocasionar problemas en la vida cotidiana, por ejemplo, en la escuela, el trabajo o en las relaciones interpersonales. En la mayor parte de los casos, los síntomas pueden tratarse con una combinación de medicamentos y terapia de conversación (psicoterapia).</p>
+<p>Las personas manifiestan problemas de salud mental de vez en cuando. Pero un problema de salud mental se convierte en una enfermedad mental cuando los signos y los síntomas se hacen permanentes, causan estrés y afectan la capacidad de funcionar normalmente.</p>
+<p>Las enfermedades mentales son trastornos que van de leves a graves, que afectan el pensamiento, el estado de ánimo y/o el comportamiento de una persona. Según el Instituto Nacional de Salud Mental, casi uno de cada cinco adultos vive con una enfermedad mental.</p>
+<p>Muchos factores contribuyen a tener problemas de salud mental, entre ellos:</p>
+<ul>
+  <li>Atributos hereditarios. La enfermedad mental es más frecuente en las personas cuyos parientes consanguíneos también la padecen. Ciertos genes pueden aumentar el riesgo de contraer una enfermedad mental y la situación de vida en particular puede desencadenarla.</li>
+  <li>Exposición ambiental anterior al nacimiento. La exposición a factores de estrés ambientales, enfermedades inflamatorias, toxinas, drogas o alcohol en el útero puede asociarse, en algunos casos, con la enfermedad mental.</li>
+  <li>Química del cerebro. Los neurotransmisores son sustancias químicas que se encuentran naturalmente en el cerebro y que transmiten señales a otras partes del cerebro y del cuerpo. Cuando las redes neuronales que contienen estas sustancias químicas se ven alteradas, la función de los receptores nerviosos y de los sistemas nerviosos cambia, lo que genera depresión y otros trastornos emocionales.</li>
+</ul>
+<p>Según los Centros para el Control de Enfermedades, los trastornos de salud mental afectan a más del 18 por ciento de los adultos solo en los Estados Unidos.</p>
+<p>Y la Organización Mundial de la Salud informa que la depresión es la principal causa de discapacidad en todo el mundo. Aunque se informa que las enfermedades de salud mental no tratadas les cuestan a las empresas estadounidenses alrededor de $500 mil millones en pérdida de productividad, sin embargo, cuando las empresas priorizan la salud mental de sus trabajadores, pueden tener éxito y prosperar en el lugar de trabajo. Los empleadores deben considerar proporcionar recursos sólidos y sistemas de apoyo para los empleados, incluidos los técnicos de mantenimiento. (U.S Centers for Disease Control and Prevention [CDC], 2019).</p>
+<p>La relación entre la salud mental y la productividad es innegable. Cuando los colaboradores están mentalmente saludables, tienden a ser más productivos. El estrés, la ansiedad y otros problemas de salud mental pueden afectar negativamente la concentración, la toma de decisiones y la calidad del trabajo.</p>
+<p>Además, los problemas de salud mental no tratados pueden llevar a una mayor rotación de personal y ausentismo, lo que interrumpe la continuidad del trabajo y aumenta los costos para la empresa. Por otro lado ésto conlleva a crear estigmas dentro de éste entorno, los estigmas son una asociación de estereotipos negativos a una etiqueta y que discrimina a las personas, para las personas con enfermedades mentales el ser discriminados puede llevarlos a punto inimaginables, es por ello la importancia de estar informados y que ellos den a conocer su enfermedad sin sentir temor.</p>
+<p>Para seguir siendo competitivas y ofrecer beneficios integrales, las empresas de mantenimiento deben priorizar la salud mental de sus empleados. Cuando los empleados tienen satisfechas sus necesidades básicas, que incluyen la salud mental, pueden generar más valor para sus organizaciones</p>
+""", unsafe_allow_html=True)
 
 # Contenido de la página 5
 st.header("Pregunta 1")
