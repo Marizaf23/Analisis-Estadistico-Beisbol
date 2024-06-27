@@ -33,7 +33,7 @@ p {
 <p>Para seguir siendo competitivas y ofrecer beneficios integrales, las empresas de mantenimiento deben priorizar la salud mental de sus empleados. Cuando los empleados tienen satisfechas sus necesidades básicas, que incluyen la salud mental, pueden generar más valor para sus organizaciones</p>
 """, unsafe_allow_html=True)
 
-st.subheaderheader("Problemas de Salud Mental")
+st.subheader("Problemas de Salud Mental")
 st.write("""
 <style>
 p {
@@ -91,7 +91,7 @@ p {
 <p>* Trastorno Psicótico: Son desórdenes mentales graves caracterizados por una alteración global de la personalidad que provoca que las personas que los sufren tengan ideas y percepciones anormales, distorsionadas de la realidad.
 """, unsafe_allow_html=True)
 
-st.subheaderheader("Enfermedades Mentales en la TI")
+st.subheader("Enfermedades Mentales en la TI")
 st.write("""
 <style>
 p {
