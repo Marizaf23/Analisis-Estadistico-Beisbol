@@ -55,14 +55,18 @@ elif option == '2019':
 st.header("Variables Cuantitativas")
 st.subheader("Estadísticas Descriptivas de Edad por Año")
 
-st.set_page_config(page_title="Edad Inv", page_icon="📊")
-Edad_2016 = df_2016.dropna(subset=['Edad'])['Edad'].describe().to_frame().T.round(2)
+df_2016['Edad'] = pd.to_numeric(df_2016['Edad'], errors='coerce')
+Edad_20161 = df_2016['Edad'].describe().to_frame().T.round(2)
+
 Edad_2017 = df_2017['Edad'].describe().to_frame().T.round(2)
+
 Edad_2018 = df_2018['Edad'].describe().to_frame().T.round(2)
-Edad_2019 = df_2019.dropna(subset=['Edad'])['Edad'].describe().to_frame().T.round(2)
+
+df_2019['Edad'] = pd.to_numeric(df_2016['Edad'], errors='coerce')
+Edad_20191 = df_2019['Edad'].describe().to_frame().T.round(2)
 
 # Unir los DataFrames en uno
-Edad_inv = pd.concat([Edad_2016, Edad_2017, Edad_2018, Edad_2019], ignore_index=True)
+Edad_inv = pd.concat([Edad_20161, Edad_2017, Edad_2018, Edad_20191], ignore_index=True)
 
 # Renombrar las filas con los años correspondientes
 Edad_inv.index = ['2016', '2017', '2018', '2019']
@@ -74,10 +78,8 @@ Edad_inv = Edad_inv[['Muestra', 'Media', 'Md', 'SD', 'Min', 'Máx', 'Q1', 'Q3']]
 
 st.dataframe(Edad_inv)
 
-Edad_inv1 = Edad_inv
-
 # Drop unnecessary columns
-Edad_inv_graph = Edad_inv1.drop(['Muestra', 'SD'], axis=1)
+Edad_inv_graph = Edad_inv.drop(['Muestra', 'SD'], axis=1)
 
 # Renombrar las columnas
 Edad_inv_graph.columns = ['mean', '50%', 'min', 'max', '25%', '75%']
@@ -91,4 +93,4 @@ fig_edad.update_layout(
     yaxis_title="Edades"
 )
 
-st.plotly(fig_edad, use_container_width=True)
+st.plotly_chart(fig_edad, use_container_width=True)
