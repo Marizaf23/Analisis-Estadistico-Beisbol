@@ -219,8 +219,67 @@ elif option == 'Estados':
     # Show the graph
     figp2_1.show()
 
-    st.write("En el siguiente mapa se puede observar en qué estados hay mayores casos de enfermedades mentales y su diagnóstico, siendo el estado de California el principal de estos con un registro de 53 personas y su respuesta más común el Trastorno de Ansiedad (Depresión, Trastorno Bipoar, etc).")
+    st.write("En el siguiente mapa se puede observar en qué estados hay mayores casos de enfermedades mentales y su diagnóstico, siendo el estado de California el principal de estos con un registro de 53 personas y su respuesta más común el Trastorno de Ansiedad (Depresión, Trastorno Bipolar, etc).")
 
     st.plotly_chart(figp2_1, use_container_width=True)
     
-    
+    st.header("Enfermedad Más Común por Edad")
+
+    #Dado los rangos de edad ¿Cual es la enfermedad mental más frecuente en cada uno? solo 201
+    df_20162=df_2016
+    # Convertir la columna Edad a tipo numérico, convirtiendo valores no numéricos a NaN
+    df_20162['Edad'] = pd.to_numeric(df_20162['Edad'], errors='coerce')
+
+    # Eliminar filas con valores NaN en la columna Edad
+    df_20162 = df_20162.dropna(subset=['Edad'])
+
+    # Convertir la columna Edad a tipo entero
+    df_20162['Edad'] = df_20162['Edad'].astype(int)
+
+    # Convertir la columna Enfermedades Mentales Diagnosticadas a tipo string
+    df_20162['Enfermedades Mentales Diagnosticadas'] = df_20162['Enfermedades Mentales Diagnosticadas'].astype(str)
+
+    # Crear una columna Edad_binned con los rangos de edad
+    df_20162['Edad'] = pd.cut(df_20162['Edad'], bins=[18, 25, 32, 38, 44, 50, 56, 66], 
+                                 labels=['19-25', '26-32', '33-38', '39-44', '45-50', '51-56', '57-66'],
+                                 include_lowest=True)
+
+    # Eliminar filas con "No respondio" en la columna Enfermedades Mentales Diagnosticadas
+    df_20162 = df_20162[~df_20162['Enfermedades Mentales Diagnosticadas'].isin(['No respondió'])]
+
+    # Agrupar por Edad y Enfermedades Mentales Diagnosticadas, y contar la frecuencia
+    pregunta2_2 = df_20162.groupby(['Edad', 'Enfermedades Mentales Diagnosticadas']).size().reset_index(name='Cantidad de personas')
+
+    # Seleccionar la enfermedad mental más frecuente para cada rango de edad
+    pregunta2_2 = pregunta2_2.loc[pregunta2_2.groupby('Edad')['Cantidad de personas'].idxmax()]
+
+    # Reordenar las columnas
+    pregunta2_2 = pregunta2_2[['Enfermedades Mentales Diagnosticadas', 'Edad', 'Cantidad de personas']]
+
+    # Mostrar la tabla con la enfermedad mental más frecuente para cada rango de edad
+    print(pregunta2_2)
+
+    # Sort the data by 'Cantidad de personas' in ascending order
+    pregunta2_2_sorted = pregunta2_2.sort_values(by='Cantidad de personas')
+
+    # Convert the data to a bar chart
+    figp2_2 = go.Figure(data=[go.Bar(x=pregunta2_2_sorted['Edad'], 
+                             y=pregunta2_2_sorted['Cantidad de personas'],
+                             hovertext=pregunta2_2_sorted['Enfermedades Mentales Diagnosticadas'],
+                             hovertemplate='Edad: %{x}<br>Frecuencia: %{y}<br>Enfermedad Mental: %{hovertext}<extra></extra>',
+                             marker=dict(color=pregunta2_2_sorted['Cantidad de personas'],
+                                          colorscale=[[0, 'rgba(0, 0, 64, 0.5)'],
+                                                      [1, 'rgba(0, 0, 128, 0.5)']],
+                                          showscale=False)
+                             )])
+
+    # Customize the plot
+    figp2_2.update_layout(title='<b>Distribución de la Edad</b><br>Enfermedad Mental',
+                  xaxis_title='Edad',
+                  yaxis_title='Frecuencia')
+
+    st.write("En el siguiente gráfico se muestran los rangos de edad de los empleados de la industria tecnológica y qué enfermedad mental tienden a padecer, dando como resultado el Trastorno de Ansiedad (Generalizado, Social, Fobia, etc). El rango de edad más padeciente en esta industria está entre los 26 y 32 años.")
+
+    st.plotly_chart(figp2_2, use_container_width=True)
+
+    st.header("Top 5: Enfermedades Mentales Más Comunes por Género")
