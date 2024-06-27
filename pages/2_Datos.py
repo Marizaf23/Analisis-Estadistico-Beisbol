@@ -43,13 +43,13 @@ option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
 
 # Muestra el DataFrame correspondiente según la opción seleccionada
 if option == '2016':
-    st.dataframe(df_2016, ignore_index=True)
+    st.dataframe(df_2016)
 elif option == '2017':
-    st.dataframe(df_2017, ignore_index=True)
+    st.dataframe(df_2017)
 elif option == '2018':
-    st.dataframe(df_2018, ignore_index=True)
+    st.dataframe(df_2018)
 elif option == '2019':
-    st.dataframe(df_2019, ignore_index=True)
+    st.dataframe(df_2019)
 
 
 st.header("Variables Cuantitativas")
