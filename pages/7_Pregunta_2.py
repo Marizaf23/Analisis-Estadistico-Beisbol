@@ -341,3 +341,5 @@ elif option == 'Estados':
     st.write("A continuación se muestran las 5 enfermedades mentales más comúnes según es el género predominante en la industria, dando como resultado que la mayoria de las personas que padecen el Trastorno de Ansiedad (Generalizado, Social, Fobia, etc) son hombres.")
 
     st.plotly_chart(figp2_3, use_container_width=True)
+
+    st.write("Nota: Todo lo calculado para esta pregunta solo se realizó para 2016 debido a que la variable de Enfermedades Mentales Diagnosticadas fue respondida en este año.")
