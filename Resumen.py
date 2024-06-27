@@ -219,6 +219,9 @@ st.header("Pregunta 2")
 st.subheader("¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cuál es la enfermedad mental predominante en cada uno?")
 st.subheader("Mapa General de EEUU con la Enfermedades Mentales Más Comunes")
 
+import plotly.express as px
+import pandas as pd
+
 data = pd.DataFrame({
 'State': ['Alabama', 'Arizona', "California","Carolina del Norte", "Carolina del Sur", "Connecticut", "Delaware", "Florida","Georgia", "Idaho", "Illinois", "Indiana", "Kansas", "Kentucky", "Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Missouri","Nebraska","Nueva Jersey","Nueva York","Nuevo Hampshire","Ohio","Oklahoma","Oregon","Pensilvania","Rhode Island","Tennessee","Texas","Utah","Vermont","Virginia","Virginia del Oeste","Washington","Wisconsin"],
 'Frequency': [2,1,34,8,1,3,1,5,3,2,18,8,2,2,2,2,3,4,12,12,2,2,3,13,1,6,2,11,16,1,6,13,3,1,4,1,10,5]
