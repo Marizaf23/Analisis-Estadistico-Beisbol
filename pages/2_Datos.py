@@ -52,6 +52,27 @@ elif option == '2019':
     st.dataframe(df_2019)
 
 
+st.header("Variables Cuantitativas")
+st.subheader("Estadísticas Descriptivas de Edad por Año")
+
+st.set_page_config(page_title="Edad Inv", page_icon="📊")
+Edad_2016 = df_2016.dropna(subset=['Edad'])['Edad'].describe().to_frame().T.round(2)
+Edad_2017 = df_2017['Edad'].describe().to_frame().T.round(2)
+Edad_2018 = df_2018['Edad'].describe().to_frame().T.round(2)
+Edad_2019 = df_2019.dropna(subset=['Edad'])['Edad'].describe().to_frame().T.round(2)
+
+# Unir los DataFrames en uno
+Edad_inv = pd.concat([Edad_2016, Edad_2017, Edad_2018, Edad_2019], ignore_index=True)
+
+# Renombrar las filas con los años correspondientes
+Edad_inv.index = ['2016', '2017', '2018', '2019']
+
+# Renombrar las columnas
+Edad_inv.columns = ['Muestra', 'Media', 'SD', 'Min', 'Q1', 'Md', 'Q3', 'Máx']
+
+Edad_inv = Edad_inv[['Muestra', 'Media', 'Md', 'SD', 'Min', 'Máx', 'Q1', 'Q3']]
+
+st.dataframe(Edad_inv)
 
 Edad_inv_graph = Edad_inv.drop(['Muestra', 'SD'], axis=1)
 
