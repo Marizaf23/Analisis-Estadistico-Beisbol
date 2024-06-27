@@ -107,7 +107,7 @@ st.header("Pregunta 1")
 st.subheader("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
 # Crea un selectbox con las opciones
-option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
+option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'], key='year_selectbox')
 
 if option == '2016':
 
