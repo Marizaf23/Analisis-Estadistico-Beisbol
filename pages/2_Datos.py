@@ -6,6 +6,7 @@ import plotly as px
 import streamlit as st
 import requests
 from io import StringIO
+import plotly.express as px
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
