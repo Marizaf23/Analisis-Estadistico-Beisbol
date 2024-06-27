@@ -42,7 +42,7 @@ p {
 </style>
 <ul>
   <li>Anorexia: Es un trastorno alimentario que resulta en una pérdida de peso poco saludable. Las personas con anorexia pueden tener una imagen corporal distorsionada y restringen sus calorías y/o se purgan para alcanzar objetivos de peso poco realistas.</p>
-  <lii>Autismo: Son un grupo de afecciones diversas. Se caracterizan por algún grado de dificultad en la interacción social y la comunicación. Otras características que presentan son patrones atípicos de actividad y comportamiento; por ejemplo, dificultad para pasar de una actividad a otra, gran atención a los detalles y reacciones poco habituales a las sensaciones.</p>
+  <li>Autismo: Son un grupo de afecciones diversas. Se caracterizan por algún grado de dificultad en la interacción social y la comunicación. Otras características que presentan son patrones atípicos de actividad y comportamiento; por ejemplo, dificultad para pasar de una actividad a otra, gran atención a los detalles y reacciones poco habituales a las sensaciones.</p>
 <ul>
 <p>En el año 2013, el autismo pasó a llamarse trastorno del espectro autista (TEA), justamente debido a la comprobación de que existen varios tipos de autismo. En general, el trastorno se define por la presencia de déficit persistentes en la interacción social y en la comunicación.</p>
 <p>Aunque en el autismo o trastorno del espectro autista (TEA) se considera un trastorno mental según los dos sistemas de clasificación más importantes de los trastornos mentales, el DSM-V y el CIE-11. Sin embargo, en algunos países anglosajones, como Reino Unido, Canadá y Australia, se está optando cada vez más por entenderlo como una condición.</p>
