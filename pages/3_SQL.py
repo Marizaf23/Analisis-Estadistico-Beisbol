@@ -16,61 +16,13 @@ st.title("SQL")
 # Download the database file from GitHub
 url = "https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/5618e24a050665009706f13a395efac802815571/BBDD/SALUD%20MENTAL%20EN%20LA%20INDUSTRIA%20TECNOL%C3%93GICA%201.sqlite"
 response = requests.get(url)
-with open("database.sqlite", "wb") as f:
+with open("saludmental1.sqlite", "wb") as f:
     f.write(response.content)
 
-# Check if the file exists and has correct permissions
-print(os.path.exists("database.sqlite"))  # Should print True
-print(os.access("database.sqlite", os.R_OK))  # Should print True
-
 try:
-    # Establish a connection to the database
-    conn = sqlite3.connect("database.sqlite")
-    print("Connected to database!")
-
-    # Create a cursor object
-    cur = conn.cursor()
-    print("Cursor created!")
-
-    # Execute the SQL query
-    query = """SELECT
-    S.SurveyID AS "Año de la Encuesta",
-    ROUND(AVG(CASE WHEN A2.AnswerText = 'Masculino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END), 2) AS "Edad Promedio (MASC)",
-    MIN(CASE WHEN A2.AnswerText = 'Masculino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Mínima (MASC)",
-    MAX(CASE WHEN A2.AnswerText = 'Masculino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Máxima (MASC)",
-				SUM(CASE WHEN A2.AnswerText = 'Masculino' THEN 1 ELSE 0 END) AS "Total Masculino",
-    ROUND(AVG(CASE WHEN A2.AnswerText = 'Femenino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END), 2) AS "Edad Promedio (FEM)",
-    MIN(CASE WHEN A2.AnswerText = 'Femenino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Mínima (FEM)",
-    MAX(CASE WHEN A2.AnswerText = 'Femenino' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Máxima (FEM)",
-				SUM(CASE WHEN A2.AnswerText = 'Femenino' THEN 1 ELSE 0 END) AS "Total Femenino",
-    ROUND(AVG(CASE WHEN A2.AnswerText = 'Otro' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END), 2) AS "Edad Promedio (Otro)",
-    MIN(CASE WHEN A2.AnswerText = 'Otro' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Mínima (Otro)",
-    MAX(CASE WHEN A2.AnswerText = 'Otro' THEN CAST(A.AnswerText AS INTEGER) ELSE NULL END) AS "Edad Máxima (Otro)",
-				SUM(CASE WHEN A2.AnswerText = 'Otro' THEN 1 ELSE 0 END) AS "Total Otro",
-    COUNT(DISTINCT A.UserID) AS "Total de Encuestados"
-FROM Respuestas A
-JOIN Survey S ON A.SurveyID = S.SurveyID
-JOIN Respuestas A2 ON S.SurveyID = A2.SurveyID AND A2.QuestionID = 2 AND A2.UserID = A.UserID
-WHERE A.QuestionID = 1
-GROUP BY S.SurveyID;"""
-    print(f"Executing query: {query}")
     cur.execute(query)
-    print("Query executed!")
-
-    # Fetch the results
-    results = cur.fetchall()
-    print("Results fetched!")
-
-    # Close the connection
-    conn.close()
-    print("Connection closed!")
-
-except sqlite3.OperationalError as e:
+except sqlite3.ProgrammingError as e:
     print(f"Error executing query: {e}")
-except sqlite3.Error as e:
-    print(f"Error connecting to database: {e}")
-except Exception as e:
-    print(f"Error: {e}")
 
 
 st.header("Consulta 1")
