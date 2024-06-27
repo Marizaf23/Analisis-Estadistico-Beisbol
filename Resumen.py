@@ -19,7 +19,6 @@ st.write("Información de la Data Suministrada.")
 
 # Contenido de la página 2
 st.header("Visualización de los Datos")
-st.write("Información de la Data Suministrada.")
 
 @st.cache
 def load_csv_from_github(url):
@@ -56,6 +55,43 @@ elif option == '2018':
     st.dataframe(df_2018)
 elif option == '2019':
     st.dataframe(df_2019)
+
+st.write("La base de datos depurada y estructurada para esta investigación abarca los años 2016-2019. La fuente es Kaggle y su vez las encuestas anónimas realizadas por la organización OSMI para estudiar el conocimiento y aceptación de enfermedades mentales en la industria tecnológica. Se analizaron variables como diagnóstico, creencias, antecedentes heredofamiliares, trabajo remoto, recursos de apoyo, percepción externa, género y edad. El enfoque en este período previo a la pandemia permite observar cambios antes de la creciente conciencia sobre salud mental. A pesar de los desafíos en la normalización y limpieza de datos, se utilizaron herramientas como SQLite, Python y PowerBi para llevar a cabo la investigación.")
+
+st.header("Variables Cuantitativas")
+
+st.subheader("Estadísticas Descriptivas de Edad por Año")
+
+try:
+    df_2016['Edad'] = pd.to_numeric(df_2016['Edad'], errors='coerce')
+except Exception as e:
+    st.write(f"Error: {e}")
+
+Edad_2016 = df_2016['Edad'].describe().to_frame().T.round(2)
+
+Edad_2017 = df_2017['Edad'].describe().to_frame().T.round(2)
+
+Edad_2018 = df_2018['Edad'].describe().to_frame().T.round(2)
+
+try:
+    df_2019['Edad'] = pd.to_numeric(df_2019['Edad'], errors='coerce')
+except Exception as e:
+    st.write(f"Error: {e}")
+
+Edad_2019 = df_2019['Edad'].describe().to_frame().T.round(2)
+
+# Unir los DataFrames en uno
+Edad_inv = pd.concat([Edad_2016, Edad_2017, Edad_2018, Edad_2019], ignore_index=True)
+
+# Renombrar las filas con los años correspondientes
+Edad_inv.index = ['2016', '2017', '2018', '2019']
+
+# Renombrar las columnas
+Edad_inv.columns = ['Muestra', 'Media', 'SD', 'Min', 'Q1', 'Md', 'Q3', 'Máx']
+
+Edad_inv = Edad_inv[['Muestra', 'Media', 'Md', 'SD', 'Min', 'Máx', 'Q1', 'Q3']]
+
+st.dataframe(Edad_inv, width=1800, height=178)
 
 # Contenido de la página 3
 st.header("Planteamiento Del Problema")
