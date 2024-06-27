@@ -114,10 +114,10 @@ if option == 'Diagnosticadas':
     st.dataframe(Enfermedades2016_4_1, width=1000, height=528, hide_index=True)
     st.plotly_chart(fig20164_1, use_container_width=True)
 
-    st.dataframe(Trabajo2016_4_1, width=1000, height=460)
+    st.dataframe(Trabajo2016_4_1, width=1000, height=458)
     st.plotly_chart(fig20164_3, use_container_width=True)
 
-    st.dataframe(Pregunta4_1, width=1000, height=472, hide_index=True)
+    st.dataframe(Pregunta4_1, width=1000, height=463, hide_index=True)
 
 
 if option == 'No Diagnosticadas':
