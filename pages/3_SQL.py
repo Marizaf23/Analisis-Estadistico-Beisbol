@@ -9,19 +9,17 @@ from io import StringIO
 import plotly.express as px
 import requests
 import sqlite3
-
-import sqlite3
 import os
 
 # Download the database file from GitHub
 url = "https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/5618e24a050665009706f13a395efac802815571/BBDD/SALUD%20MENTAL%20EN%20LA%20INDUSTRIA%20TECNOL%C3%93GICA%201.sqlite"
 response = requests.get(url)
-with open("saludmental.sqlite", "wb") as f:
+with open("database.sqlite", "wb") as f:
     f.write(response.content)
 
 # Check if the file exists and has correct permissions
-print(os.path.exists("saludmental.sqlite"))  # Should print True
-print(os.access("salusmental.sqlite", os.R_OK))  # Should print True
+print(os.path.exists("database.sqlite"))  # Should print True
+print(os.access("database.sqlite", os.R_OK))  # Should print True
 
 try:
     # Establish a connection to the database
@@ -33,7 +31,9 @@ try:
     print("Cursor created!")
 
     # Execute the SQL query
-    cur.execute("""YOUR_SQL_QUERY_HERE""")
+    query = """YOUR_SQL_QUERY_HERE"""
+    print(f"Executing query: {query}")
+    cur.execute(query)
     print("Query executed!")
 
     # Fetch the results
@@ -44,6 +44,8 @@ try:
     conn.close()
     print("Connection closed!")
 
+except sqlite3.OperationalError as e:
+    print(f"Error executing query: {e}")
 except sqlite3.Error as e:
     print(f"Error connecting to database: {e}")
 except Exception as e:
