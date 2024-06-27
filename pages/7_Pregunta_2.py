@@ -283,3 +283,63 @@ elif option == 'Estados':
     st.plotly_chart(figp2_2, use_container_width=True)
 
     st.header("Top 5: Enfermedades Mentales Más Comunes por Género")
+
+    Pregunta2_3 = df_2016.groupby(['Enfermedades Mentales Diagnosticadas', 'Género']).size().reset_index(name='Cantidad de personas')
+
+    Pregunta2_3 = Pregunta2_3[Pregunta2_3['Género']!= 'No respondió']  # Eliminar "No respondió" de la columna "Género"
+
+    top_5_enfermedades = Pregunta2_3.groupby('Enfermedades Mentales Diagnosticadas')['Cantidad de personas'].sum().nlargest(6).index
+
+    Pregunta2_3 = Pregunta2_3[Pregunta2_3['Enfermedades Mentales Diagnosticadas'].isin(top_5_enfermedades)]
+
+    Pregunta2_3 = Pregunta2_3[Pregunta2_3['Enfermedades Mentales Diagnosticadas']!= 'No respondió']
+
+    Pregunta2_3 = Pregunta2_3.pivot_table(index='Enfermedades Mentales Diagnosticadas', columns='Género', values='Cantidad de personas', fill_value=0)
+
+    print(Pregunta2_3)
+
+    figp2_3 = go.Figure()
+    figp2_3.add_trace(go.Bar(
+        x=Pregunta2_3.index,  
+        y=Pregunta2_3['Femenino'],  
+        name='Femenino',
+        marker_color='#938DBB',
+        opacity=0.75
+        ))
+    figp2_3.add_trace(go.Bar(
+        x=Pregunta2_3.index,  
+        y=Pregunta2_3['Masculino'],
+        name='Masculino',
+        marker_color= '#7A3586',
+        opacity=0.75
+        ))
+    figp2_3.add_trace(go.Bar(
+        x=Pregunta2_3.index,  
+        y=Pregunta2_3['Otro'],  
+        name='Otro',
+        marker_color='#410E48',
+        opacity=0.75
+        ))
+
+    figp2_3.update_layout(
+        title_text='Top 5 Enfermedades Mentales por Género', 
+        xaxis_title_text='Enfermedades Mentales',  
+        yaxis_title_text='Cantidad de personas', 
+        bargap=0.2,  
+        bargroupgap=0.1,  
+        xaxis=dict(
+        showticklabels=False  
+        ),
+        legend=dict(
+        font=dict(
+            size=18  
+        )
+        ),
+        width=800,  
+        height=600  
+        )
+    figp2_3.show()
+
+    st.write("A continuación se muestran las 5 enfermedades mentales más comúnes según es el género predominante en la industria, dando como resultado que la mayoria de las personas que padecen el Trastorno de Ansiedad (Generalizado, Social, Fobia, etc) son hombres.")
+
+    st.plotly_chart(figp2_3, use_container_width=True)
