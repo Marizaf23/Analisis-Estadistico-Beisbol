@@ -8,7 +8,7 @@ La salud mental es un aspecto crítico del desarrollo humano, social, económico
 
 
 # Fuente de Datos
-La fuente utilizada para éste análisis provienen de la BBDD  “Mental Health in the Tech Industry_sqlite”  la cual contiene información sobre una encuesta realizada entre los años 2014-2019 exceptuando el año  2015 sobre las Enfermedades Mentales en la Industria tegnológica.
+La fuente utilizada para éste análisis provienen de la BBDD  “Mental Health in the Tech Industry_sqlite”  la cual contiene información sobre una encuesta realizada entre los años 2014-2019 exceptuando el año 2015 sobre las Enfermedades Mentales en la Industria tegnológica.
 
 
 # Herramientas/ Librerías
