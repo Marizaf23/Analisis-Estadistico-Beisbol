@@ -15,7 +15,7 @@ st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria
 
 # Contenido de la página 1
 st.header("Introducción")
-st.write("La salud mental es un aspecto crítico del desarrollo humano, social, económico, y es esencial para la salud en general.  Para los empleados de la TI (Industria Tecnológica) es un tema de preocupación creciente debido a las características únicas de este sector, el cual pueden contribuir de manera positiva o negativa al bienestar psicológico de sus empleados. Identificarse como una persona que padece de una Enfermedad Mental se ha convertido en un problema, una de las principales razones es el estigma y la discriminación que rodea las Enfermedades Mentales. La gente teme ser juzgada o tratada de manera diferente por sus compañeros de trabajo, familiares y amigos si se identifican con ello.")
+st.write('<p style="text-align: justify;">La salud mental es un aspecto crítico del desarrollo humano, social, económico, y es esencial para la salud en general.  Para los empleados de la TI (Industria Tecnológica) es un tema de preocupación creciente debido a las características únicas de este sector, el cual pueden contribuir de manera positiva o negativa al bienestar psicológico de sus empleados. Identificarse como una persona que padece de una Enfermedad Mental se ha convertido en un problema, una de las principales razones es el estigma y la discriminación que rodea las Enfermedades Mentales. La gente teme ser juzgada o tratada de manera diferente por sus compañeros de trabajo, familiares y amigos si se identifican con ello.</p>', unsafe_allow_html=True)
 
 # Contenido de la página 2
 st.header("Visualización de los Datos")
@@ -56,7 +56,7 @@ elif option == '2018':
 elif option == '2019':
     st.dataframe(df_2019)
 
-st.write("La base de datos depurada y estructurada para esta investigación abarca los años 2016-2019. La fuente es Kaggle y su vez las encuestas anónimas realizadas por la organización OSMI para estudiar el conocimiento y aceptación de enfermedades mentales en la industria tecnológica. Se analizaron variables como diagnóstico, creencias, antecedentes heredofamiliares, trabajo remoto, recursos de apoyo, percepción externa, género y edad. El enfoque en este período previo a la pandemia permite observar cambios antes de la creciente conciencia sobre salud mental. A pesar de los desafíos en la normalización y limpieza de datos, se utilizaron herramientas como SQLite, Python y PowerBi para llevar a cabo la investigación.")
+st.write('<p style="text-align: justify;">La base de datos depurada y estructurada para esta investigación abarca los años 2016-2019. La fuente es Kaggle y su vez las encuestas anónimas realizadas por la organización OSMI para estudiar el conocimiento y aceptación de enfermedades mentales en la industria tecnológica. Se analizaron variables como diagnóstico, creencias, antecedentes heredofamiliares, trabajo remoto, recursos de apoyo, percepción externa, género y edad. El enfoque en este período previo a la pandemia permite observar cambios antes de la creciente conciencia sobre salud mental. A pesar de los desafíos en la normalización y limpieza de datos, se utilizaron herramientas como SQLite, Python y PowerBi para llevar a cabo la investigación.</p>', unsafe_allow_html=True)
 
 st.header("Variables Cuantitativas")
 
@@ -96,7 +96,7 @@ st.dataframe(Edad_inv, width=1800, height=178)
 # Contenido de la página 3
 st.header("Planteamiento Del Problema")
 st.subheader("Objetivos")
-st.write("•	Determinar las características e incidencias de las enfermedades mentales en la industria tecnológica estadounidense tomando en cuenta el diagnóstico, historial familiar, edad, género y puesto de trabajo de los afectados. •	Identificar el nivel de productividad de los empleados de la industria tecnológica estadounidense con enfermedades mentales y qué beneficios reciben para su tratamiento. •	Indagar la percepción externa de los trabajadores sobre las enfermedades mentales en la industria tecnológica estadounidense.")
+st.write('<ul><li>Determinar las características e incidencias de las enfermedades mentales en la industria tecnológica estadounidense tomando en cuenta el diagnóstico, antecedentes heredofamiliares, edad, género y puesto de trabajo de los afectados.</li><li>Identificar el nivel de productividad de los empleados de la industria tecnológica estadounidense con enfermedades mentales y qué beneficios reciben para su tratamiento.</li><li>Indagar la percepción externa de los trabajadores sobre las enfermedades mentales en la industria tecnológica estadounidense.</li></ul>', unsafe_allow_html=True)
 
 # Contenido de la página 4
 st.header("Marco Teórico")
