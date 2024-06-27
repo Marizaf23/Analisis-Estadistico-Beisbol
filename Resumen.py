@@ -15,7 +15,7 @@ st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria
 
 # Contenido de la página 1
 st.header("Introducción")
-st.write("Información de la Data Suministrada.")
+st.write("La salud mental es un aspecto crítico del desarrollo humano, social, económico, y es esencial para la salud en general.  Para los empleados de la TI (Industria Tecnológica) es un tema de preocupación creciente debido a las características únicas de este sector, el cual pueden contribuir de manera positiva o negativa al bienestar psicológico de sus empleados. Identificarse como una persona que padece de una Enfermedad Mental se ha convertido en un problema, una de las principales razones es el estigma y la discriminación que rodea las Enfermedades Mentales. La gente teme ser juzgada o tratada de manera diferente por sus compañeros de trabajo, familiares y amigos si se identifican con ello.")
 
 # Contenido de la página 2
 st.header("Visualización de los Datos")
@@ -95,21 +95,21 @@ st.dataframe(Edad_inv, width=1800, height=178)
 
 # Contenido de la página 3
 st.header("Planteamiento Del Problema")
-st.write("planteamiento.")
+st.subheader("Objetivos")
+st.write("•	Determinar las características e incidencias de las enfermedades mentales en la industria tecnológica estadounidense tomando en cuenta el diagnóstico, historial familiar, edad, género y puesto de trabajo de los afectados. •	Identificar el nivel de productividad de los empleados de la industria tecnológica estadounidense con enfermedades mentales y qué beneficios reciben para su tratamiento. •	Indagar la percepción externa de los trabajadores sobre las enfermedades mentales en la industria tecnológica estadounidense.")
 
 # Contenido de la página 4
 st.header("Marco Teórico")
 st.write("marco.")
 
 # Contenido de la página 5
-st.header("Pregunta #1: ¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
-st.write("#1")
+st.header("Pregunta 1")
+st.subheader("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
 # Crea un selectbox con las opciones
-option = st.selectbox('Año de Encuesta:', ['Todos','2016', '2017', '2018', '2019'])
+option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
 
 if option == '2016':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     #Crear la tabla bivariante con pandas
     Pregunta2016_1 = pd.crosstab(df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
@@ -127,12 +127,10 @@ if option == '2016':
     
     Pregunta2016_1.rename(columns={'index': 'Enfermedad Mental'})
 
-    st.dataframe(Pregunta2016_1, width=800, height=177)
-
+    st.dataframe(Pregunta2016_1, width=1500, height=177)
 
 elif option == '2017':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
-
+    
     #Crear la tabla bivariante con pandas
     Pregunta2017_1 = pd.crosstab(df_2017['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2017['Antecedentes Heredofamiliares'], 
@@ -153,10 +151,8 @@ elif option == '2017':
     
     st.dataframe(Pregunta2017_1, width=800, height=212)
 
-
 elif option == '2018':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
-
+    
     #Crear la tabla bivariante con pandas
     Pregunta2018_1 = pd.crosstab(df_2018['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
                         df_2018['Antecedentes Heredofamiliares'], 
@@ -177,9 +173,7 @@ elif option == '2018':
     
     st.dataframe(Pregunta2018_1, width=800, height=212)
 
-
 elif option == '2019':
-    st.write("¿Cuántas personas en la industria tecnológica tienen una enfermedad mental diagnosticada y, dentro de este grupo, existe algún historial familiar dentro de este ámbito?")
 
     #Crear la tabla bivariante con pandas
     Pregunta2019_1 = pd.crosstab(df_2019['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], 
