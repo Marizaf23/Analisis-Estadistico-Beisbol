@@ -22,9 +22,8 @@ with open("saludmental.sqlite", "wb") as f:
 conn = sqlite3.connect("saludmental.sqlite")
 cur = conn.cursor()
 
-# Consulta 1:
-# PREGUNTA #1
-# Es de interés saber cuál año tuvo más encuestados, su género, la edad promedio, la edad mínima y la edad máxima para cada año, debe estar la descripción de la encuesta
+st.header("Consulta 1")
+st.subheader("Es de interés saber cuál año tuvo más encuestados, su género, la edad promedio, la edad mínima y la edad máxima para cada año, debe estar la descripción de la encuesta")
 
 cur.execute("""
 SELECT
@@ -54,9 +53,8 @@ Consulta1 = pd.DataFrame(cur.fetchall(), columns=[desc[0] for desc in cur.descri
 
 st.dataframe(Consulta1)
 
-# Consulta #2
-# PREGUNTA #2
-# Se requiere indagar si se puede observar cuántas personas se sienten cómodas hablando de sus problemas mentales con sus compañeros y supervisores
+st.header("Consulta 2")
+st.subheader("Se requiere indagar si se puede observar cuántas personas se sienten cómodas hablando de sus problemas mentales con sus compañeros y supervisores")
 
 cur.execute("""
 SELECT 
@@ -99,9 +97,8 @@ Consulta2 = pd.DataFrame(cur.fetchall(), columns=[desc[0] for desc in cur.descri
 
 st.dataframe(Consulta2)
 
-# Consulta #3
-# PREGUNTA #3
-# Es de interés indagar si las empresas con más de 100 empleados tienen mayor cantidad de personas con problemas de salud mental, ¿Estas empresas tienen algún plan o apoyo para estos empleados?
+st.header("Consulta 3")
+st.subheader("Es de interés indagar si las empresas con más de 100 empleados tienen mayor cantidad de personas con problemas de salud mental, ¿Estas empresas tienen algún plan o apoyo para estos empleados?")
 
 cur.execute("""
 WITH
@@ -174,13 +171,12 @@ Consulta3 = pd.DataFrame(cur.fetchall(), columns=[desc[0] for desc in cur.descri
 
 st.dataframe(Consulta3)
 
-# NOTA: SE REALIZÓ LA COLUMNA 'NO SABE' MEDIANTE UNA DIFERENCIA DEBIDO A QUE EXISTÍAN VALORES NULOS Y -1 QUE AL HACER EL UPDATE FUERON ELIMINADOS, POR ESTO NO HACÍA EL CONTEO COMPLETO
+st.write("NOTA: SE REALIZÓ LA COLUMNA 'NO SABE' MEDIANTE UNA DIFERENCIA DEBIDO A QUE EXISTÍAN VALORES NULOS Y -1 QUE AL HACER EL UPDATE FUERON ELIMINADOS, POR ESTO NO HACÍA EL CONTEO COMPLETO")
 
-# NOTA: NO SE PUDO AGREGAR LA QUESTION_ID 94 PARA EVALUAR OTROS OPOYOS DEBIDO A QUE ESTA PREGUNTA SOLO SE RESPONDE EN SURVEY_ID 2014 Y NO TIENE RELACION ALGUNA CON LA PREGUNTA DE LAS ENFERMEDADES MENTALES
+st.write("NOTA: NO SE PUDO AGREGAR LA QUESTION_ID 94 PARA EVALUAR OTROS OPOYOS DEBIDO A QUE ESTA PREGUNTA SOLO SE RESPONDE EN SURVEY_ID 2014 Y NO TIENE RELACION ALGUNA CON LA PREGUNTA DE LAS ENFERMEDADES MENTALES")
 
-# Consulta #4
-# PREGUNTA #4
-# Según los diferentes periodos de la encuesta existe un cambio significativo para el género según la industria tecnológica. ¿En cantidad y por año quienes se declararon con problemas mentales?
+st.header("Consulta 4")
+st.subheader("Según los diferentes periodos de la encuesta existe un cambio significativo para el género según la industria tecnológica. ¿En cantidad y por año quienes se declararon con problemas mentales?")
 
 cur.execute("""
 SELECT 
@@ -221,15 +217,14 @@ WHERE
 # Recuperación de los resultados en un Dataframe
 Consulta4 = pd.DataFrame(cur.fetchall(), columns=[desc[0] for desc in cur.description])
 
-# NOTA: NO EXISTE PREGUNTA QUE RESPONDA EL TIPO DE INDUSTRIA TECNOLÓGICA ASÍ QUE SE TOMÓ PUESTO DE TRABAJO COMO VARIABLE PARA REALIZAR LA CONSULTA
+st.write("NOTA: NO EXISTE PREGUNTA QUE RESPONDA EL TIPO DE INDUSTRIA TECNOLÓGICA ASÍ QUE SE TOMÓ PUESTO DE TRABAJO COMO VARIABLE PARA REALIZAR LA CONSULTA")
 		
-# NOTA: NO SE PUDO CALCULAR EL INCREMENTO POR AÑO SEGÚN LOS PERIODOS DE TIEMPO PORQUE LA PREGUNTA DE LOS PUESTOS DE TRABAJO SÓLO SE RESPONDE EN EL SURVEY_ID 2016
+st.write("NOTA: NO SE PUDO CALCULAR EL INCREMENTO POR AÑO SEGÚN LOS PERIODOS DE TIEMPO PORQUE LA PREGUNTA DE LOS PUESTOS DE TRABAJO SÓLO SE RESPONDE EN EL SURVEY_ID 2016")
 
 st.dataframe(Consulta4)
 
-# Consulta #5
-# PREGUNTA #5
-# Se requiere saber si se ha normalizado la aceptación de los problemas mentales para los diferentes años de la encuesta y ha cambiado su tendencia con respecto a la opinión de la efectividad laboral al momento de declarar que se posee una enfermedad mental
+st.header("Consulta 5")
+st.subheader("Se requiere saber si se ha normalizado la aceptación de los problemas mentales para los diferentes años de la encuesta y ha cambiado su tendencia con respecto a la opinión de la efectividad laboral al momento de declarar que se posee una enfermedad mental")
 
 cur.execute("""
 SELECT 
@@ -369,10 +364,12 @@ FROM (
 # Recuperación de los resultados en un Dataframe
 Consulta5 = pd.DataFrame(cur.fetchall(), columns=[desc[0] for desc in cur.description])
 
-# NOTA: SE ESCOGEN LAS PREGUNTAS 81, 102 Y 114 PARA RESPONDER EL APARTADO DE ACEPTACIÓN Y LUEGO HACER LA COMPARATIVA DE TODOS LOS AÑOS
+st.write("NOTA: SE ESCOGEN LAS PREGUNTAS 81, 102 Y 114 PARA RESPONDER EL APARTADO DE ACEPTACIÓN Y LUEGO HACER LA COMPARATIVA DE TODOS LOS AÑOS")
 
-# NOTA: EN EL CASO DE LAS PERSONAS CON ENFERMEDAD MENTAL Y SU EFECTIVIDAD, SE USARON LAS PREGUNTAS 48, 49 Y 92
+st.write("NOTA: EN EL CASO DE LAS PERSONAS CON ENFERMEDAD MENTAL Y SU EFECTIVIDAD, SE USARON LAS PREGUNTAS 48, 49 Y 92")
 
 st.dataframe(Consulta5)
 
 conn.close
+
+st.write("Funciones aplicadas para realizar las consultas: CTE (Common Table Expressions), UNION ALL, Subquery")
