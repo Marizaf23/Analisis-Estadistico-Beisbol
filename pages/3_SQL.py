@@ -7,8 +7,6 @@ import streamlit as st
 import requests
 from io import StringIO
 import plotly.express as px
-import sqlite3
-
 import requests
 import sqlite3
 
@@ -18,9 +16,13 @@ response = requests.get(url)
 with open("saludmental.sqlite", "wb") as f:
     f.write(response.content)
 
-# Conectar a la base de datos localmente
-conn = sqlite3.connect("saludmental.sqlite")
-cur = conn.cursor()
+try:
+    conn = sqlite3.connect("saludmental.sqlite")
+    cur = conn.cursor()
+    # Execute your SQL query here
+except sqlite3.Error as e:
+    print(f"Error connecting to database: {e}")
+
 
 st.header("Consulta 1")
 st.subheader("Es de interés saber cuál año tuvo más encuestados, su género, la edad promedio, la edad mínima y la edad máxima para cada año, debe estar la descripción de la encuesta")
