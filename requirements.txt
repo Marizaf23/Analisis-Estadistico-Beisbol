@@ -6,4 +6,3 @@ matplotlib
 plotly
 altair
 pywaffle
-iplotly.express
