@@ -183,12 +183,12 @@ if option == 'No Diagnosticadas':
                   title=dict(text='Distribución de Puestos de Trabajo Según Trabajo Remoto (Creencia)',
                              font=dict(size=18)))
     
-    st.dataframe(Enfermedades2016_4_2, width=2000, height=450, hide_index=True)
+    st.dataframe(Enfermedades2016_4_2, width=2000, height=415, hide_index=True)
     st.plotly_chart(fig20164_2, use_container_width=True)
 
-    st.dataframe(Trabajo2016_4_2, width=1500, height=412, hide_index=True)
+    st.dataframe(Trabajo2016_4_2, width=1000, height=415, hide_index=True)
     st.plotly_chart(fig20164_4, use_container_width=True)
 
-    st.dataframe(Pregunta4_2, width=1500, height=412, hide_index=True)
+    st.dataframe(Pregunta4_2, width=1500, height=415, hide_index=True)
     
     
