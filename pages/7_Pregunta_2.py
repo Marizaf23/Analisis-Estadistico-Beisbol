@@ -159,6 +159,8 @@ if option == 'General':
 
     figp2.update_layout(coloraxis_colorbar=dict(title="Frecuencia de Casos"))
 
+    st.write("Se observa en la siguiente gráfica el mapa de EEUU separado en estados y la enfermedad mental diagnosticada más comun.")
+    
     st.plotly_chart(figp2, use_container_width=True)
     
-    st.write("Se observa en la siguiente gráfica el mapa de EEUU separado en estados y la enfermedad mental diagnosticada más comun.")
+    
