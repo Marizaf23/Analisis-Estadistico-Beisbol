@@ -6,4 +6,4 @@ matplotlib
 plotly
 altair
 pywaffle
-import plotly.express
+plotly.express
