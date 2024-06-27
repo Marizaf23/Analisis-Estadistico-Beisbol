@@ -296,8 +296,6 @@ elif option == 'Estados':
 
     Pregunta2_3 = Pregunta2_3.pivot_table(index='Enfermedades Mentales Diagnosticadas', columns='Género', values='Cantidad de personas', fill_value=0)
 
-    print(Pregunta2_3)
-
     figp2_3 = go.Figure()
     figp2_3.add_trace(go.Bar(
         x=Pregunta2_3.index,  
