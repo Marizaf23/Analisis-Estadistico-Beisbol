@@ -40,8 +40,10 @@ p {
   text-align: justify;
 }
 </style>
-<p>Anorexia: Es un trastorno alimentario que resulta en una pérdida de peso poco saludable. Las personas con anorexia pueden tener una imagen corporal distorsionada y restringen sus calorías y/o se purgan para alcanzar objetivos de peso poco realistas.</p>
-<p>* Autismo: Son un grupo de afecciones diversas. Se caracterizan por algún grado de dificultad en la interacción social y la comunicación. Otras características que presentan son patrones atípicos de actividad y comportamiento; por ejemplo, dificultad para pasar de una actividad a otra, gran atención a los detalles y reacciones poco habituales a las sensaciones.</p>
+<ul>
+  <li>Anorexia: Es un trastorno alimentario que resulta en una pérdida de peso poco saludable. Las personas con anorexia pueden tener una imagen corporal distorsionada y restringen sus calorías y/o se purgan para alcanzar objetivos de peso poco realistas.</p>
+  <lii>Autismo: Son un grupo de afecciones diversas. Se caracterizan por algún grado de dificultad en la interacción social y la comunicación. Otras características que presentan son patrones atípicos de actividad y comportamiento; por ejemplo, dificultad para pasar de una actividad a otra, gran atención a los detalles y reacciones poco habituales a las sensaciones.</p>
+<ul>
 <p>En el año 2013, el autismo pasó a llamarse trastorno del espectro autista (TEA), justamente debido a la comprobación de que existen varios tipos de autismo. En general, el trastorno se define por la presencia de déficit persistentes en la interacción social y en la comunicación.</p>
 <p>Aunque en el autismo o trastorno del espectro autista (TEA) se considera un trastorno mental según los dos sistemas de clasificación más importantes de los trastornos mentales, el DSM-V y el CIE-11. Sin embargo, en algunos países anglosajones, como Reino Unido, Canadá y Australia, se está optando cada vez más por entenderlo como una condición.</p>
 <ul>  
@@ -111,13 +113,12 @@ p {
 <p>Un grupo que está especialmente bien representado en el sector tecnológico es el del personal neurodivergente. Neurodivergente es el término que se utiliza generalmente para las personas cuyo funcionamiento mental o neurológico difiere de lo que se considera típico, como los que tienen TDAH, autismo, dislexia, dispraxia, síndrome de Tourette y discalculia.</p>
 <p>Neurotípico es el término utilizado para las personas no neurodivergente, es decir, las que no se identifican como poseedoras de ninguna de las condiciones mencionadas.</p>
 <p>En este entorno, es imperativo que hagamos un esfuerzo consciente para priorizar la salud mental. Los empleadores tienen un papel esencial en esto al crear ambientes de trabajo que fomenten la apertura, la flexibilidad y el bienestar de los empleados.</p>
+<ul>  
   <li>Promover la Comunicación Abierta: Establecer un espacio seguro para que los empleados compartan sus preocupaciones y desafíos es fundamental. La comunicación abierta reduce el estrés y fomenta un sentido de comunidad.</p>
   <li>Fomentar el Equilibrio entre el Trabajo y la Vida Personal: Establecer límites claros entre el tiempo de trabajo y el tiempo personal ayuda a los empleados a desconectar y recargar energías, lo que es vital para su bienestar.</p>
   <li>Ofrecer Recursos de Apoyo: Proporcionar acceso a recursos como asesoramiento, programas de bienestar, y capacitación en manejo del estrés puede marcar una gran diferencia en la vida de los empleados.</p>
   <li>Incentivar el Desarrollo Profesional y Personal: Apoyar el crecimiento y desarrollo integral de los empleados, tanto en el ámbito profesional como personal, puede aumentar su satisfacción laboral y bienestar.</p>
   <li>Promover la Autocuidado: Incentivar prácticas de autocuidado, como el ejercicio, la meditación y el tiempo de descanso, puede contribuir a una mejor salud mental y un mayor rendimiento laboral.</p>
-<p>En última instancia, todos somos responsables de crear una cultura laboral que valore la salud mental y promueva el bienestar. Juntos, podemos marcar la diferencia y construir un futuro tecnológico más humano y sostenible.</p>
-<ul>  
-  <li>Trastorno Psicótico: Son desórdenes mentales graves caracterizados por una alteración global de la personalidad que provoca que las personas que los sufren tengan ideas y percepciones anormales, distorsionadas de la realidad.
 <ul>
+<p>En última instancia, todos somos responsables de crear una cultura laboral que valore la salud mental y promueva el bienestar. Juntos, podemos marcar la diferencia y construir un futuro tecnológico más humano y sostenible.</p>
 """, unsafe_allow_html=True)
