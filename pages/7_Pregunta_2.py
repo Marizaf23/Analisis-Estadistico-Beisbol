@@ -160,7 +160,67 @@ if option == 'General':
     figp2.update_layout(coloraxis_colorbar=dict(title="Frecuencia de Casos"))
 
     st.write("Se observa en la siguiente gráfica el mapa de EEUU separado en estados y la enfermedad mental diagnosticada más comun.")
-    
+
     st.plotly_chart(figp2, use_container_width=True)
+
+elif option == 'Estados':
+
+    pregunta_2 = df_2016[df_2016['Enfermedades Mentales Diagnosticadas']!= 'No respondió'].groupby('Ciudad de Residencia (EEUU)')['Enfermedades Mentales Diagnosticadas'].value_counts().nlargest(5).reset_index(name='Frecuencia')
+
+    pregunta_2 = pregunta_2.loc[:, ['Enfermedades Mentales Diagnosticadas', 'Ciudad de Residencia (EEUU)', 'Frecuencia']]  # Reordenar columnas
+
+    pregunta_2.columns = ['Enfermedades Mentales Diagnosticadas', 'Ciudad de Residencia (EEUU)', 'Cantidad de personas']  # Renombrar columnas
+
+    print(pregunta_2.to_string(header=True, index=False))
+
+    #Grafica
+
+    import plotly.express as px
+    data = pd.DataFrame({
+        'State': ['California', 'California', 'Illinois', 'Pennsylvania', 'New York'],
+        'Frequency': [34, 19, 18, 16, 13]
+    })
+
+
+    data = data.groupby('State')['Frequency'].sum().reset_index()
+
+
+    data['State Abbrev'] = data['State'].map({
+        'California': 'CA',
+        'Illinois': 'IL',
+        'Pennsylvania': 'PA',
+        'New York': 'NY'
+        })
+
+
+    data['Mental Health Condition'] = data['State'].map({
+        'California': 'Trastorno de Ansiedad (Generalizado,Fobia, Social, Trastorno del Ánimo (Depresión, Trastorno Bipolar, etc))',
+        'Illinois': 'Generalizado,Fobia, Social',
+        'Pennsylvania': 'Generalizado,Fobia, Social',
+        'New York': 'Generalizado,Fobia, Social'
+        })
+
+
+    figp2_1 = px.choropleth(
+        data,
+        locations="State Abbrev", 
+        locationmode="USA-states",
+        color="Frequency",
+        scope="usa",
+        color_continuous_scale="Purples", 
+        hover_name="State",
+        hover_data=["Frequency", "Mental Health Condition"], 
+        color_continuous_midpoint=data['Frequency'].mean(), 
+        title="Frecuencia de Condiciones de Salud Mental por Estado en EE. UU.",  
+        )
+
+    figp2_1.update_layout(coloraxis_colorbar=dict(title="Frecuencia de Casos"))
+
+    # Show the graph
+    figp2_1.show()
+
+    st.write("En el siguiente mapa se puede observar en qué estados hay mayores casos de enfermedades mentales y su diagnóstico, siendo el estado de California el principal de estos con un registro de 53 personas y su respuesta más común el Trastorno de Ansiedad (Depresión, Trastorno Bipoar, etc).")
+
+    st.plotly_chart(figp2_1, use_container_width=True)
     
     
