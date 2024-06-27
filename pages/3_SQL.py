@@ -13,16 +13,46 @@ import os
 
 st.title("SQL")
 
+import sqlite3
+import os
+
 # Download the database file from GitHub
 url = "https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/5618e24a050665009706f13a395efac802815571/BBDD/SALUD%20MENTAL%20EN%20LA%20INDUSTRIA%20TECNOL%C3%93GICA%201.sqlite"
 response = requests.get(url)
-with open("saludmental1.sqlite", "wb") as f:
+with open("mentalhealthti.sqlite", "wb") as f:
     f.write(response.content)
 
+
+print(os.path.exists("mentalhealthti.sqlite"))
+print(os.access("mentalhealthti.sqlite", os.R_OK))
+
 try:
+    # Establish a connection to the database
+    conn = sqlite3.connect("mentalhealthti.sqlite")
+    print("Connected to database!")
+
+
+    cur = conn.cursor()
+    print("Cursor created!")
+
+
+    query = """YOUR_SQL_QUERY_HERE"""
+    print(f"Executing query: {query}")
     cur.execute(query)
-except sqlite3.ProgrammingError as e:
+    print("Query executed!")
+
+    results = cur.fetchall()
+    print("Results fetched!")
+
+    conn.close()
+    print("Connection closed!")
+
+except sqlite3.OperationalError as e:
     print(f"Error executing query: {e}")
+except sqlite3.Error as e:
+    print(f"Error connecting to database: {e}")
+except Exception as e:
+    print(f"Error: {e}")
 
 
 st.header("Consulta 1")
