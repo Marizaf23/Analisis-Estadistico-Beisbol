@@ -10,18 +10,44 @@ import plotly.express as px
 import requests
 import sqlite3
 
-# Descarga la base de datos desde GitHub
+import sqlite3
+import os
+
+# Download the database file from GitHub
 url = "https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/5618e24a050665009706f13a395efac802815571/BBDD/SALUD%20MENTAL%20EN%20LA%20INDUSTRIA%20TECNOL%C3%93GICA%201.sqlite"
 response = requests.get(url)
 with open("saludmental.sqlite", "wb") as f:
     f.write(response.content)
 
+# Check if the file exists and has correct permissions
+print(os.path.exists("saludmental.sqlite"))  # Should print True
+print(os.access("salusmental.sqlite", os.R_OK))  # Should print True
+
 try:
-    conn = sqlite3.connect("saludmental.sqlite")
+    # Establish a connection to the database
+    conn = sqlite3.connect("database.sqlite")
+    print("Connected to database!")
+
+    # Create a cursor object
     cur = conn.cursor()
-    # Execute your SQL query here
+    print("Cursor created!")
+
+    # Execute the SQL query
+    cur.execute("""YOUR_SQL_QUERY_HERE""")
+    print("Query executed!")
+
+    # Fetch the results
+    results = cur.fetchall()
+    print("Results fetched!")
+
+    # Close the connection
+    conn.close()
+    print("Connection closed!")
+
 except sqlite3.Error as e:
     print(f"Error connecting to database: {e}")
+except Exception as e:
+    print(f"Error: {e}")
 
 
 st.header("Consulta 1")
