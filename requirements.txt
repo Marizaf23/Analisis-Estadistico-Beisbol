@@ -7,3 +7,4 @@ plotly
 altair
 pywaffle
 plotly.express
+sqlite3
