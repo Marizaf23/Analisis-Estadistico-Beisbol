@@ -11,6 +11,8 @@ import requests
 import sqlite3
 import os
 
+st.title("SQL")
+
 # Download the database file from GitHub
 url = "https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/5618e24a050665009706f13a395efac802815571/BBDD/SALUD%20MENTAL%20EN%20LA%20INDUSTRIA%20TECNOL%C3%93GICA%201.sqlite"
 response = requests.get(url)
