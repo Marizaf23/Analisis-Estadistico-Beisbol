@@ -50,7 +50,7 @@ ax.pie(sizes, labels=labels, autopct=lambda p: '{:.0f}'.format(p* sum(sizes) / 1
 # Título del gráfico
 ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las Edades 20-28')
 
-st.plotly_chart(fig6_4, use_container_width=True)
+st.pyplot(fig6_4, use_container_width=True)
 
 st.write("Entre las personas de 20 a 28 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
 
@@ -78,7 +78,7 @@ ax.pie(sizes, labels=labels, autopct=lambda p: '{:.0f}'.format(p* sum(sizes) / 1
 # Título del gráfico
 ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las Edades 38-46')
 
-st.plotly_chart(fig6_5, use_container_width=True)
+st.pyplot(fig6_5, use_container_width=True)
 
 st.write("Entre las personas de 36 a 46 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
 
@@ -106,7 +106,7 @@ ax.pie(sizes, labels=labels, autopct=lambda p: '{:.0f}'.format(p* sum(sizes) / 1
 # Título del gráfico
 ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las Edades 47-55')
 
-st.plotly_chart(fig6_1, use_container_width=True)
+st.pyplot(fig6_1, use_container_width=True)
 
 st.write("""
     <p style="text-align: justify;">La afectación del tiempo laboral se distribuye de la siguiente manera:</p>
@@ -118,11 +118,9 @@ st.write("""
     </ul>
 """, unsafe_allow_html=True)
 
-
+# Datos
 data = [2, 2]  # example data
-total = sum(data)
 labels = ['1-25%', '51-75%']
-sizes = [float(d) / total * 100 for d in data]
 
 # Crear figura y axe
 fig6_2, ax = plt.subplots()
@@ -130,12 +128,12 @@ fig6_2, ax = plt.subplots()
 colores = ['#4d94ff', '#3385ff', '#66a3ff', '#0066ff']
 
 # Crear gráfico circular
-ax.pie(sizes, labels=labels, autopct='%1.1f%%', colors=colores)
+ax.pie(data, labels=labels, autopct=lambda p : '{:.0f}'.format(data[int(p/100*len(data))]), colors=colores)
 
 # Título del gráfico
 ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las Edades 56-65')
 
-st.plotly_chart(fig6_2, use_container_width=True)
+st.pyplot(fig6_2, use_container_width=True)
 
 st.write("Entre las personas de 56-65 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
 
