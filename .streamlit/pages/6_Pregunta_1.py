@@ -135,6 +135,15 @@ if option == 'Todos':
         fig_total2.set_size_inches(10, 4) 
         st.pyplot(fig_total2)
 
+        st.write("""
+            <p style="text-align: justify;">
+                <ul>
+                    <li>En la primera gráfica de waffle se ve representado el porcentaje de personas a través de los años de estudio con su respuesta a la pregunta de si tienen una enfermedad mental diagnosticada o no. Se puede observar con claridad que el porcentaje de personas con enfermedades mentales no varía mucho (52%-56%) y el porcentaje que va aumentando a través de los años es el de personas que no contestan la interrogante.</li>
+                    <li>En la segunda gráfica de waffle se ve representado el porcentaje de personas con antecedentes heredofamiliares a través de los años. El mayor porcentaje de personas tiene antecedentes heredofamiliares de enfermedades mentales. Esto podría estar relacionados directamente con la pregunta anterior.</li>
+                </ul>
+            </p>
+        """, unsafe_allow_html=True)
+
 elif option == '2016':
 
     #Crear la tabla bivariante con pandas
@@ -187,6 +196,15 @@ elif option == '2016':
 
     # Mostrar la figura en Streamlit
     st.plotly_chart(fig, use_container_width=True)
+
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>Como anteriormente se suponía, el mayor número de personas con enfermedades mentales tiene antecedentes heredofamiliares con 333 registros.</li>
+                <li>Aunque hay 473 personas con enfermedades mentales registradas en el 2016, no existe mucha diferencia entre esta cifra y la correspondiente a las personas que no tienen enfermedades mentales (366 respuestas).</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
 
 elif option == '2017':
     
@@ -251,6 +269,15 @@ elif option == '2017':
     # Mostrar la figura en Streamlit
     st.plotly_chart(fig2017_1, use_container_width=True)
 
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>En el 2017 se mantiene la situación con 163 personas en la industria tecnólogica con enfermedades mentales y antecedentes heredofamiliares.</li>
+                <li>Se puede evidenciar el aumento personas que no contestan la pregunta de enfermedades mentales . Esto se puede deber al estigma.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
+
 elif option == '2018':
     
     #Crear la tabla bivariante con pandas
@@ -313,6 +340,15 @@ elif option == '2018':
 
     # Mostrar la figura en Streamlit
     st.plotly_chart(fig2018_1, use_container_width=True)
+
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>Para el 2018 el mayor número de individuos en la industria tecnólogica tiene enfermedades mentales y antecedentes heredofamiliares con 113 respuestas, seguido por las 59 personas que no tienen antecedentes y a su vez no contestaron la pregunta.</li>
+                <li>Aquí la cantidad de personas que no respondieron la pregunta disminuye al igual que la cantidad que contestó la encuesta en comparación con los años anteriores. Sin embargo, la proporción sigue siendo muy alta pues casi un 50% no contestó la interrogante.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
 
 elif option == '2019':
 
@@ -377,4 +413,11 @@ elif option == '2019':
     # Mostrar la figura en Streamlit
     st.plotly_chart(fig2019_1, use_container_width=True)
 
-
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>El 2019 es el año con menor cantidad de personas en la industria tecnológica que contestaron la encuesta con una muestra de 204 individuos.</li>
+                <li>El número de personas que no tienen enfermedades mentales disminuye al mínimo con una sola respuesta. Ya observando la ocurrencia de todos los años en la investigación, se puede decir que normalmente las personas con enfermedades mentales diagnosticadas tienen algún antecedente heredofamiliar en este ámbito.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
