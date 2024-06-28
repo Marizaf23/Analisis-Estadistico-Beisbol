@@ -7,6 +7,20 @@ import streamlit as st
 import requests
 from io import StringIO
 import plotly.express as px
+import base64
+
+LOGO_IMAGE1 = "logos/UCV.png"
+LOGO_IMAGE2 = "logos/EECA.png"
+
+st.markdown(
+    f"""
+    <div style="background-color:#4991f5;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-30px;">
+        <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE1, "rb").read()).decode()}" style="height:40px;margin:20px;">
+        <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE2, "rb").read()).decode()}" style="height:40px;margin:20px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
