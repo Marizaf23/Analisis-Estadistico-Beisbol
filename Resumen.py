@@ -489,3 +489,49 @@ if option == 'No Diagnosticadas':
     st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
     
     st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
+
+st.header("Pregunta 5")
+st.subheader('¿Cuál es la disposición de los empleados de la industria tegnológica a a hora de hablar sobre su Enfermedad Mental?')
+
+st.header("Disposición Para Hablar")
+st.subheader("Disposición a la hora de hablar sobre tu salud mental con supervisor")
+
+st.subheader("2016")
+filtro_si_diagnosticado = df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'] == 'Si'
+pregunta_5_2016 = pd.crosstab(df_2016[filtro_si_diagnosticado]['Disposición de Hablar de Salud Mental con un Supervisor'], 
+                                df_2016[filtro_si_diagnosticado]['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], margins=True)
+pregunta_5_2016 = pregunta_5_2016.rename(columns={'Si': 'Diagnosticado con Enfermedad Mental'})
+pregunta_5_2016 = pregunta_5_2016.drop('All', axis=0).drop('All', axis=1)  # Elimina las filas y columnas "All"
+st.dataframe(pregunta_5_2016)
+
+st.subheader("Disposisión a la hora de hablar sobre tu salud mental con amigos y familiares")
+
+st.subheader("2016")
+
+filtro_si_diagnosticado = df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'] == 'Si'
+pregunta1_5_2016 = pd.crosstab(df_2016[filtro_si_diagnosticado]['Disposición para Hablar Sobre Enfermedad Mental con Familia/Amigos'], 
+                                df_2016[filtro_si_diagnosticado]['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], margins=True)
+pregunta1_5_2016 = pregunta1_5_2016.rename(columns={'Si': 'Diagnosticado con Enfermedad Mental'})
+pregunta1_5_2016 = pregunta1_5_2016.drop('All', axis=0).drop('All', axis=1)  # Eliminar fila y columna "All"
+
+# Seleccionar las filas que contienen "no dispuesto (a)" y "no estoy dispuesto (a)"
+no_dispuestos = pregunta1_5_2016.loc[['No estoy dispuesto(a)', 'No dispuesto(a)']]
+
+# Sumar las filas seleccionadas
+no_dispuestos_sum = no_dispuestos.sum()
+
+# Reemplazar las filas originales con la nueva fila sumada
+pregunta1_5_2016.loc['No Dispuesto'] = no_dispuestos_sum
+pregunta1_5_2016 = pregunta1_5_2016.drop(['No estoy dispuesto(a)', 'No dispuesto(a)'], axis=0)
+
+st.dataframe(pregunta1_5_2016)
+
+st.header("¿Crees que los miembros de su Equipo/Compañeros de trabajo te verían o reaccionarían de mala manera si revelas tener una enfermedad mental? (2016-2019)")
+st.subheader("2016")
+
+filtro_si_diagnosticado = df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'] == 'Si'
+preguntatrabajo_5_2016 = pd.crosstab(df_2016[filtro_si_diagnosticado]['¿Cree que los Miembros de su Equipo/Compañeros de Trabajo le Verían de Forma más Negativa Si Supieran que Padece una Enfermedad Mental?'], 
+                                df_2016[filtro_si_diagnosticado]['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], margins=True)
+preguntatrabajo_5_2016 = preguntatrabajo_5_2016.rename(columns={'Si': ''})
+preguntatrabajo_5_2016 = preguntatrabajo_5_2016.drop('All', axis=0).drop('All', axis=1)  # Elimina las filas y columnas "All"
+st.dataframe(preguntatrabajo_5_2016)
