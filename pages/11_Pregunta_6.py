@@ -57,12 +57,10 @@ st.write("Entre las personas de 20 a 28 años que afirman tener una enfermedad m
 
 st.write("""
     <p style="text-align: justify;">
-        <ul>
-            <li>Afectación leve (1-25%): 1 personas (14.28%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
-                <li>Afectación moderada (26-50%): 1 personas (14.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
+        <ul>Afectación leve (1-25%): 1 personas (14.28%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
+            <li>Afectación moderada (26-50%): 1 personas (14.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
             <li>Afectación significativa (51-75%): 2 personas (28.57%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.<li>
-        <li>Afectación grave (76-100%): 3 persona (42.85%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
-    </ul>
+        <ul>Afectación grave (76-100%): 3 persona (42.85%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
     </p>
     """, unsafe_allow_html=True)
 
@@ -86,12 +84,10 @@ st.write("Entre las personas de 36 a 46 años que afirman tener una enfermedad m
 
 st.write("""
     <p style="text-align: justify;">
-        <ul>
-            <li>Afectación leve (1-25%): 10 personas (71.42%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
-                <li>Afectación moderada (26-50%): 2 personas (12.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
+        <ul>Afectación leve (1-25%): 10 personas (71.42%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
+            <li>Afectación moderada (26-50%): 2 personas (12.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
             <li>Afectación significativa (51-75%): 1 personas (7.14%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.<li>
-        <li>Afectación grave (76-100%): 1 persona (7.14%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
-    </ul>
+        <ul>Afectación grave (76-100%): 1 persona (7.14%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
     </p>
     """, unsafe_allow_html=True)
 
@@ -113,12 +109,10 @@ st.plotly_chart(fig6_1, use_container_width=True)
 
 st.write("""
     <p style="text-align: justify;">
-        <ul>
-           <li>Afectación leve (1-25%): 6 personas (37.5%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
-                <li>Afectación moderada (26-50%): 3 personas (18.75%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.</li>
+        <ul>Afectación leve (1-25%): 6 personas (37.5%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
+            <li>Afectación moderada (26-50%): 3 personas (18.75%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.</li>
             <li>Afectación significativa (51-75%): 2 personas (12.5%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
-        <li>Afectación grave (76-100%): 1 persona (6.25%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.</li>
-    </ul>
+        <ul>Afectación grave (76-100%): 1 persona (6.25%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.</li>
     </p>
     """, unsafe_allow_html=True)
 
@@ -145,9 +139,7 @@ st.write("Entre las personas de 56-65 años que afirman tener una enfermedad men
 
 st.write("""
     <p style="text-align: justify;">
-        <ul>
            <li>Afectación leve (1-25%): 2 personas (50%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
             <li>Afectación significativa (51-75%): 2 personas (50%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
-        </ul>
-    </p>
+         </p>
     """, unsafe_allow_html=True)
