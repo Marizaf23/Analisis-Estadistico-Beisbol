@@ -19,6 +19,5 @@ La fuente utilizada para éste análisis provienen de la BBDD  “Mental Health 
 Para análizar los Estigmas sobre las Enfermedades Mentales, Problemas y la Falta de Conocimiento sobre el tema se han realizado tablas Bivariantes, diferentes gráficos, consultas SQLITE y visualizaciones de datos.
 
 # ¡Visitanos Aquí!
-https://mentalhealthanalysis20162019.streamlit.app/ 
-
+https://mentalhealth20162019.streamlit.app/
  
