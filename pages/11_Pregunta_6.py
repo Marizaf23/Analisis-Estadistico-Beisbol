@@ -70,35 +70,6 @@ labels = ['1-25%', '26-50%', '51-75%', '76-100%']
 sizes = [10, 2, 1, 1]
 
 # Crear figura y axe
-fig6_3, ax = plt.subplots()
-
-colores = ['#4d94ff', '#3385ff', '#66a3ff', '#0066ff']
-
-# Crear gráfico circular
-ax.pie(sizes, labels=labels, autopct=lambda p: '{:.0f}'.format(p* sum(sizes) / 100), colors=colores)
-
-# Título del gráfico
-ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las Edades 38-46')
-
-st.plotly_chart(fig6_3, use_container_width=True)
-
-st.write("Entre las personas de 29 a 37 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
-
-st.write("""
-    <p style="text-align: justify;">
-        <ul>
-            <li>Afectación leve (1-25%): 9 personas (37.5%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
-                <li>Afectación moderada (26-50%): 11 personas (45.83%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
-            <li>Afectación significativa (51-75%): 3 personas (12.5%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.<li>
-        <li>Afectación grave (76-100%): 1 persona (4.16%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
-    </ul>
-    </p>
-    """, unsafe_allow_html=True)
-
-labels = ['1-25%', '26-50%', '51-75%', '76-100%']
-sizes = [10, 2, 1, 1]
-
-# Crear figura y axe
 fig6_5, ax = plt.subplots()
 
 colores = ['#4d94ff', '#3385ff', '#66a3ff', '#0066ff']
