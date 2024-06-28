@@ -9,9 +9,39 @@ from io import StringIO
 from PIL import Image
 import plotly.graph_objects as go
 
+st.set_page_config(
+    page_title="Grupo 2",
+    page_icon=":guardsman:",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.streamlit.io/help',
+        'Report a bug': "https://github.com/streamlit/streamlit/issues",
+        'About': "Streamlit v1.13.0"
+    }
+)
 
-st.set_page_config(layout="wide")
-
+# Set the theme
+st.markdown(
+    """
+    <style>
+    :root {
+        --primary-color: #4991f5;
+    }
+    body {
+        color: #0a0a0a;
+        background-color: #f5f5f5;
+        font-family: serif;
+    }
+    .block-container {
+        border-left: 1px solid var(--primary-color);
+        border-right: 1px solid var(--primary-color);
+        border-top: 1px solid var(--primary-color);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
