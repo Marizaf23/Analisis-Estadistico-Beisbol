@@ -129,7 +129,7 @@ st.plotly_chart(figp5_1, use_container_width=True)
 st.subheader("Análisis")
 st.write("El gráfico indica la disposición para discutir temas de salud mental con un supervisor. En los últimos años, La mayoría de las personas no hablan de su salud mental con sus jefes, esto se debe a los estigmas explicados anteriormente. Los empleados tienden a sentir miedo al hablar sobre su condición, aunque hay número significativo que estaría dispuesto a hablar sobre ello pero con algunos en específico.")
 
-st.subheader("Disposisión a la hora de hablar sobre tu salud mental con amigos y familiares")
+st.subheader("Disposición a la hora de hablar sobre tu salud mental con amigos y familiares")
 
 st.subheader("2016")
 
@@ -365,7 +365,7 @@ figp5_3.update_traces(hovertemplate="<br>".join([
 
 st.plotly_chart(figp5_3, use_container_width=True)
 
-st.write("A continucación se observa un gráfico de barras en el cual se indican las respuestas de las personas diagosticadas con enfermedades mentales y si creen que su percepción externa sería diferente si dan a conocer que tienen una enfermedad mental. Como se puede observar para el año 2016 las personas no estarían seguras sobre la reaccion de sus compañeros.")
+st.write("A continuación se observa un gráfico de barras en el cual se indican las respuestas de las personas diagosticadas con enfermedades mentales y si creen que su percepción externa sería diferente si dan a conocer que tienen una enfermedad mental. Como se puede observar para el año 2016 las personas no estarían seguras sobre la reaccion de sus compañeros.")
 
 st.subheader("Gráfica 2017-2019")
 
