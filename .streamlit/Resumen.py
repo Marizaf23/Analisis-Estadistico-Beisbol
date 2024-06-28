@@ -249,7 +249,7 @@ elif option == '2019':
     st.dataframe(Pregunta2019_1, width=800, height=212)
 
 st.header("Pregunta 2")
-st.subheader("¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cuál es la enfermedad mental predominante en cada uno?, ¿Cuál es la enfermedad mental diagnosticada más común por rango de edad y cuál es el top 5 de enfermedades mentales más comunes por género?")
+st.subheader("¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cuál es la enfermedad mental predominante en cada uno? ¿Cuál es la enfermedad mental diagnosticada más común por rango de edad y cuál es el top 5 de enfermedades mentales más comunes por género?")
 st.subheader("Mapa General de EEUU con la Enfermedades Mentales Más Comunes")
 
 import plotly.express as px
