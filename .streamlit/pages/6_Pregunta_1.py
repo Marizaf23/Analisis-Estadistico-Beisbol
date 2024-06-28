@@ -273,7 +273,7 @@ elif option == '2017':
         <p style="text-align: justify;">
             <ul>
                 <li>En el 2017 se mantiene la situación con 163 personas en la industria tecnólogica con enfermedades mentales y antecedentes heredofamiliares.</li>
-                <li>Se puede evidenciar el aumento personas que no contestan la pregunta de enfermedades mentales . Esto se puede deber al estigma.</li>
+                <li>Se puede evidenciar el aumento personas que no contestan la pregunta de enfermedades mentales . Esto se podría deberse al estigma.</li>
             </ul>
         </p>
     """, unsafe_allow_html=True)
