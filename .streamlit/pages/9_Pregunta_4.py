@@ -98,7 +98,7 @@ if option == 'Diagnosticadas':
     # Ordenar por Total en orden descendente
     Trabajo2016_4_1 = Trabajo2016_4_1.sort_values(by='Número de Empleados', ascending=False)
 
-    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Font-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
+    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Front-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
 
     fig20164_3 = go.Figure(data=[
     go.Bar(name='Siempre trabajo remoto', y=Trabajo_Remoto, x=[17, 11, 9, 9, 10, 12, 10, 3, 9, 4, 0, 0], orientation='h', marker_color='rgb(0, 89, 179)'),
@@ -140,8 +140,8 @@ if option == 'Diagnosticadas':
     st.write("""
         <p style="text-align: justify;">
             <ul>
-                <li>En la industria tecnológica predomina el Trastorno de Ansiedad en todos los puestos de trabajo, siendo los más afectados los Programadores Font-End.</li>
-                <li>La mayoría de estos trabaja a distancia a veces. Los profesionales de Soporte o Ayuda trabajan siempre remotamente, a diferecia del Vendedor con TA que nunca a trabajado a distancia.</li>
+                <li>En la industria tecnológica predomina el Trastorno de Ansiedad en todos los puestos de trabajo, siendo los más afectados los Programadores Front-End.</li>
+                <li>La mayoría de estos trabaja a distancia a veces. Los profesionales de Soporte o Ayuda trabajan siempre remotamente, a diferencia del Vendedor con TA que nunca a trabajado a distancia.</li>
             </ul>
         </p>
     """, unsafe_allow_html=True)
@@ -196,7 +196,7 @@ if option == 'No Diagnosticadas':
     # Ordenar por Total en orden descendente
     Trabajo2016_4_2 = Trabajo2016_4_2.sort_values(by='Número de Empleados', ascending=False)
 
-    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Font-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
+    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Front-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
 
     fig20164_4 = go.Figure(data=[
     go.Bar(name='Siempre trabajo remoto', y=Trabajo_Remoto, x=[9, 7, 8, 6, 3, 9, 7, 2, 1, 0, 0], orientation='h', marker_color='rgb(77, 0, 153)'),
