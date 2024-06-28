@@ -8,6 +8,7 @@ import requests
 from io import StringIO
 from PIL import Image
 import plotly.graph_objects as go
+import base64
 
 st.set_page_config(
     page_title="Grupo 2",
@@ -21,7 +22,19 @@ st.set_page_config(
     }
 )
 
-# Set the theme
+LOGO_IMAGE1 = "Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/logos/EECA.jpeg"
+LOGO_IMAGE2 = "Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/logos/UCV.png"
+
+st.markdown(
+    f"""
+    <div style="background-color:#f9a01b;padding:10px;display:flex;justify-content:space-between;align-items:center;">
+        <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE1, "rb").read()).decode()}" style="height:40px;margin:10px;">
+        <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE2, "rb").read()).decode()}" style="height:40px;margin:10px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 st.markdown(
     """
     <style>
