@@ -269,13 +269,4 @@ if option == 'Disposición Para Hablar':
 
     st.write("En esta gráfica se muestra la disposición para hablar sobre enfermedades mentales con familliares y amigos. Ciertamente las personas tienden a sentirse cada vez más comodas para hablar sobre su salud mental con allegados a través de los años.")
 
-elif option == 'Reacción':
-    st.header("¿Crees que los miembros de su Equipo/Compañeros de trabajo te verían o reaccionarian de mala manera si revelas tener una enfermedad mental? esto para los 4 años de la encuesta.")
 
-    st.subheader("2016")
-    filtro_si_diagnosticado = df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'] == 'Si'
-    preguntatrabajo_5_2016 = pd.crosstab(df_2016[filtro_si_diagnosticado]['¿Cree que los Miembros de su Equipo/Compañeros de Trabajo le Verían de Forma más Negativa Si Supieran que Padece una Enfermedad Mental?'], 
-                                df_2016[filtro_si_diagnosticado]['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'], margins=True)
-    preguntatrabajo_5_2016 = preguntatrabajo_5_2016.rename(columns={'Si': ''})
-    preguntatrabajo_5_2016 = preguntatrabajo_5_2016.drop('All', axis=0).drop('All', axis=1)  # Elimina las filas y columnas "All"
-    st.dataframe(preguntatrabajo_5_2016)
