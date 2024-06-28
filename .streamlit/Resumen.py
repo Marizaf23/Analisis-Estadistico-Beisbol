@@ -11,7 +11,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="Grupo 2",
-    page_icon=":guardsman:",
+    page_icon=":brain:",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
