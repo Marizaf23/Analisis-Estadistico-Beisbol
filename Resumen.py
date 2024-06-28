@@ -536,6 +536,24 @@ preguntatrabajo_5_2016 = preguntatrabajo_5_2016.rename(columns={'Si': ''})
 preguntatrabajo_5_2016 = preguntatrabajo_5_2016.drop('All', axis=0).drop('All', axis=1)  # Elimina las filas y columnas "All"
 st.dataframe(preguntatrabajo_5_2016)
 
+st.header("Pregunta 6")
+st.subheader("¿El nivel de productividad de los trabajadores estadounidenses con enfermedades mentales diagnosticadas varía según su rango de edad?")
+
+labels = ['1-25%', '26-50%', '51-75%', '76-100%']
+sizes = [10, 2, 1, 1]
+
+# Crear figura y axe
+fig6_5, ax = plt.subplots()
+
+colores = ['#4d94ff', '#3385ff', '#66a3ff', '#0066ff']
+
+# Crear gráfico circular
+ax.pie(sizes, labels=labels, autopct=lambda p: '{:.0f}'.format(p* sum(sizes) / 100), colors=colores)
+
+# Título del gráfico
+ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las Edades 38-46')
+
+st.pyplot(fig6_5, use_container_width=True)
 
 st.header("Conclusión")
 st.write("""
