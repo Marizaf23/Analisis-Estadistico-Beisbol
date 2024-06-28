@@ -54,15 +54,15 @@ st.plotly_chart(fig6_4, use_container_width=True)
 
 st.write("Entre las personas de 20 a 28 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
 
-
 st.write("""
-    <p style="text-align: justify;">
-        <ul>Afectación leve (1-25%): 1 personas (14.28%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
-            <li>Afectación moderada (26-50%): 1 personas (14.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
-            <li>Afectación significativa (51-75%): 2 personas (28.57%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.<li>
-        <ul>Afectación grave (76-100%): 3 persona (42.85%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
-    </p>
-    """, unsafe_allow_html=True)
+    <p style="text-align: justify;">La afectación del tiempo laboral se distribuye de la siguiente manera:</p>
+    <ul style="text-align: justify;">
+        <li>Afectación leve (1-25%): 1 persona (14.28%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
+        <li>Afectación moderada (26-50%): 1 persona (14.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.</li>
+        <li>Afectación significativa (51-75%): 2 personas (28.57%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
+        <li>Afectación grave (76-100%): 3 personas (42.85%) indican una afectación grave, con un impacto en su tiempo laboral superior al 75%.</li>
+    </ul>
+""", unsafe_allow_html=True)
 
 labels = ['1-25%', '26-50%', '51-75%', '76-100%']
 sizes = [10, 2, 1, 1]
@@ -83,13 +83,14 @@ st.plotly_chart(fig6_5, use_container_width=True)
 st.write("Entre las personas de 36 a 46 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
 
 st.write("""
-    <p style="text-align: justify;">
-        <ul>Afectación leve (1-25%): 10 personas (71.42%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.<li>
-            <li>Afectación moderada (26-50%): 2 personas (12.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.<li>
-            <li>Afectación significativa (51-75%): 1 personas (7.14%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.<li>
-        <ul>Afectación grave (76-100%): 1 persona (7.14%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.<li>
-    </p>
-    """, unsafe_allow_html=True)
+    <p style="text-align: justify;">La afectación del tiempo laboral se distribuye de la siguiente manera:</p>
+    <ul style="text-align: justify;">
+        <li>Afectación leve (1-25%): 10 personas (71.42%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
+        <li>Afectación moderada (26-50%): 2 personas (12.28%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.</li>
+        <li>Afectación significativa (51-75%): 1 persona (7.14%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
+        <li>Afectación grave (76-100%): 1 persona (7.14%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.</li>
+    </ul>
+""", unsafe_allow_html=True)
 
 labels = ['1-25%', "26-50%", '51-75%', "76-100%"]
 sizes = [6, 3, 2, 1]
@@ -108,13 +109,14 @@ ax.set_title('Porcentaje de Tiempo Afectado por una Enfermedad Mental entre las 
 st.plotly_chart(fig6_1, use_container_width=True)
 
 st.write("""
-    <p style="text-align: justify;">
-        <ul>Afectación leve (1-25%): 6 personas (37.5%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
-            <li>Afectación moderada (26-50%): 3 personas (18.75%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.</li>
-            <li>Afectación significativa (51-75%): 2 personas (12.5%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
-        <ul>Afectación grave (76-100%): 1 persona (6.25%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.</li>
-    </p>
-    """, unsafe_allow_html=True)
+    <p style="text-align: justify;">La afectación del tiempo laboral se distribuye de la siguiente manera:</p>
+    <ul style="text-align: justify;">
+        <li>Afectación leve (1-25%): 6 personas (37.5%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
+        <li>Afectación moderada (26-50%): 3 personas (18.75%) indican que su enfermedad mental impacta su tiempo laboral en un rango moderado, entre 26% y 50%.</li>
+        <li>Afectación significativa (51-75%): 2 personas (12.5%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
+        <li>Afectación grave (76-100%): 1 persona (6.25%) indica una afectación grave, con un impacto en su tiempo laboral superior al 75%.</li>
+    </ul>
+""", unsafe_allow_html=True)
 
 
 data = [2, 2]  # example data
@@ -138,8 +140,8 @@ st.plotly_chart(fig6_2, use_container_width=True)
 st.write("Entre las personas de 56-65 años que afirman tener una enfermedad mental diagnosticada, se observa una distribución variable en cuanto al impacto de estas condiciones en su tiempo laboral:")
 
 st.write("""
-    <p style="text-align: justify;">
-           <li>Afectación leve (1-25%): 2 personas (50%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
-            <li>Afectación significativa (51-75%): 2 personas (50%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
-         </p>
-    """, unsafe_allow_html=True)
+    <ul style="text-align: justify;">
+        <li>Afectación leve (1-25%): 2 personas (50%) reportan que su enfermedad mental afecta su tiempo laboral en un rango bajo, entre 1% y 25%.</li>
+        <li>Afectación significativa (51-75%): 2 personas (50%) reportan una afectación significativa, con un impacto en su tiempo laboral entre 51% y 75%.</li>
+    </ul>
+""", unsafe_allow_html=True)
