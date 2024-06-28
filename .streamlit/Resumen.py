@@ -523,7 +523,7 @@ if option == 'No Diagnosticadas':
     st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
 
 st.header("Pregunta 5")
-st.subheader('¿Cuál es la disposición de los empleados de la industria tegnológica a a hora de hablar sobre su Enfermedad Mental?')
+st.subheader('¿Cuál es la disposición de los empleados de la industria tecnológica a a hora de hablar sobre su enfermedad mental y cómo creen que serían las reacciones externas?')
 
 st.header("Disposición Para Hablar")
 st.subheader("Disposición a la hora de hablar sobre tu salud mental con supervisor")
