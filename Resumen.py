@@ -504,7 +504,7 @@ pregunta_5_2016 = pregunta_5_2016.rename(columns={'Si': 'Diagnosticado con Enfer
 pregunta_5_2016 = pregunta_5_2016.drop('All', axis=0).drop('All', axis=1)  # Elimina las filas y columnas "All"
 st.dataframe(pregunta_5_2016)
 
-st.subheader("Disposisión a la hora de hablar sobre tu salud mental con amigos y familiares")
+st.subheader("Disposición a la hora de hablar sobre tu salud mental con amigos y familiares")
 
 st.subheader("2016")
 
