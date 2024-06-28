@@ -345,14 +345,9 @@ st.plotly_chart(figp2, use_container_width=True)
 st.header("Pregunta 3")
 st.subheader('Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad de empleados con enfermedades mentales? ¿Estas ofrecen algún beneficio o algún tipo de convenio?')
 
-# Crea un selectbox con las opciones
-if 'year_selectbox' not in st.session_state:
-    st.session_state.year_selectbox = '2016'
+option = st.selectbox('Encuesta:', ['1: 2016', '2: 2017', '3: 2018', '4: 2019']),
 
-option = st.selectbox('Año:', ['2016', '2017', '2018', '2019'], key='year_selectbox')
-st.session_state.year_selectbox = option
-
-if option == '2016':
+if option == '1: 2016':
     df1 = pd.DataFrame([["1-5", "3", "2"], ["6-25", "19", "9"], ["26-100", "50", "25"], ["100-500", "80", "21"], ["500-1000", "85", "8"], ["Más de 1000","85", "44"]],
                    columns = ["Tamaño de la Empresa", "Cantidad de Personas dentro de la Empresa con una Enfermedad mental diagnosticada", "Cantidad de Empleados con una Enfermedad Mental que saben de los Beneficios que ofrece la empresa para ellos"])
 
@@ -378,7 +373,7 @@ if option == '2016':
 
     st.plotly_chart(figp3_1, use_container_width=True)
 
-elif option == '2017':
+elif option == '2: 2017':
     df2 = pd.DataFrame ([["1-5", "7", "0"], ["6-25", "25", "4"], ["26-100", "46", "3"], ["100-500", "107", "37"], ["500-1000", "36", "11"], ["Más de 1000","88", "46"]],
                    columns = ["Tamaño de la Empresa", "Cantidad de Personas dentro de la Empresa con una Enfermedad mental diagnosticada", "Cantidad de Empleados con una Enfermedad Mental que saben de los Beneficios que ofrece la empresa para ellos"])
 
@@ -406,7 +401,7 @@ elif option == '2017':
 
     st.plotly_chart(figp3_2, use_container_width=True)
 
-elif option == '2018':
+elif option == '3: 2018':
     df3 = pd.DataFrame ([["1-5", "3", "1"], ["6-25", "24", "3"], ["26-100", "30", "8"], ["100-500", "44", "20"], ["500-1000", "31", "10"], ["Más de 1000","71", "35"]],
                    columns = ["Tamaño de la Empresa", "Cantidad de Personas dentro de la Empresa con una Enfermedad mental diagnosticada", "Cantidad de Empleados con una Enfermedad Mental que saben de los Beneficios que ofrece la empresa para ellos"])
 
@@ -434,7 +429,7 @@ elif option == '2018':
 
     st.plotly_chart(figp3_3, use_container_width=True)
 
-elif option == '2019':
+elif option == '4: 2019':
     df4 = pd.DataFrame ([["1-5", "3", "0"], ["6-25", "15", "3"], ["26-100", "21", "3"], ["100-500", "33", "11"], ["500-1000", "11", "3"], ["Más de 1000","48", "32"]],
                    columns = ["Tamaño de la Empresa", "Cantidad de Personas dentro de la Empresa con una Enfermedad mental diagnosticada", "Cantidad de Empleados con una Enfermedad Mental que saben de los Beneficios que ofrece la empresa para ellos"])
 
