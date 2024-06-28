@@ -148,6 +148,19 @@ elif option == '2018':
 
     st.plotly_chart(figp3_3, use_container_width=True)
 
+    st.write("""
+    <p style="text-align: justify;">
+        <ul>
+            <li>Empresas de 1-5 empleados: solo 3 empleados tenían una enfermedad mental diagnosticada, y ninguno conoce sobre los beneficios que ofrece la empresa.</li>
+                <li>Empresas de 6-25 empleados: Hay 15 empleados con una enfermedad mental diagnosticada, de esos 3 conocen de los beneficios que ofrece la empresa para ellos.</li>
+                    <li>Empresas de 26-100 empleados: Hay 21 Personas con una Enfermedad mental Diagnostica y de estos 3 conoce sobre los beneficios que ofrece la empresa.</li>
+                    <li>Empresas de 100-500 empleados: Es la segunda empresa que tiene más empleados con una enfermedad mental diagnostica con un total de 33 con una Enfermedad Mental y solo 11 personas conocen de los beneficios que tiene la empresa Diagnosticada.</li>
+                <li>Empresas de 500-1000 empleados: Hay 11 empleados con una enfermedad mental diagnosticada, de esos 3 conocen de los beneficios que ofrece la empresa para ellos.</li>
+            <li>Empresas de más de 1000 empleados: Es la empresa que tiene más empleados con una Enfermedad Mental Diagnosticada con una total 48 empleados, y más de la mitad de estos (32) conoce sobre los beneficios que ofrece la empresa. Esto podría deberse a recursos y estrategias de comunicación más robustas en empresas de mayor tamaño.</li>
+        </ul>
+    </p>
+    """, unsafe_allow_html=True)
+
 elif option == '2019':
     df4 = pd.DataFrame ([["1-5", "3", "0"], ["6-25", "15", "3"], ["26-100", "21", "3"], ["100-500", "33", "11"], ["500-1000", "11", "3"], ["Más de 1000","48", "32"]],
                    columns = ["Tamaño de la Empresa", "Cantidad de Personas dentro de la Empresa con una Enfermedad mental diagnosticada", "Cantidad de Empleados con una Enfermedad Mental que saben de los Beneficios que ofrece la empresa para ellos"])
