@@ -48,7 +48,7 @@ st.write("</ul>", unsafe_allow_html=True)
 st.write('<p style="text-align: justify;">Dentro de este marco de interrogantes, se desprenden los siguientes objetivos:</p>', unsafe_allow_html=True)
 
 st.subheader("Objetivo General") 
-st.write('<ul><li>Analizar las problemáticas y los estigmas de las enfermedades mentales  dentro de la industria tecnológica estadounidense en el año 2016.</li></ul>', unsafe_allow_html=True)
+st.write('<ul><li>Analizar las problemáticas y los estigmas de las enfermedades mentales dentro de la industria tecnológica estadounidense entre los años 2016 y 2019.</li></ul>', unsafe_allow_html=True)
 
 st.subheader("Objetivos Específicos")
 st.write("")
