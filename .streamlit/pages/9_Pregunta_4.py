@@ -34,7 +34,7 @@ df_2018 = load_csv_from_github(urls['2018'])
 df_2019 = load_csv_from_github(urls['2019'])
 
 
-# Contenido de la página 5
+
 st.header("Pregunta 4")
 st.subheader('¿Cuál es la enfermedad mental más común dentro de cada puesto de trabajo en la industria tecnológica estadounidense? ¿De este grupo cuántos trabajan remotamente?')
 
@@ -98,7 +98,7 @@ if option == 'Diagnosticadas':
     # Ordenar por Total en orden descendente
     Trabajo2016_4_1 = Trabajo2016_4_1.sort_values(by='Número de Empleados', ascending=False)
 
-    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Front-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
+    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Font-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
 
     fig20164_3 = go.Figure(data=[
     go.Bar(name='Siempre trabajo remoto', y=Trabajo_Remoto, x=[17, 11, 9, 9, 10, 12, 10, 3, 9, 4, 0, 0], orientation='h', marker_color='rgb(0, 89, 179)'),
@@ -114,11 +114,37 @@ if option == 'Diagnosticadas':
     st.dataframe(Enfermedades2016_4_1, width=1000, height=528, hide_index=True)
     st.plotly_chart(fig20164_1, use_container_width=True)
 
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>El top 3 de enfermedades mentales diagnosticadas en el 2016 es el Trastorno de Ansiedad con 229 empleados, seguido por el Trastorno del Estado de Ánimo con 166 y el Trastorno por Déficit de Atención e Hiperactividad con 19 respuestas.</li>
+                <li>Nota: Esta pregunta sólo se responderá para 2016 debido a que la variable de Enfermedades Mentales Diagnosticadas fue contestada unicamente ese año, al igual que Puesto de Trabajo.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
+
     st.dataframe(Trabajo2016_4_1, width=1000, height=458)
     st.plotly_chart(fig20164_3, use_container_width=True)
 
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>Los tres puestos de trabajo que más trabajan remotamente son los Programadores Back-End (17 personas), los Emprendedores (12 personas) y Supervisores y Líderes de Equipo (11 personas).</li>
+                <li>Sin embargo, para esta época el trabajo remoto iba en ascenso más no era tan común todo el tiempo. Hay trabajadores que rara vez podrán trabajar remotamente como los Vendedores o y el personal de Recursos Humanos.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
+
     st.dataframe(Pregunta4_1, width=1000, height=458, hide_index=True)
 
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>En la industria tecnológica predomina el Trastorno de Ansiedad en todos los puestos de trabajo, siendo los más afectados los Programadores Font-End.</li>
+                <li>La mayoría de estos trabaja a distancia a veces. Los profesionales de Soporte o Ayuda trabajan siempre remotamente, a diferecia del Vendedor con TA que nunca a trabajado a distancia.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
 
 if option == 'No Diagnosticadas':
     
@@ -170,7 +196,7 @@ if option == 'No Diagnosticadas':
     # Ordenar por Total en orden descendente
     Trabajo2016_4_2 = Trabajo2016_4_2.sort_values(by='Número de Empleados', ascending=False)
 
-    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Front-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
+    Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Font-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
 
     fig20164_4 = go.Figure(data=[
     go.Bar(name='Siempre trabajo remoto', y=Trabajo_Remoto, x=[9, 7, 8, 6, 3, 9, 7, 2, 1, 0, 0], orientation='h', marker_color='rgb(77, 0, 153)'),
@@ -186,9 +212,34 @@ if option == 'No Diagnosticadas':
     st.dataframe(Enfermedades2016_4_2, width=1000, height=422, hide_index=True)
     st.plotly_chart(fig20164_2, use_container_width=True)
 
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>El top 3 de enfermedades mentales no diagnosticadas en el 2016 es el Trastorno de Ansiedad con 108 empleados, seguido por el Trastorno del Estado de Ánimo con 49 y el Trastorno por Déficit de Atención e Hiperactividad con 8 respuestas. Cuando se refiere a Creencia o Enfermedad Mental No Diagnosticada quiere decir que la persona cree tener esta enfermedad y no ha sido formalmente diagnosticada por un especialista.</li>
+                <li>Nota: Esta pregunta sólo se responderá para 2016 debido a que la variable de Enfermedades Mentales No Diagnosticadas fue contestada unicamente ese año, al igual que Puesto de Trabajo.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
+
     st.dataframe(Trabajo2016_4_2, width=1000, height=422)
     st.plotly_chart(fig20164_4, use_container_width=True)
 
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>Los tres puestos de trabajo que más trabajan remotamente son los Emprendedores (9 personas), los Programadores Back-End (9 personas) y los DevOps/Administradores de Sistemas (8 personas).</li>
+                <li>La mayoría trabaja a distancia a cierta medida.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
+
     st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
     
-    
+    st.write("""
+        <p style="text-align: justify;">
+            <ul>
+                <li>Aquí vuelve a predominar el Trastorno de Ansiedad en casi los puestos de trabajo, siendo la excepción los Diseñadores y Vendedores que afirmaron tener Trastorno del Estado del Ánimo.</li>
+                <li>La mayoría de estos trabaja a distancia a veces. Los Emprendedores y Promotores de Desarrollo trabajan siempre remotamente.</li>
+            </ul>
+        </p>
+    """, unsafe_allow_html=True)
