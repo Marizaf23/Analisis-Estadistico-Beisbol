@@ -27,7 +27,7 @@ LOGO_IMAGE2 = "logos/EECA.png"
 
 st.markdown(
     f"""
-    <div style="background-color:#66b3ff;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-30px;">
+    <div style="background-color:#80bfff;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-30px;">
         <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE1, "rb").read()).decode()}" style="height:40px;margin:20px;">
         <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE2, "rb").read()).decode()}" style="height:40px;margin:20px;">
     </div>
