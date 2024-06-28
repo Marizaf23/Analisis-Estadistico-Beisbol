@@ -14,7 +14,7 @@ def inject_custom_css():
         """
         <style>
         .stApp {
-            background-color: #B3D1F8
+            background-color: #f0f2f6; /* Cambia el color a tu gusto */
         }
         </style>
         """,
@@ -23,6 +23,7 @@ def inject_custom_css():
 
 inject_custom_css()
 st.set_page_config(layout="wide")
+
 
 # Título de la aplicación
 st.title("Problemáticas y Estigmas de las Enfermedades Mentales en la Industria Tecnológica Estadounidense 2016-2019")
