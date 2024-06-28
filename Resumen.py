@@ -9,19 +9,7 @@ from io import StringIO
 from PIL import Image
 import plotly.graph_objects as go
 
-def inject_custom_css():
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background-color: #f0f2f6; /* Cambia el color a tu gusto */
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
 
-inject_custom_css()
 st.set_page_config(layout="wide")
 
 
