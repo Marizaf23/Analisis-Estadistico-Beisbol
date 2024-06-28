@@ -10,6 +10,21 @@ import plotly.express as px
 import requests
 import sqlite3
 import os
+import base64
+
+LOGO_IMAGE1 = "logos/UCV.png"
+LOGO_IMAGE2 = "logos/EECA.png"
+
+st.markdown(
+    f"""
+    <div style="background-color:#80bfff;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-30px;">
+        <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE1, "rb").read()).decode()}" style="height:40px;margin:30px;">
+        <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE2, "rb").read()).decode()}" style="height:40px;margin:30px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
 st.title("SQL")
 
@@ -19,16 +34,16 @@ import os
 # Download the database file from GitHub
 url = "https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/5618e24a050665009706f13a395efac802815571/BBDD/SALUD%20MENTAL%20EN%20LA%20INDUSTRIA%20TECNOL%C3%93GICA%201.sqlite"
 response = requests.get(url)
-with open("mentalhealthti.sqlite", "wb") as f:
+with open("mentalhealthti1.sqlite", "wb") as f:
     f.write(response.content)
 
 
-print(os.path.exists("mentalhealthti.sqlite"))
+print(os.path.exists("mentalhealthti1.sqlite"))
 print(os.access("mentalhealthti.sqlite", os.R_OK))
 
 try:
     # Establish a connection to the database
-    conn = sqlite3.connect("mentalhealthti.sqlite")
+    conn = sqlite3.connect("mentalhealthti1.sqlite")
     print("Connected to database!")
 
 
