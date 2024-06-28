@@ -375,7 +375,7 @@ st.write("Se observa en la siguiente gráfica el mapa de EEUU separado en estado
 st.plotly_chart(figp2, use_container_width=True)
 
 st.header("Pregunta 3")
-st.subheader('Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad de empleados con enfermedades mentales? ¿Estas ofrecen algún beneficio o algún tipo de convenio?')
+st.subheader('Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad con enfermedades mentales? ¿Los empleados conocen los beneficios que ofrece la empresa?')
 
 st.subheader("2016")
 df3 = pd.DataFrame ([["1-5", "3", "1"], ["6-25", "24", "3"], ["26-100", "30", "8"], ["100-500", "44", "20"], ["500-1000", "31", "10"], ["Más de 1000","71", "35"]],
