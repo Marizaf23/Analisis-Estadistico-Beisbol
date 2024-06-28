@@ -266,7 +266,7 @@ st.plotly_chart(figp5_2, use_container_width=True)
 
 st.write("En esta gráfica se muestra la disposición para hablar sobre enfermedades mentales con familliares y amigos. Ciertamente las personas tienden a sentirse cada vez más comodas para hablar sobre su salud mental con allegados a través de los años.")
 
-st.header("¿Crees que los miembros de su Equipo/Compañeros de trabajo te verían o reaccionarían de mala manera si revelas tener una enfermedad mental? (2016-2019)")
+st.subheader("¿Crees que los miembros de su Equipo/Compañeros de trabajo te verían o reaccionarían de mala manera si revelas tener una enfermedad mental? (2016-2019)")
 st.subheader("2016")
 
 filtro_si_diagnosticado = df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'] == 'Si'
