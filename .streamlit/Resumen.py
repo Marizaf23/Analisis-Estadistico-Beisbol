@@ -22,12 +22,12 @@ st.set_page_config(
     }
 )
 
-LOGO_IMAGE1 = "logos/EECA.jpeg"
-LOGO_IMAGE2 = "logos/UCV.png"
+LOGO_IMAGE1 = "logos/UCV.png"
+LOGO_IMAGE2 = "logos/EECA.png"
 
 st.markdown(
     f"""
-    <div style="background-color:#0000b3;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-20px;">
+    <div style="background-color:#0000b3;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-30px;">
         <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE1, "rb").read()).decode()}" style="height:40px;margin:10px;">
         <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE2, "rb").read()).decode()}" style="height:40px;margin:10px;">
     </div>
