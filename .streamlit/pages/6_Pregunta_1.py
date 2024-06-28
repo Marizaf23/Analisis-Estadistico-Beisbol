@@ -139,7 +139,7 @@ if option == 'Todos':
             <p style="text-align: justify;">
                 <ul>
                     <li>En la primera gráfica de waffle se ve representado el porcentaje de personas a través de los años y su respuesta a la pregunta de si tienen una enfermedad mental diagnosticada o no. Se puede observar con claridad que el porcentaje de personas con enfermedades mentales no varía mucho (52%-56%) y el porcentaje que va aumentando a través de los años es el de personas que no contestan la interrogante.</li>
-                    <li>En la segunda gráfica de waffle se ve representado el porcentaje de personas con antecedentes heredofamiliares a través de los años. El mayor porcentaje de personas tiene antecedentes heredofamiliares de enfermedades mentales. Esto podría estar relacionados directamente con la pregunta anterior.</li>
+                    <li>En la segunda gráfica de waffle se ve representado el porcentaje de personas con antecedentes heredofamiliares a través de los años. El mayor porcentaje de personas tiene antecedentes heredofamiliares de enfermedades mentales. Esto podría estar directamente relacionado con la pregunta anterior.</li>
                 </ul>
             </p>
         """, unsafe_allow_html=True)
