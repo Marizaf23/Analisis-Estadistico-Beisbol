@@ -129,7 +129,7 @@ if option == 'Diagnosticadas':
     st.write("""
         <p style="text-align: justify;">
             <ul>
-                <li>Los tres puestos de trabajo que más trabajan remotamente son los Programadores Back-End (17 personas), los Emprendedores (12 personas) y Supervisores y Líderes de Equipo (11 personas).</li>
+                <li>Los tres puestos que más trabajan remotamente son los Programadores Back-End (17 personas), los Emprendedores (12 personas) y Supervisores y Líderes de Equipo (11 personas).</li>
                 <li>Sin embargo, para esta época el trabajo remoto iba en ascenso más no era tan común todo el tiempo. Hay trabajadores que rara vez podrán trabajar remotamente como los Vendedores o y el personal de Recursos Humanos.</li>
             </ul>
         </p>
@@ -227,7 +227,7 @@ if option == 'No Diagnosticadas':
     st.write("""
         <p style="text-align: justify;">
             <ul>
-                <li>Los tres puestos de trabajo que más trabajan remotamente son los Emprendedores (9 personas), los Programadores Back-End (9 personas) y los DevOps/Administradores de Sistemas (8 personas).</li>
+                <li>Los tres puestos que más trabajan remotamente son los Emprendedores (9 personas), los Programadores Back-End (9 personas) y los DevOps/Administradores de Sistemas (8 personas).</li>
                 <li>La mayoría trabaja a distancia a cierta medida.</li>
             </ul>
         </p>
