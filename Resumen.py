@@ -342,11 +342,11 @@ st.write("Se observa en la siguiente gráfica el mapa de EEUU separado en estado
 
 st.plotly_chart(figp2, use_container_width=True)
 
-# Crea un selectbox con las opciones
-option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
-
 st.header("Pregunta 3")
 st.subheader('Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad de empleados con enfermedades mentales? ¿Estas ofrecen algún beneficio o algún tipo de convenio?')
+
+# Crea un selectbox con las opciones
+option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'], key='year_selectbox')
 
 if option == '2016':
     df1 = pd.DataFrame([["1-5", "3", "2"], ["6-25", "19", "9"], ["26-100", "50", "25"], ["100-500", "80", "21"], ["500-1000", "85", "8"], ["Más de 1000","85", "44"]],
