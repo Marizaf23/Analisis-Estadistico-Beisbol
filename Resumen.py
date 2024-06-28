@@ -411,12 +411,6 @@ if option == 'Diagnosticadas':
     'Trastorno de Ansiedad (Genralizado, Social, Fobia, etc.)': 'Trastorno de Ansiedad (Generalizado, Social, Fobia, etc.)'}
 
     Enfermedades2016_4_1['Enfermedades Mentales Diagnosticadas'] = Enfermedades2016_4_1['Enfermedades Mentales Diagnosticadas'].replace(correcciones)
-
-    fig20164_1 = px.bar(Enfermedades2016_4_1, x='Abreviatura', y='Número de Empleados', 
-             title='Enfermedades Mentales Diagnosticadas',
-             labels={'Abreviatura': 'Diagnóstico', 'Número de Empleados': 'Número de Empleados'},
-             color='Abreviatura', color_discrete_sequence=['#004080', '#004d99', '#0059b3', '#0066cc', '#0073e6', '#0080ff', '#1a8cff', '#3399ff', '#4da6ff', '#66b3ff', '#80bfff', '#99ccff'],
-             hover_name='Enfermedades Mentales Diagnosticadas')
     
     # Contar la frecuencia de cada puesto de trabajo
     Trabajo2016_4_1 = df_2016_filtrado_1['Puesto de Trabajo'].value_counts().to_frame('Cantidad de Empleados')
@@ -438,22 +432,9 @@ if option == 'Diagnosticadas':
 
     Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Front-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
 
-    fig20164_3 = go.Figure(data=[
-    go.Bar(name='Siempre trabajo remoto', y=Trabajo_Remoto, x=[17, 11, 9, 9, 10, 12, 10, 3, 9, 4, 0, 0], orientation='h', marker_color='rgb(0, 89, 179)'),
-    go.Bar(name='A veces trabajo remoto', y=Trabajo_Remoto, x=[57, 34, 26, 27, 25, 13, 11, 14, 8, 8, 2, 0], orientation='h', marker_color='rgb(0, 128, 255)'),
-    go.Bar(name='Nunca trabajo remoto', y=Trabajo_Remoto, x=[23, 9, 11, 8, 5, 3, 1, 2, 2, 3, 1, 1], orientation='h', marker_color='rgb(102, 179, 255)')
-    ])
-
-    fig20164_3.update_layout(barmode='stack',
-                  margin=dict(l=200),
-                  title=dict(text='Distribución de Puestos de Trabajo Según Trabajo Remoto (Diagnóstico)',
-                             font=dict(size=18)))
-
     st.dataframe(Enfermedades2016_4_1, width=1000, height=528, hide_index=True)
-    st.plotly_chart(fig20164_1, use_container_width=True)
 
     st.dataframe(Trabajo2016_4_1, width=1000, height=458)
-    st.plotly_chart(fig20164_3, use_container_width=True)
 
     st.dataframe(Pregunta4_1, width=1000, height=458, hide_index=True)
 
@@ -484,13 +465,6 @@ if option == 'No Diagnosticadas':
     Enfermedades2016_4_2['Abreviatura'] = ['TA', 'TD/TB', 'TDAH', 'TCS', 'TP', 'TEPT', 'TOC', 'DPP/A', 'SA', 'TEA', 'TCA']
     Enfermedades2016_4_2 = Enfermedades2016_4_2.loc[:, ['Abreviatura', 'Enfermedades Mentales No Diagnosticadas', 'Número de Empleados']]
 
-    fig20164_2 = px.bar(Enfermedades2016_4_2, x='Abreviatura', y='Número de Empleados', 
-             title='Enfermedades Mentales No Diagnosticadas',
-             labels={'Abreviatura': 'Creencia', 'Número de Empleados': 'Número de Empleados'},
-             color='Abreviatura', 
-             color_discrete_sequence=['#400080', '#4d0099', '#5900b3', '#6600cc', '#7300e6', '#8000ff', '#8c1aff', '#9933ff', '#a64dff', '#b366ff', '#bf80ff'],
-             hover_name='Enfermedades Mentales No Diagnosticadas')
-    
     Trabajo2016_4_2 = df_2016_filtrado_2['Puesto de Trabajo'].value_counts().to_frame('Cantidad de Empleados')
 
     # Pivot table para contar trabajo remoto
@@ -510,22 +484,7 @@ if option == 'No Diagnosticadas':
 
     Trabajo_Remoto = ['Programador(a) Back-End', 'Programador(a) Front-End', 'Supervisor(a)/Líder de Equipo', 'Director(a) Ejecutivo', 'Promotor(a) de Desarrollo', 'Administrador(a) de Sistemas', 'Soporte o Ayuda', 'Diseñador(a)', 'Emprendedor(a)', 'Otros', 'Vendedor(a)', 'Recursos Humanos']
 
-    fig20164_4 = go.Figure(data=[
-    go.Bar(name='Siempre trabajo remoto', y=Trabajo_Remoto, x=[9, 7, 8, 6, 3, 9, 7, 2, 1, 0, 0], orientation='h', marker_color='rgb(77, 0, 153)'),
-    go.Bar(name='A veces trabajo remoto', y=Trabajo_Remoto, x=[21, 18, 15, 8, 10, 5, 1, 2, 3, 1, 1], orientation='h', marker_color='rgb(153, 51, 255)'),
-    go.Bar(name='Nunca trabajo remoto', y=Trabajo_Remoto, x=[9, 9, 4, 7, 6, 1, 1, 2, 0, 0, 0], orientation='h', marker_color='rgb(191, 128, 255)')
-    ])
-
-    fig20164_4.update_layout(barmode='stack',
-                  margin=dict(l=200),
-                  title=dict(text='Distribución de Puestos de Trabajo Según Trabajo Remoto (Creencia)',
-                             font=dict(size=18)))
-    
-    st.dataframe(Enfermedades2016_4_2, width=1000, height=422, hide_index=True)
-    st.plotly_chart(fig20164_2, use_container_width=True)
-
     st.dataframe(Trabajo2016_4_2, width=1000, height=422)
-    st.plotly_chart(fig20164_4, use_container_width=True)
 
     st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
     
