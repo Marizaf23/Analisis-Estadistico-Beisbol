@@ -27,7 +27,7 @@ LOGO_IMAGE2 = "logos/UCV.png"
 
 st.markdown(
     f"""
-    <div style="background-color:#f9a01b;padding:10px;display:flex;justify-content:space-between;align-items:center;">
+    <div style="background-color:#0000b3;padding:10px;display:flex;justify-content:space-between;align-items:center;margin-top:-20px;">
         <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE1, "rb").read()).decode()}" style="height:40px;margin:10px;">
         <img src="data:image/png;base64,{base64.b64encode(open(LOGO_IMAGE2, "rb").read()).decode()}" style="height:40px;margin:10px;">
     </div>
