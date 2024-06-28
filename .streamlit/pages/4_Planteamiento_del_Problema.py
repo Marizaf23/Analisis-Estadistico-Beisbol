@@ -33,8 +33,8 @@ st.write("")
 
 objectives = [
     "¿Cuántas personas en la industria tecnológica estadounidense tienen una enfermedad mental diagnosticada y dentro de este grupo, existe algún historial familiar?",
-    "¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cual es la enfermedad mental predominante en cada uno?",
-    "Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad de empleados con enfermedades mentales? ¿Estas ofrecen algún beneficio o algún tipo de convenio?",
+    "¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cuál es la enfermedad mental predominante en cada uno?, ¿Cuál es la enfermedad mental diagnosticada más común por rango de edad y cuál es el top 5 de enfermedades mentales más comunes por género?",
+    "Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad con enfermedades mentales? ¿Los empleados conocen los beneficios que ofrece la empresa?",
     "¿Cuál es la enfermedad mental más común dentro de cada puesto de trabajo en la industria tecnológica estadounidense? ¿De este grupo cuántos son su propio jefe o trabajan remotamente?",
     "¿Qué disposición tienen los empleados de la industria tecnológica a la hora de hablar sobre su enfermedad mental?",
     "¿El nivel de productividad de los trabajadores estadounidenses con enfermedades mentales diagnosticadas varía según su rango de edad?"

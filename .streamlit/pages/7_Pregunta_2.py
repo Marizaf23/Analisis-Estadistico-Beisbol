@@ -36,7 +36,7 @@ df_2019 = load_csv_from_github(urls['2019'])
 
 # Contenido de la página 5
 st.header("Pregunta 2")
-st.subheader('"¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cuál es la enfermedad mental predominante en cada uno?"')
+st.subheader('¿Cuáles son los 5 estados con mayor registro de enfermedades mentales diagnosticadas y cuál es la enfermedad mental predominante en cada uno?, ¿Cuál es la enfermedad mental diagnosticada más común por rango de edad y cuál es el top 5 de enfermedades mentales más comunes por género?')
 
 # Crea un selectbox con las opciones
 option = st.selectbox('EEUU:', ['General','Estados'])
