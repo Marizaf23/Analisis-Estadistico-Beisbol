@@ -85,7 +85,7 @@ dataframes = [
     Pregunta_5_2017.reset_index(),
     Pregunta_5_2018.reset_index(),
     Pregunta_5_2019.reset_index(),
-    ]
+]
 
 # Crear la lista de nombres
 frames = []
@@ -98,11 +98,11 @@ for i, df in enumerate(dataframes):
         name=f'frame{i}',
         layout=go.Layout(title=f'Año {2016 + i}')
     )
-frames.append(frame)
+    frames.append(frame)
 
 # Crear la figura inicial
 figp5_1 = go.Figure(
-data=[go.Bar(x=dataframes[0]['index'], y=dataframes[0]['Diagnosticado con Enfermedad Mental'], 
+    data=[go.Bar(x=dataframes[0]['index'], y=dataframes[0]['Diagnosticado con Enfermedad Mental'], 
                  name='Año 2016', 
                  marker=dict(color='rgba(0, 0, 255, 0.8)'),  # degradado de azul
                  orientation='v')],
@@ -115,15 +115,14 @@ data=[go.Bar(x=dataframes[0]['index'], y=dataframes[0]['Diagnosticado con Enferm
                 type="buttons",
                 direction="down",
                 buttons=list([
-                        dict(label="Play", method="animate", args=[None, {"frame": {"duration": 7000, "fromcurrent": True}, "transition": {"duration": 500}}]),
-                        dict(label="Pause", method="animate", args=[[None], {"frame": {"duration": 0, "fromcurrent": True}, "transition": {"duration": 0}}]),
-                        dict(label="Restart", method="animate", args=[None, {"frame": {"duration": 0, "fromcurrent": False}, "transition": {"duration": 0}}])
-                        ]),
-                    )
-                ]
+                    dict(label="Play", method="animate", args=[None, {"frame": {"duration": 7000, "fromcurrent": True}, "transition": {"duration": 500}}]),
+                    dict(label="Pause", method="animate", args=[[None], {"frame": {"duration": 0, "fromcurrent": True}, "transition": {"duration": 0}}]),
+                    dict(label="Restart", method="animate", args=[None, {"frame": {"duration": 0, "fromcurrent": False}, "transition": {"duration": 0}}])
+                ]),
             )
-        )
-
+        ]
+    )
+)
 figp5_1.frames = frames
 st.plotly_chart(figp5_1, use_container_width=True)
 
@@ -223,27 +222,28 @@ dataframes = [
     Pregunta2_5_2017.reset_index(),
     Pregunta3_5_2018.reset_index(),
     Pregunta4_5_2019.reset_index(),
-    ]
+]
 
 
 for i, df in enumerate(dataframes):
     frame = go.Frame(
-            data=[go.Bar(x=df['index'], y=df['Diagnosticado con Enfermedad Mental'], 
+        data=[go.Bar(x=df['index'], y=df['Diagnosticado con Enfermedad Mental'], 
                      name=f'Año {2016 + i}', 
                      marker=dict(color=f'rgba(128, 0, {255 - i*64}, 0.8)'),  # degradado de morado
                      orientation='v')],
-            name=f'frame{i}',
+        name=f'frame{i}',
         layout=go.Layout(title=f'Año {2016 + i}')
-        )
-frames.append(frame)
+    )
+    frames.append(frame)
 
+#...
 
 figp5_2 = go.Figure(
     data=[go.Bar(x=dataframes[0]['index'], y=dataframes[0]['Diagnosticado con Enfermedad Mental'], 
                  name='Año 2016', 
                  marker=dict(color='rgba(128, 0, 255, 0.8)'),  # degradado de morado
                  orientation='v')],
-layout=go.Layout(
+    layout=go.Layout(
         title='Disposición para Hablar Sobre Enfermedad Mental con Familia/Amigos',
         xaxis=dict(title='Respuestas'),
         yaxis=dict(title='Cantidad'),
@@ -256,7 +256,7 @@ layout=go.Layout(
                     dict(label="Pause", method="animate", args=[[None], {"frame": {"duration": 0, "fromcurrent": True}, "transition": {"duration": 0}}]),
                     dict(label="Restart", method="animate", args=[None, {"frame": {"duration": 0, "fromcurrent": False}, "transition": {"duration": 0}}])
                 ]),
-            )    
+            )
         ]
     )
 )
