@@ -22,8 +22,8 @@ st.set_page_config(
     }
 )
 
-LOGO_IMAGE1 = "https://github.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/blob/64b932c5bd702a06834ec2be831be92a3696ad90/logos/EECA.jpeg"
-LOGO_IMAGE2 = "https://github.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/blob/64b932c5bd702a06834ec2be831be92a3696ad90/logos/UCV.png"
+LOGO_IMAGE1 = "logos/EECA.jpeg"
+LOGO_IMAGE2 = "logos/UCV.png"
 
 st.markdown(
     f"""
