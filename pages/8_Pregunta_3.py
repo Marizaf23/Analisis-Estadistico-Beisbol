@@ -33,12 +33,11 @@ df_2017 = load_csv_from_github(urls['2017'])
 df_2018 = load_csv_from_github(urls['2018'])
 df_2019 = load_csv_from_github(urls['2019'])
 
-st.subheader('Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad de empleados con enfermedades mentales? ¿Estas ofrecen algún beneficio o algún tipo de convenio?')
-
 # Crea un selectbox con las opciones
 option = st.selectbox('Año de Encuesta:', ['2016', '2017', '2018', '2019'])
 
 st.header("Pregunta 3")
+st.subheader('Según la cantidad de empleados en las empresas tecnológicas ¿Cuál tiene la mayor cantidad de empleados con enfermedades mentales? ¿Estas ofrecen algún beneficio o algún tipo de convenio?')
 
 if option == '2016':
     df1 = pd.DataFrame([["1-5", "3", "2"], ["6-25", "19", "9"], ["26-100", "50", "25"], ["100-500", "80", "21"], ["500-1000", "85", "8"], ["Más de 1000","85", "44"]],
