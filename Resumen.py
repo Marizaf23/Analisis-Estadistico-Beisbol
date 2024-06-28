@@ -488,4 +488,4 @@ if option == 'No Diagnosticadas':
 
     st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
     
-    
+    st.dataframe(Pregunta4_2, width=1000, height=422, hide_index=True)
