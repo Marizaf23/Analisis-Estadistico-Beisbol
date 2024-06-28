@@ -526,7 +526,7 @@ pregunta1_5_2016 = pregunta1_5_2016.drop(['No estoy dispuesto(a)', 'No dispuesto
 
 st.dataframe(pregunta1_5_2016)
 
-st.header("¿Crees que los miembros de su Equipo/Compañeros de trabajo te verían o reaccionarían de mala manera si revelas tener una enfermedad mental? (2016-2019)")
+st.subheaderheader("¿Crees que los miembros de su Equipo/Compañeros de trabajo te verían o reaccionarían de mala manera si revelas tener una enfermedad mental? (2016-2019)")
 st.subheader("2016")
 
 filtro_si_diagnosticado = df_2016['¿Alguna Vez Has Sido Diagnosticado con una Enfermedad Mental?'] == 'Si'
