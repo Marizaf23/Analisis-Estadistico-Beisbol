@@ -9,20 +9,19 @@ from io import StringIO
 from PIL import Image
 import plotly.graph_objects as go
 
-def set_bg_hack_url():
-    st.markdown( 
-          f""" 
-          <style> 
-          .stApp {{ 
-              background: url("https://raw.githubusercontent.com/Marizaf23/Analisis-Estadistico-Salud-Mental-Tecnologia/main/logos/fondo%20Streamlit.jpg"); 
-              background-size: cover 
-          }} 
-          </style> 
-          """, 
-          unsafe_allow_html=True 
-      )
-    
-set_bg_hack_url()
+def inject_custom_css():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-color: #B3D1F8
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+inject_custom_css()
 st.set_page_config(layout="wide")
 
 # Título de la aplicación
