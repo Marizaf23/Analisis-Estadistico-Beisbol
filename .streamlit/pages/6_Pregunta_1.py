@@ -344,7 +344,7 @@ elif option == '2018':
     st.write("""
         <p style="text-align: justify;">
             <ul>
-                <li>Para el 2018 el mayor número de individuos en la industria tecnólogica tiene enfermedades mentales y antecedentes heredofamiliares con 113 respuestas, seguido por las 59 personas que no tienen antecedentes y a su vez no contestaron la pregunta.</li>
+                <li>Para el 2018, el mayor número de individuos en la industria tecnólogica tiene enfermedades mentales y antecedentes heredofamiliares con 113 respuestas, seguido por las 59 personas que no tienen antecedentes y a su vez no contestaron la pregunta.</li>
                 <li>Aquí la cantidad de personas que no respondieron la pregunta disminuye al igual que la cantidad que contestó la encuesta en comparación con los años anteriores. Sin embargo, la proporción sigue siendo muy alta pues casi un 50% no contestó la interrogante.</li>
             </ul>
         </p>
