@@ -129,8 +129,8 @@ if option == 'Diagnosticadas':
     st.write("""
         <p style="text-align: justify;">
             <ul>
-                <li>Los tres puestos que más trabajan remotamente son los Programadores Back-End (17 personas), los Emprendedores (12 personas) y Supervisores y Líderes de Equipo (11 personas).</li>
-                <li>Sin embargo, para esta época el trabajo remoto iba en ascenso más no era tan común todo el tiempo. Hay trabajadores que rara vez podrán trabajar remotamente como los Vendedores o y el personal de Recursos Humanos.</li>
+                <li>Los tres puestos que más trabajan remotamente son los Programadores Back-End (17 personas), los Emprendedores (12 personas), Supervisores y Líderes de Equipo (11 personas).</li>
+                <li>Sin embargo, para esta época el trabajo remoto iba en ascenso más no era tan común todo el tiempo. Hay trabajadores que rara vez podrán trabajar remotamente como los Vendedores y el personal de Recursos Humanos.</li>
             </ul>
         </p>
     """, unsafe_allow_html=True)
