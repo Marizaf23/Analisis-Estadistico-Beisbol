@@ -151,12 +151,12 @@ elif option == '2018':
     st.write("""
     <p style="text-align: justify;">
         <ul>
-            <li>Empresas de 1-5 empleados: solo 3 empleados tenían una enfermedad mental diagnosticada, y ninguno conoce sobre los beneficios que ofrece la empresa.</li>
-                <li>Empresas de 6-25 empleados: Hay 15 empleados con una enfermedad mental diagnosticada, de esos 3 conocen de los beneficios que ofrece la empresa para ellos.</li>
-                    <li>Empresas de 26-100 empleados: Hay 21 Personas con una Enfermedad mental Diagnostica y de estos 3 conoce sobre los beneficios que ofrece la empresa.</li>
-                    <li>Empresas de 100-500 empleados: Es la segunda empresa que tiene más empleados con una enfermedad mental diagnostica con un total de 33 con una Enfermedad Mental y solo 11 personas conocen de los beneficios que tiene la empresa Diagnosticada.</li>
-                <li>Empresas de 500-1000 empleados: Hay 11 empleados con una enfermedad mental diagnosticada, de esos 3 conocen de los beneficios que ofrece la empresa para ellos.</li>
-            <li>Empresas de más de 1000 empleados: Es la empresa que tiene más empleados con una Enfermedad Mental Diagnosticada con una total 48 empleados, y más de la mitad de estos (32) conoce sobre los beneficios que ofrece la empresa. Esto podría deberse a recursos y estrategias de comunicación más robustas en empresas de mayor tamaño.</li>
+            <li>Empresas de 1-5 empleados: solo 3 empleados tenían una enfermedad mental diagnosticada, y solo 1 de ellos conoce los beneficios que ofrece la empresa para este tipo de casos.</li>
+                <li>Empresas de 6-25 empleados: Hay 24 empleados con una enfermedad mental diagnosticada, de esos 3 conocen de los beneficios que ofrece la empresa para ellos.</li>
+                    <li>Empresas de 26-100 empleados: Hay 30 Personas con una Enfermedad mental Diagnostica y de estos 8 conoce sobre los beneficios que ofrece la empresa.</li>
+                    <li>Empresas de 100-500 empleados: Es la segunda empresa que tiene más empleados con una enfermedad mental diagnostica con un total de 44 con una Enfermedad Mental y casi la mitad (20) conoce de los beneficios que tiene la empresa.</li>
+                <li>Empresas de 500-1000 empleados: Hay 31 empleados con una enfermedad mental diagnosticada, de esos 10 conocen de los beneficios que ofrece la empresa para ellos.</li>
+            <li>Empresas de más de 1000 empleados: Es la empresa que tiene más empleados con una Enfermedad Mental Diagnosticada con una total 71 empleados, y casi la mitad de estos (35) conoce sobre los beneficios que ofrece la empresa. Esto podría deberse a recursos y estrategias de comunicación más robustas en empresas de mayor tamaño.</li>
         </ul>
     </p>
     """, unsafe_allow_html=True)
